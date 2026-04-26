@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitarbeiter · MZ Personalvermittlung</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" href="/img/logobrauzer.jpeg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="team.css">
+  <link rel="stylesheet" href="font.css">
+  <style>
+    
+  </style>
+</head>
+
+<body>
+
+  <!-- FLOAT BUTTONS -->
+  <div class="float-contact-stack">
+    <a class="float-btn whatsapp-btn" href="https://wa.me/491639880495" target="_blank" rel="noopener"
+      aria-label="WhatsApp">
+      <span class="float-tooltip" id="wa-tooltip">WhatsApp uns</span>
+      <svg viewBox="0 0 32 32" fill="none">
+        <path
+          d="M16 2C8.268 2 2 8.268 2 16c0 2.478.648 4.8 1.784 6.816L2 30l7.392-1.736A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2Z"
+          fill="#fff" />
+        <path
+          d="M16 4c-6.627 0-12 5.373-12 12 0 2.19.591 4.24 1.62 6.003L4 28l6.12-1.566A11.94 11.94 0 0 0 16 28c6.627 0 12-5.373 12-12S22.627 4 16 4Z"
+          fill="#25D366" />
+        <path
+          d="M21.398 18.793c-.295-.147-1.743-.859-2.013-.957-.27-.098-.466-.147-.663.147-.196.294-.762.957-.933 1.154-.172.196-.343.22-.638.074-.295-.147-1.245-.459-2.372-1.463-.877-.78-1.469-1.744-1.64-2.038-.172-.295-.018-.454.129-.6.132-.132.295-.343.442-.515.148-.172.197-.294.295-.49.099-.196.05-.368-.024-.52-.074-.147-.663-1.597-.908-2.187-.24-.574-.483-.496-.663-.505l-.564-.01c-.196 0-.515.074-.785.368-.27.294-1.03 1.006-1.03 2.453 0 1.447 1.054 2.845 1.201 3.04.147.196 2.074 3.167 5.025 4.44.702.303 1.25.484 1.677.62.705.224 1.346.192 1.853.116.565-.084 1.743-.712 1.989-1.4.245-.687.245-1.276.171-1.4-.073-.122-.27-.196-.564-.343Z"
+          fill="#fff" />
+      </svg>
+    </a>
+    <a class="float-btn phone-btn" href="tel:+491639880495" aria-label="Anrufen">
+      <span class="float-tooltip">Anrufen</span>
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+          fill="#fff" />
+      </svg>
+    </a>
+    <a class="float-btn email-btn" href="mailto:info@mz-personalvermittlung.de" aria-label="E-Mail senden">
+      <span class="float-tooltip">E-Mail senden</span>
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+          fill="var(--navy)" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" aria-label="MZ Personalvermittlung">
+      <img src="/img/logo.png" alt="MZ Personalvermittlung" class="logo-img"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
+      <span class="logo-fallback" style="display:none;">MZ <span>Personalvermittlung</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#leistungen" class="nav-link">
+          <span data-lang="de">Leistungen</span><span data-lang="en">Services</span>
+        </a></li>
+      <li><a href="index.html#ablauf" class="nav-link">
+          <span data-lang="de">Ablauf</span><span data-lang="en">Process</span>
+        </a></li>
+      <li><a href="team.html" class="nav-link">
+          <span data-lang="de">Mitarbeiter</span><span data-lang="en">Team</span>
+        </a></li>
+      <li><a href="index.html#ueber" class="nav-link">
+          <span data-lang="de">Über uns</span><span data-lang="en">About</span>
+        </a></li>
+      <li><a href="index.html#kontakt" class="nav-link">
+          <span data-lang="de">Kontakt</span><span data-lang="en">Contact</span>
+        </a></li>
+      <li>
+        <div class="nav-controls">
+          <div class="lang-toggle">
+            <button class="lang-btn active" id="nav-btn-de" onclick="setLang('de')">DE</button>
+            <button class="lang-btn" id="nav-btn-en" onclick="setLang('en')">EN</button>
+          </div>
+          <button class="theme-btn" onclick="toggleTheme()" id="themeBtn" title="Toggle dark/light mode">
+            <span id="themeIcon">🌙</span>
+            <span class="theme-label" id="themeLabel">Dark</span>
+          </button>
+        </div>
+      </li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <button class="theme-btn" onclick="toggleTheme()" id="themeBtnMob"><span id="themeIconMob">🌙</span></button>
+      <button class="hamburger" onclick="toggleMobile()"
+        aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#leistungen" onclick="closeMobile()">
+      <span data-lang="de">Leistungen</span><span data-lang="en">Services</span>
+    </a>
+    <a href="team.html" onclick="closeMobile()">
+      <span data-lang="de">Mitarbeiter</span><span data-lang="en">Team</span>
+    </a>
+    <a href="index.html#ablauf" onclick="closeMobile()">
+      <span data-lang="de">Ablauf</span><span data-lang="en">Process</span>
+    </a>
+    <a href="index.html#ueber" onclick="closeMobile()">
+      <span data-lang="de">Über uns</span><span data-lang="en">About</span>
+    </a>
+    <a href="index.html#kontakt" onclick="closeMobile()">
+      <span data-lang="de">Kontakt</span><span data-lang="en">Contact</span>
+    </a>
+    <div class="mobile-bottom-row">
+      <div class="lang-toggle mobile-lang">
+        <button class="lang-btn active" id="mob-btn-de" onclick="setLang('de');closeMobile()">DE</button>
+        <button class="lang-btn" id="mob-btn-en" onclick="setLang('en');closeMobile()">EN</button>
+      </div>
+      <button class="mobile-theme-btn" onclick="toggleTheme()">
+        <span id="themeIconMobile">🌙</span>
+        <span id="themeLabelMobile">Dark Mode</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-strip">
+    <div class="hero-label">
+      <span data-lang="de">Unsere Kandidaten</span>
+      <span data-lang="en">Our Candidates</span>
+    </div>
+    <h1>
+      <span data-lang="de">Verfügbare <em>Talente</em></span>
+      <span data-lang="en">Available <em>Talents</em></span>
+    </h1>
+    <p>
+      <span data-lang="de">Qualifizierte, geprüfte Kandidaten aus Aserbaidschan — bereit für deutsche
+        Unternehmen.</span>
+      <span data-lang="en">Qualified, vetted candidates from Azerbaijan — ready for German companies.</span>
+    </p>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters-section">
+    <div class="filters-inner">
+      <div class="filters-top">
+        <div class="search-wrap">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+            <path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <input type="text" id="search-in" placeholder="Name suchen..." oninput="applyFilters()">
+        </div>
+        <select class="filter-select" id="field-in" onchange="applyFilters()">
+          <option value="" id="opt-all-fields">Alle Bereiche</option>
+          <option value="Gastronomie">Gastronomie</option>
+          <option value="Hotel">Hotel</option>
+          <option value="IT">IT</option>
+          <option value="Pflege">Pflege</option>
+          <option value="Logistik">Logistik</option>
+          <option value="Handwerk">Handwerk</option>
+          <option value="Büro">Büro</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Andere">Andere</option>
+        </select>
+        <select class="filter-select" id="lang-in" onchange="applyFilters()">
+          <option value="" id="opt-all-levels">Alle Sprachniveaus</option>
+          <option value="A1">DE – A1</option>
+          <option value="A2">DE – A2</option>
+          <option value="B1">DE – B1+</option>
+          <option value="B2">DE – B2+</option>
+        </select>
+        <div class="firebase-status" id="fb-status">
+          <span class="firebase-dot" id="fb-dot"></span>
+          <span id="fb-status-text">Laden...</span>
+        </div>
+        <span class="result-count" id="result-count"></span>
+      </div>
+      <!-- TYPE CHIPS -->
+      <div class="filter-chips" id="type-chips">
+        <button class="chip active" data-type="" onclick="setTypeFilter(this,'')">
+          <span data-lang="de">Alle</span>
+          <span data-lang="en">All</span>
+        </button>
+        <button class="chip" data-type="fachkraft" onclick="setTypeFilter(this,'fachkraft')">
+          <span class="chip-dot" style="background:#185FA5"></span>
+          <span data-lang="de">Fachkraft</span>
+          <span data-lang="en">Skilled Worker</span>
+        </button>
+        <button class="chip" data-type="ausbildung" onclick="setTypeFilter(this,'ausbildung')">
+          <span class="chip-dot" style="background:#993C1D"></span>
+          <span data-lang="de">Ausbildung</span>
+          <span data-lang="en">Apprenticeship</span>
+        </button>
+        <button class="chip" data-type="saisonal" onclick="setTypeFilter(this,'saisonal')">
+          <span class="chip-dot" style="background:#854F0B"></span>
+          <span data-lang="de">Saisonal</span>
+          <span data-lang="en">Seasonal</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid-section">
+    <div class="skeleton-grid" id="skeleton">
+      <div class="skeleton-card">
+        <div class="skel skel-circle" style="margin-bottom:12px"></div>
+        <div class="skel skel-line w80"></div>
+        <div class="skel skel-line w50"></div>
+        <div class="skel skel-line w65" style="margin-top:16px"></div>
+        <div class="skel skel-line w80"></div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skel skel-circle" style="margin-bottom:12px"></div>
+        <div class="skel skel-line w80"></div>
+        <div class="skel skel-line w50"></div>
+        <div class="skel skel-line w65" style="margin-top:16px"></div>
+        <div class="skel skel-line w80"></div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skel skel-circle" style="margin-bottom:12px"></div>
+        <div class="skel skel-line w80"></div>
+        <div class="skel skel-line w50"></div>
+        <div class="skel skel-line w65" style="margin-top:16px"></div>
+        <div class="skel skel-line w80"></div>
+      </div>
+    </div>
+    <div class="cards-grid" id="cards-grid" style="display:none"></div>
+    <div class="no-results" id="no-results" style="display:none">
+      <div class="emoji">🔍</div>
+      <h3>
+        <span data-lang="de">Keine Ergebnisse</span>
+        <span data-lang="en">No results found</span>
+      </h3>
+      <p>
+        <span data-lang="de">Versuchen Sie andere Filter.</span>
+        <span data-lang="en">Try different filters.</span>
+      </p>
+    </div>
+    <div id="pagination"></div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#hero" class="logo-footer">MZ <span>Personalvermittlung</span></a>
+        <p>
+          <span data-lang="de" class="active">Wir verbinden internationale Talente mit deutschen Unternehmen —
+            zuverlässig, transparent und nachhaltig.</span>
+          <span data-lang="en">Connecting international talent with German companies — reliably, transparently,
+            sustainably.</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4><span data-lang="de" class="active">Navigation</span><span data-lang="en">Navigation</span></h4>
+        <ul>
+          <li><a href="#leistungen" class="nav-link" data-de="Leistungen" data-en="Services">Leistungen</a></li>
+          <li><a href="#ablauf" class="nav-link" data-de="Ablauf" data-en="Process">Ablauf</a></li>
+          <li><a href="#ueber" class="nav-link" data-de="Über uns" data-en="About us">Über uns</a></li>
+          <li><a href="team.html" class="nav-link" data-de="Mitarbeiter" data-en="Team">Mitarbeiter</a></li>
+          <li><a href="#kontakt" class="nav-link" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span data-lang="de" class="active">Rechtliches</span><span data-lang="en">Legal</span></h4>
+        <ul>
+          <li><a href="#" onclick="showOverlay('impressum'); return false;"><span data-lang="de"
+                class="active">Impressum</span><span data-lang="en">Imprint</span></a></li>
+          <li><a href="#" onclick="showOverlay('datenschutz'); return false;"><span data-lang="de"
+                class="active">Datenschutz</span><span data-lang="en">Privacy Policy</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-contact-col">
+        <h4><span data-lang="de" class="active">Kontakt</span><span data-lang="en">Contact</span></h4>
+        <div class="footer-contact-items">
+          <div class="footer-contact-item">
+            <div class="fc-icon">📞</div><a href="tel:+491639880495">+49 163 9880495</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="fc-icon">✉️</div><a
+              href="mailto:info@mz-personalvermittlung.de">info@mz-personalvermittlung.de</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+              </svg></div>
+            <a href="https://wa.me/491639880495" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="fc-icon">📍</div><span>Spichernstraße 47, 40476 Düsseldorf</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          © <span id="currentYear"></span> MZ Personalvermittlung
+          · <span data-lang="de" class="active">Alle Rechte vorbehalten</span>
+          <span data-lang="en">All rights reserved</span>
+        </div>
+        <div class="footer-links">
+          <a href="#" onclick="showOverlay('impressum'); return false;">Impressum</a>
+          <a href="#" onclick="showOverlay('datenschutz'); return false;">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- IMPRESSUM OVERLAY -->
+  <div class="overlay" id="impressum">
+    <div class="overlay-content">
+      <button class="overlay-close" onclick="hideOverlay('impressum')">×</button>
+      <h2>Impressum</h2>
+      <p>Angaben gemäß § 5 DDG:</p>
+      <h3>MZ Personalvermittlung</h3>
+      <p>Magdalena Gotseva<br>Spichernstraße 47<br>40476 Düsseldorf</p>
+      <h3>Kontakt</h3>
+      <p>Telefon: <a href="tel:+491639880495">+49 163 9880495</a><br>E-Mail: <a
+          href="mailto:info@mz-personalvermittlung.de">info@mz-personalvermittlung.de</a><br>Webseite:
+        www.mz-personalvermittlung.de</p>
+      <h3>Aufsichtsbehörde</h3>
+      <p>Landeshauptstadt Düsseldorf<br>Der Oberbürgermeister, Ordnungsamt<br>40200 Düsseldorf</p>
+      <h3>Umsatzsteuer</h3>
+      <p>Umsatzsteuerbefreit gemäß § 19 UStG.</p>
+      <h3>Redaktionell verantwortlich</h3>
+      <p>Magdalena Gotseva<br>Spichernstraße 47<br>40476 Düsseldorf</p>
+    </div>
+  </div>
+  <!-- DATENSCHUTZ OVERLAY -->
+  <div class="overlay" id="datenschutz">
+    <div class="overlay-content">
+      <button class="overlay-close" onclick="hideOverlay('datenschutz')">×</button>
+      <h2>Datenschutzerklärung</h2>
+      <h3>1. Datenschutz auf einen Blick</h3>
+      <p>Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wir behandeln Ihre personenbezogenen Daten
+        vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften, insbesondere der
+        Datenschutz-Grundverordnung (DSGVO).</p>
+      <p>Diese Datenschutzerklärung informiert Sie darüber, welche Daten wir auf unserer Website erheben, wie wir diese
+        verwenden und welche Rechte Sie haben.</p>
+      <h3>2. Verantwortliche Stelle</h3>
+      <p>MZ Personalvermittlung<br>Magdalena Gotseva<br>Spichernstraße 47<br>40476
+        Düsseldorf<br>Deutschland<br><br>Telefon: +49 163 9880495<br>E-Mail: info@mz-personalvermittlung.de<br>Webseite:
+        www.mz-personalvermittlung.de</p>
+      <h3>3. Hosting durch IONOS</h3>
+      <p>Unsere Website wird bei IONOS SE gehostet. Beim Besuch unserer Website erfasst IONOS automatisch sogenannte
+        Server-Logfiles (z. B. IP-Adresse, Browsertyp, Uhrzeit des Zugriffs, aufgerufene Seiten).</p>
+      <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren
+        und stabilen Betrieb der Website).</p>
+      <h3>4. Datenerfassung auf unserer Website</h3>
+      <p><strong>a) Kontaktformular</strong><br>Wenn Sie uns per Kontaktformular Anfragen senden, werden Ihre Angaben
+        inklusive der angegebenen Kontaktdaten zwecks Bearbeitung Ihrer Anfrage und für Rückfragen
+        gespeichert.<br>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO</p>
+      <p><strong>b) Kontakt per E-Mail oder Telefon</strong><br>Wenn Sie uns per E-Mail oder Telefon kontaktieren,
+        speichern wir Ihre Angaben zur Bearbeitung Ihrer Anfrage.</p>
+      <h3>5. Bewerberdaten / Personalvermittlung</h3>
+      <p>Wenn Sie uns Bewerbungsunterlagen, Lebensläufe, Zeugnisse, Qualifikationsnachweise oder sonstige
+        personenbezogene Daten übermitteln, verwenden wir diese ausschließlich zum Zweck der Personalvermittlung.</p>
+      <p>Eine Weitergabe Ihrer Daten an potenzielle Arbeitgeber erfolgt nur mit Ihrer ausdrücklichen Zustimmung.</p>
+      <p><strong>Rechtsgrundlage:</strong><br>• Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)<br>• Art. 6 Abs. 1 lit. b
+        DSGVO (vorvertragliche Maßnahmen)</p>
+      <h3>6. Speicherdauer</h3>
+      <p>Wir speichern personenbezogene Daten nur so lange, wie dies für die jeweiligen Zwecke erforderlich ist oder
+        gesetzliche Aufbewahrungspflichten bestehen.</p>
+      <h3>7. SSL- / TLS-Verschlüsselung</h3>
+      <p>Diese Website nutzt aus Sicherheitsgründen und zum Schutz vertraulicher Inhalte eine SSL- bzw.
+        TLS-Verschlüsselung. Sie erkennen eine verschlüsselte Verbindung an „https://" in der Adresszeile Ihres
+        Browsers.</p>
+      <h3>8. Ihre Rechte</h3>
+      <p>Sie haben jederzeit das Recht auf:</p>
+      <ul style="margin-top:0.5rem">
+        <li>Auskunft über Ihre gespeicherten Daten</li>
+        <li>Berichtigung unrichtiger Daten</li>
+        <li>Löschung Ihrer Daten</li>
+        <li>Einschränkung der Verarbeitung</li>
+        <li>Datenübertragbarkeit</li>
+        <li>Widerspruch gegen die Verarbeitung</li>
+        <li>Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft</li>
+      </ul>
+      <h3>9. Beschwerderecht bei einer Aufsichtsbehörde</h3>
+      <p>Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren.<br>Zuständig ist beispielsweise:
+        Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen</p>
+      <h3>10. Änderungen dieser Datenschutzerklärung</h3>
+      <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, damit sie stets den aktuellen
+        rechtlichen Anforderungen entspricht.</p>
+    </div>
+  </div>
+  <!-- MODAL -->
+  <div class="modal-backdrop" id="cv-modal" onclick="handleBackdropClick(event)">
+    <div class="modal-box" id="modal-box">
+      <div class="modal-header">
+        <div class="modal-close-row">
+          <button class="modal-close" onclick="closeModal()" aria-label="Schließen">✕</button>
+        </div>
+        <div class="modal-profile" id="modal-profile"></div>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- IMPRESSUM / DATENSCHUTZ -->
+  <div class="overlay" id="impressum">
+    <div class="overlay-content">
+      <button class="overlay-close" onclick="hideOverlay('impressum')">×</button>
+      <h2>Impressum</h2>
+      <p>Angaben gemäß § 5 DDG:</p>
+      <h3>MZ Personalvermittlung</h3>
+      <p>Magdalena Gotseva<br>Spichernstraße 47<br>40476 Düsseldorf</p>
+      <h3>Kontakt</h3>
+      <p>Telefon: <a href="tel:+491639880495">+49 163 9880495</a><br>E-Mail: <a
+          href="mailto:info@mz-personalvermittlung.de">info@mz-personalvermittlung.de</a></p>
+      <h3>Umsatzsteuer</h3>
+      <p>Umsatzsteuerbefreit gemäß § 19 UStG.</p>
+    </div>
+  </div>
+  <div class="overlay" id="datenschutz">
+    <div class="overlay-content">
+      <button class="overlay-close" onclick="hideOverlay('datenschutz')">×</button>
+      <h2>Datenschutzerklärung</h2>
+      <p>Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════ FIREBASE SDK ═══════════════ -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js';
+    import { getFirestore, collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBgF0KZmiDoaYnmQ0IG1-Nf-mHjSd5n700",
+      authDomain: "mz-personalvermittlung.firebaseapp.com",
+      projectId: "mz-personalvermittlung",
+      storageBucket: "mz-personalvermittlung.firebasestorage.app",
+      messagingSenderId: "53699929536",
+      appId: "1:53699929536:web:1223db87fafb005aacd425"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    onSnapshot(collection(db, 'candidates'), (snapshot) => {
+      const candidates = snapshot.docs.map(d => d.data())
+        .filter(c => c.status !== 'placed');
+
+      window._allCandidates = candidates;
+      window.allData = candidates;
+      window.filtered = candidates.slice();
+
+      // Skeleton-u gizlət və real kartları göstər
+      const skel = document.getElementById('skeleton');
+      const grid = document.getElementById('cards-grid');
+      if (skel) skel.style.display = 'none';
+      if (grid) grid.style.display = 'grid';
+
+      const dot = document.getElementById('fb-dot');
+      const txt = document.getElementById('fb-status-text');
+      if (dot) dot.classList.add('live');
+      if (txt) txt.textContent = 'Live';
+
+      if (typeof window.renderCards === 'function') window.renderCards();
+      if (typeof window.updateResultCount === 'function') window.updateResultCount();
+    });
+  </script>
+
+
+  <script>
+    /* ═══════════════════════════════════════════
+       TRANSLATIONS
+    ═══════════════════════════════════════════ */
+    var T = {
+      de: {
+        searchPlaceholder: 'Name suchen...',
+        allFields: 'Alle Bereiche',
+        allLevels: 'Alle Sprachniveaus',
+        candidateSingular: ' Kandidat',
+        candidatePlural: ' Kandidaten',
+        typeMeta: {
+          fachkraft: { label: 'Fachkraft · sofort verfügbar' },
+          ausbildung: { label: 'Ausbildung gesucht' },
+          saisonal: { label: 'Saisonal · bis 8 Monate' }
+        },
+        sections: {
+          about: 'Über mich',
+          exp: 'Berufserfahrung',
+          skills: 'Kernkompetenzen',
+          langs: 'Sprachen',
+          certs: 'Zertifikate & Qualifikationen',
+          contact: 'Kandidaten anfragen',
+          field: 'Bereich',
+          dob: 'Geburtsdatum',
+          loc: 'Standort',
+          delevel: 'Deutschniveau'
+        },
+        cardMore: 'Vollständiges Profil →'
+      },
+      en: {
+        searchPlaceholder: 'Search by name...',
+        allFields: 'All Fields',
+        allLevels: 'All Language Levels',
+        candidateSingular: ' candidate',
+        candidatePlural: ' candidates',
+        typeMeta: {
+          fachkraft: { label: 'Skilled Worker · available now' },
+          ausbildung: { label: 'Seeking apprenticeship' },
+          saisonal: { label: 'Seasonal · up to 8 months' }
+        },
+        sections: {
+          about: 'About',
+          exp: 'Work Experience',
+          skills: 'Key Skills',
+          langs: 'Languages',
+          certs: 'Certificates & Qualifications',
+          contact: 'Contact for this candidate',
+          field: 'Field',
+          dob: 'Date of birth',
+          loc: 'Location',
+          delevel: 'German Level'
+        },
+        cardMore: 'View full profile →'
+      }
+    };
+
+    function getTagline(c, lang) {
+      if (lang === 'en' && c.taglineEN && c.taglineEN.trim()) return c.taglineEN;
+      return c.taglineDE || '';
+    }
+
+    /* ═══════════════════════════════════════════
+       STATE
+    ═══════════════════════════════════════════ */
+    var currentLang = 'de';
+    var currentType = '';
+    var currentPage = 1;
+    var PER_PAGE = 6;
+    var allData = [];
+    var filtered = [];
+
+    /* ═══════════════════════════════════════════
+       THEME
+    ═══════════════════════════════════════════ */
+    var theme = 'light';
+    try { theme = localStorage.getItem('mz-theme') || 'light'; } catch (e) { }
+
+    function applyTheme(t) {
+      document.documentElement.setAttribute('data-theme', t);
+      theme = t;
+      try { localStorage.setItem('mz-theme', t); } catch (e) { }
+      var isDark = t === 'dark';
+      var icon = isDark ? '☀️' : '🌙';
+      setElText('themeIcon', icon);
+      setElText('themeIconMob', icon);
+      setElText('themeIconMobile', icon);
+      setElText('themeLabel', isDark ? 'Light' : 'Dark');
+      setElText('themeLabelMobile', (isDark ? 'Light' : 'Dark') + ' Mode');
+    }
+    function toggleTheme() { applyTheme(theme === 'light' ? 'dark' : 'light'); }
+    applyTheme(theme);
+
+    function setElText(id, txt) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = txt;
+    }
+
+    /* ═══════════════════════════════════════════
+       DİL SİSTEMİ — DÜZƏLDİLMİŞ VERSİYA
+       
+       Köhnə kod:
+       - bəzi elementlərdə data-lang atributu yox idi
+       - CSS .block-lang/.active siniflərinə etibar edirdi
+       - display növü (block vs inline) idarə edilmirdi
+       
+       Yeni kod:
+       - Bütün [data-lang] elementlər CSS-də display:none
+       - JS hər elementi tapır, doğru dili göstərir
+       - Tag adına görə display:block və ya display:inline seçir
+       - Filter select seçimlərini id ilə yeniləyir
+    ═══════════════════════════════════════════ */
+    function setLang(lang) {
+      if (lang !== 'de' && lang !== 'en') lang = 'de';
+      currentLang = lang;
+
+      /* Səhifədəki bütün [data-lang] elementlərini tap və idarə et */
+      document.querySelectorAll('[data-lang]').forEach(function (el) {
+        var elLang = el.getAttribute('data-lang');
+        if (elLang === lang) {
+          /* Elementin tag adına görə düzgün display növünü seç */
+          var tag = el.tagName.toLowerCase();
+          var blockTags = ['p', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'section', 'article', 'header', 'footer', 'main', 'aside', 'nav'];
+          el.style.display = blockTags.indexOf(tag) !== -1 ? 'block' : 'inline';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+
+      /* html[lang] atributunu yenilə */
+      document.documentElement.setAttribute('lang', lang);
+
+      /* Dil düymələrini yenilə */
+      ['nav-btn-de', 'nav-btn-en', 'mob-btn-de', 'mob-btn-en'].forEach(function (id) {
+        var btn = document.getElementById(id);
+        if (!btn) return;
+        var btnLang = (id.indexOf('-de') !== -1) ? 'de' : 'en';
+        if (btnLang === lang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      /* Search input placeholder */
+      var si = document.getElementById('search-in');
+      if (si) si.placeholder = T[lang].searchPlaceholder;
+
+      /* Filter select-lərin ilk seçimlərini yenilə */
+      var optFields = document.getElementById('opt-all-fields');
+      if (optFields) optFields.textContent = T[lang].allFields;
+      var optLevels = document.getElementById('opt-all-levels');
+      if (optLevels) optLevels.textContent = T[lang].allLevels;
+
+      updateResultCount();
+      renderCards();
+    }
+
+    /* ═══════════════════════════════════════════
+       FILTERS
+    ═══════════════════════════════════════════ */
+    function setTypeFilter(el, type) {
+      document.querySelectorAll('#type-chips .chip').forEach(function (c) { c.classList.remove('active'); });
+      el.classList.add('active');
+      currentType = type;
+      currentPage = 1;
+      applyFilters();
+    }
+
+    function applyFilters() {
+      var search = document.getElementById('search-in').value.toLowerCase().trim();
+      var field = document.getElementById('field-in').value;
+      var llvl = document.getElementById('lang-in').value;
+      var lvlMap = { A1: 1, A2: 2, B1: 3, B2: 4 };
+
+      filtered = allData.filter(function (c) {
+        if (search && !c.name.toLowerCase().includes(search)) return false;
+        if (currentType && c.type !== currentType) return false;
+        if (field && c.field !== field) return false;
+        if (llvl) {
+          var cLvl = lvlMap[c.delevel] || 0;
+          var fLvl = lvlMap[llvl] || 0;
+          if (cLvl < fLvl) return false;
+        }
+        return true;
+      });
+
+      currentPage = 1;
+      updateResultCount();
+      renderCards();
+    }
+
+    function updateResultCount() {
+      var t = T[currentLang] || T.de;
+      var suffix = filtered.length === 1 ? t.candidateSingular : t.candidatePlural;
+      var el = document.getElementById('result-count');
+      if (el) el.textContent = filtered.length + suffix;
+    }
+
+    /* ═══════════════════════════════════════════
+       RENDER CARDS
+    ═══════════════════════════════════════════ */
+    var typeColors = {
+      fachkraft: { badgeClass: 'badge-fach', langClass: 'lang-fach' },
+      ausbildung: { badgeClass: 'badge-azubi', langClass: 'lang-azubi' },
+      saisonal: { badgeClass: 'badge-sais', langClass: 'lang-sais' }
+    };
+
+    function renderCards() {
+      var grid = document.getElementById('cards-grid');
+      var noRes = document.getElementById('no-results');
+      var pag = document.getElementById('pagination');
+
+      if (!grid) return;
+
+      if (filtered.length === 0) {
+        grid.style.display = 'none';
+        noRes.style.display = 'block';
+        pag.innerHTML = '';
+        /* no-results içindəki [data-lang] elementlərini yenilə */
+        noRes.querySelectorAll('[data-lang]').forEach(function (el) {
+          el.style.display = (el.getAttribute('data-lang') === currentLang) ? 'inline' : 'none';
+        });
+        return;
+      }
+
+      noRes.style.display = 'none';
+      grid.style.display = 'grid';
+
+      var t = T[currentLang] || T.de;
+      var total = Math.ceil(filtered.length / PER_PAGE);
+      var start = (currentPage - 1) * PER_PAGE;
+      var page = filtered.slice(start, start + PER_PAGE);
+
+      var html = '';
+      page.forEach(function (c, i) {
+        var colors = typeColors[c.type] || typeColors.fachkraft;
+        var tmeta = (t.typeMeta[c.type] || t.typeMeta.fachkraft);
+        var tagline = getTagline(c, currentLang);
+        var initials = c.name.split(' ').map(function (n) { return n[0]; }).join('').slice(0, 2).toUpperCase();
+        var expArr = Array.isArray(c.exp) ? c.exp : [];
+        var skillsArr = Array.isArray(c.skills) ? c.skills : [];
+        var langsArr = Array.isArray(c.langs) ? c.langs : [];
+
+        var avatarHTML = c.img
+          ? '<img src="' + esc(c.img) + '" alt="' + esc(c.name) + '" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=cv-avatar-fallback>' + initials + '<\\/div>\'">'
+          : '<div class="cv-avatar-fallback">' + initials + '</div>';
+
+        var expHTML = expArr.slice(0, 2).map(function (e) {
+          return '<div class="cv-exp-row">'
+            + '<span class="cv-exp-title">' + esc(e.title || '') + '</span>'
+            + '<span class="cv-exp-year">' + esc(e.year || '') + '</span>'
+            + '</div>';
+        }).join('');
+
+        var skillsHTML = skillsArr.slice(0, 4).map(function (s) { return '<span class="cv-tag">' + esc(s) + '</span>'; }).join('');
+        var langsHTML = langsArr.map(function (l) { return '<span class="cv-lang ' + colors.langClass + '">' + esc(l) + '</span>'; }).join('');
+        var locStr = '📍 ' + (c.location || 'Aserbaidschan') + (c.dob ? ' · ' + c.dob : '');
+        var cardIdx = allData.indexOf(c);
+
+        html += '<div class="cv-card" style="animation-delay:' + i * 70 + 'ms" onclick="openModal(' + cardIdx + ')">'
+          + '<div class="cv-card-header">'
+          + '<div class="cv-avatar">' + avatarHTML + '</div>'
+          + '<div class="cv-name">' + esc(c.name) + '</div>'
+          + '<div class="cv-loc">' + locStr + '</div>'
+          + '<span class="cv-badge ' + colors.badgeClass + '">' + esc(tmeta.label) + '</span>'
+          + '<div class="card-cta">'
+          + '<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
+          + esc(t.cardMore)
+          + '</div>'
+          + '</div>'
+          + '<div class="cv-body">'
+          + (tagline ? '<p class="cv-tagline">' + esc(tagline) + '</p>' : '')
+          + (expHTML ? '<div class="cv-section-title">' + esc(t.sections.exp) + '</div><div>' + expHTML + '</div>' : '')
+          + (skillsHTML ? '<div class="cv-section-title">' + esc(t.sections.skills) + '</div><div class="cv-tags">' + skillsHTML + '</div>' : '')
+          + '<div class="cv-section-title">' + esc(t.sections.langs) + '</div>'
+          + '<div class="cv-lang-tags">' + langsHTML + '</div>'
+          + '</div>'
+          + '</div>';
+      });
+
+      grid.innerHTML = html;
+
+      /* PAGINATION */
+      if (total <= 1) { pag.innerHTML = ''; return; }
+      var btns = '<button class="page-btn" onclick="goPage(' + (currentPage - 1) + ')" ' + (currentPage === 1 ? 'disabled' : '') + '>‹</button>';
+      for (var p = 1; p <= total; p++) {
+        btns += '<button class="page-btn' + (p === currentPage ? ' active' : '') + '" onclick="goPage(' + p + ')">' + p + '</button>';
+      }
+      btns += '<button class="page-btn" onclick="goPage(' + (currentPage + 1) + ')" ' + (currentPage === total ? 'disabled' : '') + '>›</button>';
+      btns += '<span class="page-info">' + currentPage + ' / ' + total + '</span>';
+      pag.innerHTML = '<div class="pagination">' + btns + '</div>';
+    }
+
+    function goPage(p) {
+      var total = Math.ceil(filtered.length / PER_PAGE);
+      if (p < 1 || p > total) return;
+      currentPage = p;
+      renderCards();
+      var gs = document.querySelector('.grid-section');
+      if (gs) gs.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* ═══════════════════════════════════════════
+       MODAL
+    ═══════════════════════════════════════════ */
+    function openModal(idx) {
+      var c = allData[idx];
+      if (!c) return;
+
+      var colors = typeColors[c.type] || typeColors.fachkraft;
+      var t = T[currentLang] || T.de;
+      var tmeta = t.typeMeta[c.type] || t.typeMeta.fachkraft;
+      var tagline = getTagline(c, currentLang);
+      var initials = c.name.split(' ').map(function (n) { return n[0]; }).join('').slice(0, 2).toUpperCase();
+
+      var avatarHTML = c.img
+        ? '<img src="' + esc(c.img) + '" alt="' + esc(c.name) + '" onerror="this.parentElement.innerHTML=\'<div class=modal-avatar-fallback>' + initials + '<\\/div>\'">'
+        : '<div class="modal-avatar-fallback">' + initials + '</div>';
+
+      var expArr = Array.isArray(c.exp) ? c.exp : [];
+      var skillsArr = Array.isArray(c.skills) ? c.skills : [];
+      var langsArr = Array.isArray(c.langs) ? c.langs : [];
+      var certArr = Array.isArray(c.certs) ? c.certs : [];
+
+      var expHTML = expArr.map(function (e) {
+        return '<div class="modal-exp-row">'
+          + '<div><div class="modal-exp-title">' + esc(e.title || '') + '</div>'
+          + (e.company ? '<div class="modal-exp-company">' + esc(e.company) + '</div>' : '')
+          + '</div><div class="modal-exp-year">' + esc(e.year || '') + '</div></div>';
+      }).join('');
+
+      var skillsHTML = skillsArr.map(function (s) { return '<span class="modal-tag">' + esc(s) + '</span>'; }).join('');
+      var langsHTML = langsArr.map(function (l) { return '<span class="modal-lang ' + colors.langClass + '">' + esc(l) + '</span>'; }).join('');
+      var certsHTML = certArr.map(function (cert) { return '<span class="modal-tag">' + esc(cert) + '</span>'; }).join('');
+
+      var infoItems = [];
+      if (c.field) infoItems.push([t.sections.field, c.field]);
+      if (c.delevel) infoItems.push([t.sections.delevel, 'DE – ' + c.delevel]);
+      if (c.dob) infoItems.push([t.sections.dob, c.dob]);
+      if (c.location) infoItems.push([t.sections.loc, c.location]);
+
+      var infoHTML = infoItems.map(function (it) {
+        return '<div class="modal-info-item">'
+          + '<div class="modal-info-label">' + esc(it[0]) + '</div>'
+          + '<div class="modal-info-value">' + esc(it[1]) + '</div>'
+          + '</div>';
+      }).join('');
+
+      var profileHTML = '<div class="modal-avatar">' + avatarHTML + '</div>'
+        + '<div>'
+        + '<div class="modal-name">' + esc(c.name) + '</div>'
+        + '<div class="modal-meta">📍 ' + (c.location || 'Aserbaidschan') + (c.dob ? ' · ' + c.dob : '') + '</div>'
+        + '<span class="cv-badge ' + colors.badgeClass + '">' + esc(tmeta.label) + '</span>'
+        + '</div>';
+
+      var bodyHTML = '';
+      if (tagline) bodyHTML += '<div class="modal-section"><div class="modal-section-title">' + esc(t.sections.about) + '</div><p class="modal-tagline">' + esc(tagline) + '</p></div>';
+      if (infoItems.length) bodyHTML += '<div class="modal-section"><div class="modal-info-grid">' + infoHTML + '</div></div>';
+      if (expHTML) bodyHTML += '<div class="modal-divider"></div><div class="modal-section"><div class="modal-section-title">' + esc(t.sections.exp) + '</div>' + expHTML + '</div>';
+      if (skillsHTML) bodyHTML += '<div class="modal-divider"></div><div class="modal-section"><div class="modal-section-title">' + esc(t.sections.skills) + '</div><div class="modal-tags">' + skillsHTML + '</div></div>';
+      if (certsHTML) bodyHTML += '<div class="modal-divider"></div><div class="modal-section"><div class="modal-section-title">' + esc(t.sections.certs) + '</div><div class="modal-tags">' + certsHTML + '</div></div>';
+      if (langsHTML) bodyHTML += '<div class="modal-divider"></div><div class="modal-section"><div class="modal-section-title">' + esc(t.sections.langs) + '</div><div class="modal-tags">' + langsHTML + '</div></div>';
+
+      var contactMsg = { de: 'Hallo, ich interessiere mich für den Kandidaten: ', en: 'Hello, I am interested in the candidate: ' };
+      var waMsg = encodeURIComponent((contactMsg[currentLang] || contactMsg.de) + c.name);
+
+      bodyHTML += '<button class="modal-contact-btn" onclick="window.open(\'https://wa.me/491639880495?text=' + waMsg + '\',\'_blank\')">'
+        + '<svg width="18" height="18" viewBox="0 0 32 32" fill="none">'
+        + '<path d="M16 4c-6.627 0-12 5.373-12 12 0 2.19.591 4.24 1.62 6.003L4 28l6.12-1.566A11.94 11.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 4 16 4Z" fill="currentColor"/>'
+        + '<path d="M21.398 18.793c-.295-.147-1.743-.859-2.013-.957-.27-.098-.466-.147-.663.147-.196.294-.762.957-.933 1.154-.172.196-.343.22-.638.074-.295-.147-1.245-.459-2.372-1.463-.877-.78-1.469-1.744-1.64-2.038-.172-.295-.018-.454.129-.6.132-.132.295-.343.442-.515.148-.172.197-.294.295-.49.099-.196.05-.368-.024-.52-.074-.147-.663-1.597-.908-2.187-.24-.574-.483-.496-.663-.505l-.564-.01c-.196 0-.515.074-.785.368-.27.294-1.03 1.006-1.03 2.453 0 1.447 1.054 2.845 1.201 3.04.147.196 2.074 3.167 5.025 4.44.702.303 1.25.484 1.677.62.705.224 1.346.192 1.853.116.565-.084 1.743-.712 1.989-1.4.245-.687.245-1.276.171-1.4-.073-.122-.27-.196-.564-.343Z" fill="white"/>'
+        + '</svg>'
+        + esc(t.sections.contact)
+        + '</button>';
+
+      document.getElementById('modal-profile').innerHTML = profileHTML;
+      document.getElementById('modal-body').innerHTML = bodyHTML;
+      document.getElementById('cv-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('cv-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target === document.getElementById('cv-modal')) closeModal();
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    /* ═══════════════════════════════════════════
+       UTILITY
+    ═══════════════════════════════════════════ */
+    function esc(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    /* ═══════════════════════════════════════════
+       INIT
+    ═══════════════════════════════════════════ */
+    window.addEventListener('DOMContentLoaded', function () {
+      var yr = document.getElementById('currentYear');
+      if (yr) yr.textContent = new Date().getFullYear();
+
+      /* Firebase modulu üçün qlobal referanslar */
+      window.allData = allData;
+      window.filtered = filtered;
+      window.currentPage = currentPage;
+      window.updateResultCount = updateResultCount;
+      window.renderCards = renderCards;
+
+      /* Başlanğıc dili tətbiq et */
+      setLang('de');
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>
