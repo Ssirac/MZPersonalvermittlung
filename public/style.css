@@ -749,8 +749,24 @@ span[data-lang].active { display: inline; }
   grid-template-columns: repeat(2, 1fr);
 }
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-visual { display: none; }
+.hero-visual {
+  display: block;
+  width: 100%;
+  margin-top: 2rem;
 }
+
+.hero-img-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 260px;
+}
+
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 260px;
+} }
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
