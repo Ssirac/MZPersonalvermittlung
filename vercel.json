@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/admin/:path*",
-      "destination": "/admin/index.html"
+      "source": "MZ",
+      "destination": "index.html"
     }
   ]
 }
