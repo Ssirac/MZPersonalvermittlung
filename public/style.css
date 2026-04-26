@@ -718,8 +718,27 @@ span[data-lang].active { display: inline; }
   .hero-inner { gap: 2.5rem; }
 }
 @media (max-width: 900px) {
-  .ueber-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .ueber-visual { max-width: 320px; margin: 0 auto; }
+  .ueber-inner {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.ueber-visual {
+  display: none;
+}
+#ueber h2 {
+  font-size: 1.6rem;
+}
+#ueber .section-desc {
+  max-width: 100%;
+  font-size: 0.92rem;
+}
+#ueber .btn-primary {
+  width: 100%;
+  justify-content: center;
+}
+.ueber-stats {
+  grid-template-columns: repeat(2, 1fr);
+}
   .hero-inner { grid-template-columns: 1fr; }
   .hero-visual { display: none; }
 }
