@@ -8,10 +8,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
     rel="stylesheet">
-  <link rel="icon" type="image/png" href="/img/logobrauzer.jpeg">
-  <link rel="stylesheet" href="/public/style.css">
-  <link rel="stylesheet" href="/public/team.css">
-  <link rel="stylesheet" href="/public/font.css">
+  <link rel="icon" type="image/png" href="img/logobrauzer.jpeg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="team.css">
+  <link rel="stylesheet" href="font.css">
   <style>
     
   </style>
@@ -56,7 +56,7 @@
   <!-- NAV -->
   <nav>
     <a href="index.html" aria-label="MZ Personalvermittlung">
-      <img src="/img/logo.png" alt="MZ Personalvermittlung" class="logo-img"
+      <img src="img/logo.png" alt="MZ Personalvermittlung" class="logo-img"
         onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
       <span class="logo-fallback" style="display:none;">MZ <span>Personalvermittlung</span></span>
     </a>
@@ -243,10 +243,15 @@
     <div id="pagination"></div>
   </div>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#hero" class="logo-footer">MZ <span>Personalvermittlung</span></a>
+        <a href="#hero" aria-label="MZ Personalvermittlung">
+          <img src="img/logo.png" alt="MZ Personalvermittlung" class="logo-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+          <span class="logo-fallback" style="display:none;">MZ <span>Personalvermittlung</span></span>
+        </a>
         <p>
           <span data-lang="de" class="active">Wir verbinden internationale Talente mit deutschen Unternehmen —
             zuverlässig, transparent und nachhaltig.</span>
@@ -388,41 +393,8 @@
         rechtlichen Anforderungen entspricht.</p>
     </div>
   </div>
-  <!-- MODAL -->
-  <div class="modal-backdrop" id="cv-modal" onclick="handleBackdropClick(event)">
-    <div class="modal-box" id="modal-box">
-      <div class="modal-header">
-        <div class="modal-close-row">
-          <button class="modal-close" onclick="closeModal()" aria-label="Schließen">✕</button>
-        </div>
-        <div class="modal-profile" id="modal-profile"></div>
-      </div>
-      <div class="modal-body" id="modal-body"></div>
-    </div>
-  </div>
 
-  <!-- IMPRESSUM / DATENSCHUTZ -->
-  <div class="overlay" id="impressum">
-    <div class="overlay-content">
-      <button class="overlay-close" onclick="hideOverlay('impressum')">×</button>
-      <h2>Impressum</h2>
-      <p>Angaben gemäß § 5 DDG:</p>
-      <h3>MZ Personalvermittlung</h3>
-      <p>Magdalena Gotseva<br>Spichernstraße 47<br>40476 Düsseldorf</p>
-      <h3>Kontakt</h3>
-      <p>Telefon: <a href="tel:+491639880495">+49 163 9880495</a><br>E-Mail: <a
-          href="mailto:info@mz-personalvermittlung.de">info@mz-personalvermittlung.de</a></p>
-      <h3>Umsatzsteuer</h3>
-      <p>Umsatzsteuerbefreit gemäß § 19 UStG.</p>
-    </div>
-  </div>
-  <div class="overlay" id="datenschutz">
-    <div class="overlay-content">
-      <button class="overlay-close" onclick="hideOverlay('datenschutz')">×</button>
-      <h2>Datenschutzerklärung</h2>
-      <p>Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen.</p>
-    </div>
-  </div>
+  <script src="script.js"></script>
 
   <!-- ═══════════════ FIREBASE SDK ═══════════════ -->
   <script type="module">
