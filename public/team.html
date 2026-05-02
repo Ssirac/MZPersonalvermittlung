@@ -9,284 +9,9 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
     rel="stylesheet">
   <link rel="icon" type="image/png" href="img/logobrauzer.jpeg">
+  <link rel="stylesheet" href="font.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="team.css">
-  <link rel="stylesheet" href="font.css">
-  <style>
-    /* ── SUPER MÖHTƏŞƏM MODAL STİLLƏRİ ── */
-    
-.modal-education, .modal-extra, .modal-notes {
-  margin-top: 1.8rem;
-}
-.modal-info-grid, .modal-extra-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
-}
-.modal-extra-label {
-  font-weight: 700;
-  color: var(--gold);
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.modal-section-title {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.9rem;
-  border-left: 4px solid var(--gold);
-  padding-left: 10px;
-}
-.modal-notes-box {
-  background: rgba(212,175,55,0.08);
-  border: 1px solid rgba(212,175,55,0.3);
-  border-radius: 10px;
-  padding: 16px;
-  font-style: italic;
-  line-height: 1.6;
-}
-    /* ── Modalın tam məlumat üçün əlavə stilləri ── */
-.modal-education, .modal-extra { margin-top: 1.5rem; }
-.modal-info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
-}
-.modal-extra-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  font-size: 0.9rem;
-}
-.modal-extra-label { color: var(--text-muted); font-weight: 600; }
-.modal-section-title {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.8rem;
-}
-    .cv-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 500;
-  background: rgba(15, 23, 42, 0.88);
-  backdrop-filter: blur(6px);
-  overflow-y: auto;
-  padding: 60px 5%;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.cv-modal.open {
-  display: flex;
-}
-
-.cv-modal-content {
-  background: var(--overlay-content);
-  border-radius: 12px;
-  padding: 2rem;
-  max-width: 640px;
-  width: 100%;
-  position: relative;
-  border: 1px solid var(--border-color);
-}
-
-.cv-modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.8rem;
-  color: var(--text-muted);
-  line-height: 1;
-  padding: 4px 8px;
-}
-
-.cv-modal-close:hover {
-  color: var(--heading-color);
-}
-
-.cv-modal-profile {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.modal-avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.modal-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.modal-avatar-fallback {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--gold), var(--gold-light));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: var(--navy);
-}
-
-.modal-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--heading-color);
-  margin-bottom: 4px;
-}
-
-.modal-meta {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.modal-section {
-  margin-bottom: 1.2rem;
-}
-
-.modal-section-title {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.6rem;
-}
-
-.modal-tagline {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-}
-
-.modal-info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.8rem;
-}
-
-.modal-info-label {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.modal-info-value {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.modal-exp-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 6px 0;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.modal-exp-row:last-child {
-  border-bottom: none;
-}
-
-.modal-exp-title {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.modal-exp-company {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-}
-
-.modal-exp-year {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  white-space: nowrap;
-  margin-left: 1rem;
-}
-
-.modal-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.modal-tag {
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  color: var(--text-primary);
-  font-size: 0.78rem;
-  padding: 4px 12px;
-  border-radius: 20px;
-}
-
-.modal-lang {
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 20px;
-}
-
-.modal-divider {
-  height: 1px;
-  background: var(--border-color);
-  margin: 1rem 0;
-}
-
-.modal-contact-btn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  padding: 14px;
-  margin-top: 1.5rem;
-  background: #25D366;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  justify-content: center;
-  transition: all 0.2s;
-}
-
-.modal-contact-btn:hover {
-  background: #1da851;
-}
-
-@media (max-width: 560px) {
-  .modal-info-grid {
-    grid-template-columns: 1fr;
-  }
-}
-  </style>
 </head>
 
 <body>
@@ -295,7 +20,7 @@
   <div class="float-contact-stack">
     <a class="float-btn whatsapp-btn" href="https://wa.me/491639880495" target="_blank" rel="noopener"
       aria-label="WhatsApp">
-      <span class="float-tooltip" id="wa-tooltip">WhatsApp uns</span>
+      <span class="float-tooltip">WhatsApp uns</span>
       <svg viewBox="0 0 32 32" fill="none">
         <path
           d="M16 2C8.268 2 2 8.268 2 16c0 2.478.648 4.8 1.784 6.816L2 30l7.392-1.736A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2Z"
@@ -325,7 +50,6 @@
     </a>
   </div>
 
-  <!-- NAV -->
   <nav>
     <a href="index.html" aria-label="MZ Personalvermittlung">
       <img src="img/logo.png" alt="MZ Personalvermittlung" class="logo-img"
@@ -333,21 +57,16 @@
       <span class="logo-fallback" style="display:none;">MZ <span>Personalvermittlung</span></span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html#leistungen" class="nav-link">
-          <span data-lang="de">Leistungen</span><span data-lang="en">Services</span>
-        </a></li>
-      <li><a href="index.html#ablauf" class="nav-link">
-          <span data-lang="de">Ablauf</span><span data-lang="en">Process</span>
-        </a></li>
-      <li><a href="team.html" class="nav-link">
-          <span data-lang="de">Mitarbeiter</span><span data-lang="en">Team</span>
-        </a></li>
-      <li><a href="index.html#ueber" class="nav-link">
-          <span data-lang="de">Über uns</span><span data-lang="en">About</span>
-        </a></li>
-      <li><a href="index.html#kontakt" class="nav-link">
-          <span data-lang="de">Kontakt</span><span data-lang="en">Contact</span>
-        </a></li>
+      <li><a href="index.html#leistungen" class="nav-link"><span data-lang="de">Leistungen</span><span
+            data-lang="en">Services</span></a></li>
+      <li><a href="index.html#ablauf" class="nav-link"><span data-lang="de">Ablauf</span><span
+            data-lang="en">Process</span></a></li>
+      <li><a href="team.html" class="nav-link"><span data-lang="de">Mitarbeiter</span><span
+            data-lang="en">Team</span></a></li>
+      <li><a href="index.html#ueber" class="nav-link"><span data-lang="de">Über uns</span><span
+            data-lang="en">About</span></a></li>
+      <li><a href="index.html#kontakt" class="nav-link"><span data-lang="de">Kontakt</span><span
+            data-lang="en">Contact</span></a></li>
       <li>
         <div class="nav-controls">
           <div class="lang-toggle">
@@ -355,8 +74,7 @@
             <button class="lang-btn" id="nav-btn-en" onclick="setLang('en')">EN</button>
           </div>
           <button class="theme-btn" onclick="toggleTheme()" id="themeBtn" title="Toggle dark/light mode">
-            <span id="themeIcon">🌙</span>
-            <span class="theme-label" id="themeLabel">Dark</span>
+            <span id="themeIcon">🌙</span><span class="theme-label" id="themeLabel">Dark</span>
           </button>
         </div>
       </li>
@@ -368,44 +86,32 @@
     </div>
   </nav>
 
-  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html#leistungen" onclick="closeMobile()">
-      <span data-lang="de">Leistungen</span><span data-lang="en">Services</span>
-    </a>
-    <a href="team.html" onclick="closeMobile()">
-      <span data-lang="de">Mitarbeiter</span><span data-lang="en">Team</span>
-    </a>
-    <a href="index.html#ablauf" onclick="closeMobile()">
-      <span data-lang="de">Ablauf</span><span data-lang="en">Process</span>
-    </a>
-    <a href="index.html#ueber" onclick="closeMobile()">
-      <span data-lang="de">Über uns</span><span data-lang="en">About</span>
-    </a>
-    <a href="index.html#kontakt" onclick="closeMobile()">
-      <span data-lang="de">Kontakt</span><span data-lang="en">Contact</span>
-    </a>
+    <a href="index.html#leistungen" onclick="closeMobile()"><span data-lang="de">Leistungen</span><span
+        data-lang="en">Services</span></a>
+    <a href="team.html" onclick="closeMobile()"><span data-lang="de">Mitarbeiter</span><span
+        data-lang="en">Team</span></a>
+    <a href="index.html#ablauf" onclick="closeMobile()"><span data-lang="de">Ablauf</span><span
+        data-lang="en">Process</span></a>
+    <a href="index.html#ueber" onclick="closeMobile()"><span data-lang="de">Über uns</span><span
+        data-lang="en">About</span></a>
+    <a href="index.html#kontakt" onclick="closeMobile()"><span data-lang="de">Kontakt</span><span
+        data-lang="en">Contact</span></a>
     <div class="mobile-bottom-row">
       <div class="lang-toggle mobile-lang">
         <button class="lang-btn active" id="mob-btn-de" onclick="setLang('de');closeMobile()">DE</button>
         <button class="lang-btn" id="mob-btn-en" onclick="setLang('en');closeMobile()">EN</button>
       </div>
       <button class="mobile-theme-btn" onclick="toggleTheme()">
-        <span id="themeIconMobile">🌙</span>
-        <span id="themeLabelMobile">Dark Mode</span>
+        <span id="themeIconMobile">🌙</span><span id="themeLabelMobile">Dark Mode</span>
       </button>
     </div>
   </div>
 
-  <!-- HERO -->
   <div class="hero-strip">
-    <div class="hero-label">
-      <span data-lang="de">Unsere Kandidaten</span>
-      <span data-lang="en">Our Candidates</span>
+    <div class="hero-label"><span data-lang="de">Unsere Kandidaten</span><span data-lang="en">Our Candidates</span>
     </div>
-    <h1>
-      <span data-lang="de">Verfügbare <em>Talente</em></span>
-      <span data-lang="en">Available <em>Talents</em></span>
+    <h1><span data-lang="de">Verfügbare <em>Talente</em></span><span data-lang="en">Available <em>Talents</em></span>
     </h1>
     <p>
       <span data-lang="de">Qualifizierte, geprüfte Kandidaten aus Aserbaidschan — bereit für deutsche
@@ -425,18 +131,7 @@
           </svg>
           <input type="text" id="search-in" placeholder="Name suchen..." oninput="applyFilters()">
         </div>
-        <select class="filter-select" id="field-in" onchange="applyFilters()">
-          <option value="" id="opt-all-fields">Alle Bereiche</option>
-          <option value="Gastronomie">Gastronomie</option>
-          <option value="Hotel">Hotel</option>
-          <option value="IT">IT</option>
-          <option value="Pflege">Pflege</option>
-          <option value="Logistik">Logistik</option>
-          <option value="Handwerk">Handwerk</option>
-          <option value="Büro">Büro</option>
-          <option value="Marketing">Marketing</option>
-          <option value="Andere">Andere</option>
-        </select>
+        <select class="filter-select" id="field-in" onchange="applyFilters()"></select>
         <select class="filter-select" id="lang-in" onchange="applyFilters()">
           <option value="" id="opt-all-levels">Alle Sprachniveaus</option>
           <option value="A1">DE – A1</option>
@@ -450,32 +145,27 @@
         </div>
         <span class="result-count" id="result-count"></span>
       </div>
-      <!-- TYPE CHIPS -->
       <div class="filter-chips" id="type-chips">
         <button class="chip active" data-type="" onclick="setTypeFilter(this,'')">
-          <span data-lang="de">Alle</span>
-          <span data-lang="en">All</span>
+          <span data-lang="de">Alle</span><span data-lang="en">All</span>
         </button>
         <button class="chip" data-type="fachkraft" onclick="setTypeFilter(this,'fachkraft')">
           <span class="chip-dot" style="background:#185FA5"></span>
-          <span data-lang="de">Fachkraft</span>
-          <span data-lang="en">Skilled Worker</span>
+          <span data-lang="de">Fachkraft</span><span data-lang="en">Skilled Worker</span>
         </button>
         <button class="chip" data-type="ausbildung" onclick="setTypeFilter(this,'ausbildung')">
           <span class="chip-dot" style="background:#993C1D"></span>
-          <span data-lang="de">Ausbildung</span>
-          <span data-lang="en">Apprenticeship</span>
+          <span data-lang="de">Ausbildung</span><span data-lang="en">Apprenticeship</span>
         </button>
         <button class="chip" data-type="saisonal" onclick="setTypeFilter(this,'saisonal')">
           <span class="chip-dot" style="background:#854F0B"></span>
-          <span data-lang="de">Saisonal</span>
-          <span data-lang="en">Seasonal</span>
+          <span data-lang="de">Saisonal</span><span data-lang="en">Seasonal</span>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- CV MODAL -->
+  <!-- MODAL -->
   <div class="cv-modal" id="cv-modal" onclick="handleBackdropClick(event)">
     <div class="cv-modal-content">
       <button class="cv-modal-close" onclick="closeModal()">×</button>
@@ -512,19 +202,16 @@
     <div class="cards-grid" id="cards-grid" style="display:none"></div>
     <div class="no-results" id="no-results" style="display:none">
       <div class="emoji">🔍</div>
-      <h3>
-        <span data-lang="de">Keine Ergebnisse</span>
-        <span data-lang="en">No results found</span>
-      </h3>
-      <p>
-        <span data-lang="de">Versuchen Sie andere Filter.</span>
-        <span data-lang="en">Try different filters.</span>
-      </p>
+      <h3><span data-lang="de">Keine Ergebnisse</span><span data-lang="en">No results found</span></h3>
+      <p><span data-lang="de">Versuchen Sie andere Filter.</span><span data-lang="en">Try different filters.</span></p>
+      <button onclick="resetFilters()" class="reset-filters-btn">
+        <span data-lang="de">Filter zurücksetzen</span>
+        <span data-lang="en">Reset all filters</span>
+      </button>
     </div>
     <div id="pagination"></div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
@@ -534,33 +221,33 @@
           <span class="logo-fallback" style="display:none;">MZ <span>Personalvermittlung</span></span>
         </a>
         <p>
-          <span data-lang="de" class="active">Wir verbinden internationale Talente mit deutschen Unternehmen —
-            zuverlässig, transparent und nachhaltig.</span>
+          <span data-lang="de">Wir verbinden internationale Talente mit deutschen Unternehmen — zuverlässig, transparent
+            und nachhaltig.</span>
           <span data-lang="en">Connecting international talent with German companies — reliably, transparently,
             sustainably.</span>
         </p>
       </div>
       <div class="footer-col">
-        <h4><span data-lang="de" class="active">Navigation</span><span data-lang="en">Navigation</span></h4>
+        <h4><span data-lang="de">Navigation</span><span data-lang="en">Navigation</span></h4>
         <ul>
-          <li><a href="index.html#leistungen" class="nav-link" data-de="Leistungen" data-en="Services">Leistungen</a></li>
-          <li><a href="index.html#ablauf" class="nav-link" data-de="Ablauf" data-en="Process">Ablauf</a></li>
-          <li><a href="index.html#ueber" class="nav-link" data-de="Über uns" data-en="About us">Über uns</a></li>
-          <li><a href="team.html" class="nav-link" data-de="Mitarbeiter" data-en="Team">Mitarbeiter</a></li>
-          <li><a href="index.html#kontakt" class="nav-link" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+          <li><a href="index.html#leistungen" class="nav-link">Leistungen</a></li>
+          <li><a href="index.html#ablauf" class="nav-link">Ablauf</a></li>
+          <li><a href="index.html#ueber" class="nav-link">Über uns</a></li>
+          <li><a href="team.html" class="nav-link">Mitarbeiter</a></li>
+          <li><a href="index.html#kontakt" class="nav-link">Kontakt</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4><span data-lang="de" class="active">Rechtliches</span><span data-lang="en">Legal</span></h4>
+        <h4><span data-lang="de">Rechtliches</span><span data-lang="en">Legal</span></h4>
         <ul>
-          <li><a href="#" onclick="showOverlay('impressum'); return false;"><span data-lang="de"
-                class="active">Impressum</span><span data-lang="en">Imprint</span></a></li>
-          <li><a href="#" onclick="showOverlay('datenschutz'); return false;"><span data-lang="de"
-                class="active">Datenschutz</span><span data-lang="en">Privacy Policy</span></a></li>
+          <li><a href="#" onclick="showOverlay('impressum'); return false;"><span data-lang="de">Impressum</span><span
+                data-lang="en">Imprint</span></a></li>
+          <li><a href="#" onclick="showOverlay('datenschutz'); return false;"><span
+                data-lang="de">Datenschutz</span><span data-lang="en">Privacy Policy</span></a></li>
         </ul>
       </div>
       <div class="footer-contact-col">
-        <h4><span data-lang="de" class="active">Kontakt</span><span data-lang="en">Contact</span></h4>
+        <h4><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></h4>
         <div class="footer-contact-items">
           <div class="footer-contact-item">
             <div class="fc-icon">📞</div><a href="tel:+491639880495">+49 163 9880495</a>
@@ -570,10 +257,12 @@
               href="mailto:info@mz-personalvermittlung.de">info@mz-personalvermittlung.de</a>
           </div>
           <div class="footer-contact-item">
-            <div class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366">
+            <div class="fc-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-              </svg></div>
+              </svg>
+            </div>
             <a href="https://wa.me/491639880495" target="_blank" rel="noopener">WhatsApp</a>
           </div>
           <div class="footer-contact-item">
@@ -584,11 +273,8 @@
     </div>
     <div style="max-width:1200px; margin:0 auto;">
       <div class="footer-bottom">
-        <div class="footer-copy">
-          © <span id="currentYear"></span> MZ Personalvermittlung
-          · <span data-lang="de" class="active">Alle Rechte vorbehalten</span>
-          <span data-lang="en">All rights reserved</span>
-        </div>
+        <div class="footer-copy">© <span id="currentYear"></span> MZ Personalvermittlung · <span data-lang="de">Alle
+            Rechte vorbehalten</span><span data-lang="en">All rights reserved</span></div>
         <div class="footer-links">
           <a href="#" onclick="showOverlay('impressum'); return false;">Impressum</a>
           <a href="#" onclick="showOverlay('datenschutz'); return false;">Datenschutz</a>
@@ -597,503 +283,538 @@
     </div>
   </footer>
 
-  <!-- IMPRESSUM OVERLAY -->
   <div class="overlay" id="impressum">
     <div class="overlay-content">
       <button class="overlay-close" onclick="hideOverlay('impressum')">×</button>
       <h2>Impressum</h2>
-      <p>Angaben gemäß § 5 DDG:</p>
-      <h3>MZ Personalvermittlung</h3>
       <p>Magdalena Gotseva<br>Spichernstraße 47<br>40476 Düsseldorf</p>
-      <h3>Kontakt</h3>
       <p>Telefon: <a href="tel:+491639880495">+49 163 9880495</a><br>E-Mail: <a
-          href="mailto:info@mz-personalvermittlung.de">info@mz-personalvermittlung.de</a><br>Webseite:
-        www.mz-personalvermittlung.de</p>
-      <h3>Aufsichtsbehörde</h3>
-      <p>Landeshauptstadt Düsseldorf<br>Der Oberbürgermeister, Ordnungsamt<br>40200 Düsseldorf</p>
-      <h3>Umsatzsteuer</h3>
-      <p>Umsatzsteuerbefreit gemäß § 19 UStG.</p>
-      <h3>Redaktionell verantwortlich</h3>
-      <p>Magdalena Gotseva<br>Spichernstraße 47<br>40476 Düsseldorf</p>
+          href="mailto:info@mz-personalvermittlung.de">info@mz-personalvermittlung.de</a></p>
     </div>
   </div>
-
-  <!-- DATENSCHUTZ OVERLAY -->
   <div class="overlay" id="datenschutz">
     <div class="overlay-content">
       <button class="overlay-close" onclick="hideOverlay('datenschutz')">×</button>
       <h2>Datenschutzerklärung</h2>
-      <h3>1. Datenschutz auf einen Blick</h3>
-      <p>Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wir behandeln Ihre personenbezogenen Daten
-        vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften, insbesondere der
-        Datenschutz-Grundverordnung (DSGVO).</p>
-      <p>Diese Datenschutzerklärung informiert Sie darüber, welche Daten wir auf unserer Website erheben, wie wir diese
-        verwenden und welche Rechte Sie haben.</p>
-      <h3>2. Verantwortliche Stelle</h3>
-      <p>MZ Personalvermittlung<br>Magdalena Gotseva<br>Spichernstraße 47<br>40476
-        Düsseldorf<br>Deutschland<br><br>Telefon: +49 163 9880495<br>E-Mail: info@mz-personalvermittlung.de<br>Webseite:
-        www.mz-personalvermittlung.de</p>
-      <h3>3. Hosting durch IONOS</h3>
-      <p>Unsere Website wird bei IONOS SE gehostet. Beim Besuch unserer Website erfasst IONOS automatisch sogenannte
-        Server-Logfiles (z. B. IP-Adresse, Browsertyp, Uhrzeit des Zugriffs, aufgerufene Seiten).</p>
-      <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren
-        und stabilen Betrieb der Website).</p>
-      <h3>4. Datenerfassung auf unserer Website</h3>
-      <p><strong>a) Kontaktformular</strong><br>Wenn Sie uns per Kontaktformular Anfragen senden, werden Ihre Angaben
-        inklusive der angegebenen Kontaktdaten zwecks Bearbeitung Ihrer Anfrage und für Rückfragen
-        gespeichert.<br>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO</p>
-      <p><strong>b) Kontakt per E-Mail oder Telefon</strong><br>Wenn Sie uns per E-Mail oder Telefon kontaktieren,
-        speichern wir Ihre Angaben zur Bearbeitung Ihrer Anfrage.</p>
-      <h3>5. Bewerberdaten / Personalvermittlung</h3>
-      <p>Wenn Sie uns Bewerbungsunterlagen, Lebensläufe, Zeugnisse, Qualifikationsnachweise oder sonstige
-        personenbezogene Daten übermitteln, verwenden wir diese ausschließlich zum Zweck der Personalvermittlung.</p>
-      <p>Eine Weitergabe Ihrer Daten an potenzielle Arbeitgeber erfolgt nur mit Ihrer ausdrücklichen Zustimmung.</p>
-      <p><strong>Rechtsgrundlage:</strong><br>• Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)<br>• Art. 6 Abs. 1 lit. b
-        DSGVO (vorvertragliche Maßnahmen)</p>
-      <h3>6. Speicherdauer</h3>
-      <p>Wir speichern personenbezogene Daten nur so lange, wie dies für die jeweiligen Zwecke erforderlich ist oder
-        gesetzliche Aufbewahrungspflichten bestehen.</p>
-      <h3>7. SSL- / TLS-Verschlüsselung</h3>
-      <p>Diese Website nutzt aus Sicherheitsgründen und zum Schutz vertraulicher Inhalte eine SSL- bzw.
-        TLS-Verschlüsselung. Sie erkennen eine verschlüsselte Verbindung an „https://" in der Adresszeile Ihres
-        Browsers.</p>
-      <h3>8. Ihre Rechte</h3>
-      <p>Sie haben jederzeit das Recht auf:</p>
-      <ul style="margin-top:0.5rem">
-        <li>Auskunft über Ihre gespeicherten Daten</li>
-        <li>Berichtigung unrichtiger Daten</li>
-        <li>Löschung Ihrer Daten</li>
-        <li>Einschränkung der Verarbeitung</li>
-        <li>Datenübertragbarkeit</li>
-        <li>Widerspruch gegen die Verarbeitung</li>
-        <li>Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft</li>
-      </ul>
-      <h3>9. Beschwerderecht bei einer Aufsichtsbehörde</h3>
-      <p>Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren.<br>Zuständig ist beispielsweise:
-        Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen</p>
-      <h3>10. Änderungen dieser Datenschutzerklärung</h3>
-      <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, damit sie stets den aktuellen
-        rechtlichen Anforderungen entspricht.</p>
+      <p>Verantwortlich: MZ Personalvermittlung, Spichernstraße 47, 40476 Düsseldorf.</p>
     </div>
   </div>
 
+  <!-- ================================================================
+       FIREBASE MODULE
+       ================================================================ -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js';
+    import { getFirestore, collection, query, where, onSnapshot } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
 
-<!-- ═══════════════ FIREBASE SDK (DÜZƏLDİLMİŞ v2) ═══════════════ -->
-<script type="module">
-  import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js';
-  import { getFirestore, collection, query, where, onSnapshot } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
+    const firebaseConfig = {
+      apiKey: "AIzaSyBgF0KZmiDoaYnmQ0IG1-Nf-mHjSd5n700",
+      authDomain: "mz-personalvermittlung.firebaseapp.com",
+      projectId: "mz-personalvermittlung",
+      storageBucket: "mz-personalvermittlung.firebasestorage.app",
+      messagingSenderId: "53699929536",
+      appId: "1:53699929536:web:1223db87fafb005aacd425"
+    };
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyBgF0KZmiDoaYnmQ0IG1-Nf-mHjSd5n700",
-    authDomain: "mz-personalvermittlung.firebaseapp.com",
-    projectId: "mz-personalvermittlung",
-    storageBucket: "mz-personalvermittlung.firebasestorage.app",
-    messagingSenderId: "53699929536",
-    appId: "1:53699929536:web:1223db87fafb005aacd425"
-  };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const q = query(collection(db, 'candidates'), where("status", "!=", "placed"));
 
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // Yalnız status "placed" OLMAYAN kandidatları server tərəfdən filtrləyirik
-  const q = query(
-    collection(db, 'candidates'),
-    where("status", "!=", "placed")
-  );
-
-  onSnapshot(q, (snapshot) => {
-    const candidates = snapshot.docs
-      .map(d => {
+    onSnapshot(q, (snapshot) => {
+      const candidates = snapshot.docs.map(d => {
         const data = d.data();
         let sortMs = 0;
         const val = data.createdAt;
-        if (val && typeof val.toMillis === 'function') {
-          sortMs = val.toMillis();
-        } else if (val && val.seconds !== undefined) {
-          sortMs = val.seconds * 1000;
-        } else if (typeof val === 'number' && val > 0) {
-          sortMs = val;
-        } else if (typeof val === 'string' && val) {
-          sortMs = new Date(val).getTime() || 0;
-        }
-        if (!sortMs && d.id && d.id.length >= 8) {
-          sortMs = parseInt(d.id.substring(0, 8), 16) * 1000;
-        }
-        return { id: d.id, _sortMs: sortMs, ...data };
-      })
-      .sort((a, b) => b._sortMs - a._sortMs);
+        if (val && typeof val.toMillis === 'function') sortMs = val.toMillis();
+        else if (val && val.seconds !== undefined) sortMs = val.seconds * 1000;
+        else if (typeof val === 'number' && val > 0) sortMs = val;
+        else if (typeof val === 'string' && val) sortMs = new Date(val).getTime() || 0;
+        if (!sortMs && d.id && d.id.length >= 8) sortMs = parseInt(d.id.substring(0, 8), 16) * 1000;
+        return { ...data, id: d.id, _sortMs: sortMs };
+      }).sort((a, b) => b._sortMs - a._sortMs);
 
-    window._allCandidates = candidates;
-    window.allData = candidates;
-    window.filtered = candidates.slice();
+      window.allData = candidates;
 
-    // Skeleton-u gizlət və kartları göstər
-    const skel = document.getElementById('skeleton');
-    const grid = document.getElementById('cards-grid');
-    if (skel) skel.style.display = 'none';
-    if (grid) grid.style.display = 'grid';
+      document.getElementById('skeleton').style.display = 'none';
+      document.getElementById('cards-grid').style.display = 'grid';
 
-    const dot = document.getElementById('fb-dot');
-    const txt = document.getElementById('fb-status-text');
-    if (dot) dot.classList.add('live');
-    if (txt) txt.textContent = 'Live';
+      const dot = document.getElementById('fb-dot');
+      if (dot) dot.classList.add('live');
+      const txt = document.getElementById('fb-status-text');
+      if (txt) txt.textContent = 'Live';
 
-    if (typeof window.renderCards === 'function') window.renderCards();
-    if (typeof window.updateResultCount === 'function') window.updateResultCount();
-  });
-</script>
+      if (typeof window.applyFilters === 'function') window.applyFilters();
+    });
+  </script>
 
+  <!-- ================================================================
+       ƏSAS MƏNTIQ
+       ================================================================ -->
+  <script>
+    // ── SABİT MƏLUMATLAR ─────────────────────────────────────────────
+    var fieldOptions = {
+      de: {
+        "": "Alle Bereiche",
+        "Gastronomie": "Gastronomie", "Koch": "Koch / Aşpaz", "Baecker": "Bäcker",
+        "Konditor": "Konditor", "Kellner": "Kellner", "Barista": "Barista",
+        "Catering": "Catering", "Qida": "Lebensmittelindustrie", "Hotel": "Hotel & Rezeption",
+        "Tourismus": "Tourismus", "Eventmanagement": "Eventmanagement", "Housekeeping": "Housekeeping",
+        "Pflege": "Pflegefachkraft", "Arzt": "Arzt", "Zahnarzt": "Zahnarzt",
+        "Apotheke": "Apotheke", "Physiotherapie": "Physiotherapie", "Psychologie": "Psychologie",
+        "Tibb": "Medizin", "Veteriner": "Veterinär",
+        "IT": "IT / Entwicklung", "Netzwerk": "Netzwerkadministration", "Cybersecurity": "Cybersecurity",
+        "DataScience": "Data Science / AI", "Design": "UI/UX Design", "ITSupport": "IT-Support",
+        "Bau": "Bau / Bauwesen", "Handwerk": "Handwerk", "Elektrik": "Elektriker",
+        "Sanitaer": "Sanitär", "Schreiner": "Schreiner", "Schweisser": "Schweißer",
+        "Maler": "Maler", "Dachdecker": "Dachdecker", "Kfz": "KFZ-Mechaniker",
+        "Maschinenbau": "Maschinenbau",
+        "Logistik": "Logistik", "Fahrer": "Fahrer / LKW", "Lager": "Lagerlogistik",
+        "Transport": "Transport", "Spedition": "Spedition", "Gabelstapler": "Gabelstaplerfahrer",
+        "Büro": "Bürokaufmann", "Buchhaltung": "Buchhaltung", "Maliyye": "Finanzwesen",
+        "Controlling": "Controlling", "Personalwesen": "Personalwesen", "Recht": "Recht / Jurist",
+        "Steuer": "Steuerberatung", "Marketing": "Marketing", "Verkauf": "Vertrieb",
+        "Kundenservice": "Kundenservice", "Ecommerce": "E-Commerce", "SocialMedia": "Social Media",
+        "PR": "Öffentlichkeitsarbeit",
+        "Lehrer": "Lehrer", "Erziehung": "Erzieher", "Sozialarbeit": "Sozialarbeit",
+        "Wissenschaft": "Wissenschaft", "Übersetzer": "Übersetzer",
+        "Mühəndis": "Ingenieur", "Elektronik": "Elektronik", "Chemie": "Chemie",
+        "Umwelt": "Umwelttechnik", "Luft": "Luft- und Raumfahrt",
+        "Sicherheit": "Sicherheit", "Reinigung": "Reinigung", "Friseur": "Friseur / Kosmetik",
+        "Landwirtschaft": "Landwirtschaft", "Energie": "Energie", "Andere": "Sonstige"
+      },
+      en: {
+        "": "All fields",
+        "Gastronomie": "Gastronomy", "Koch": "Chef / Cook", "Baecker": "Baker",
+        "Konditor": "Pastry Chef", "Kellner": "Waiter", "Barista": "Barista",
+        "Catering": "Catering", "Qida": "Food Industry", "Hotel": "Hotel & Reception",
+        "Tourismus": "Tourism", "Eventmanagement": "Event Management", "Housekeeping": "Housekeeping",
+        "Pflege": "Nursing", "Arzt": "Doctor", "Zahnarzt": "Dentist",
+        "Apotheke": "Pharmacy", "Physiotherapie": "Physiotherapy", "Psychologie": "Psychology",
+        "Tibb": "Medicine", "Veteriner": "Veterinary",
+        "IT": "IT / Development", "Netzwerk": "Network Admin", "Cybersecurity": "Cybersecurity",
+        "DataScience": "Data Science / AI", "Design": "UI/UX Design", "ITSupport": "IT Support",
+        "Bau": "Construction", "Handwerk": "Craftsmanship", "Elektrik": "Electrician",
+        "Sanitaer": "Plumbing", "Schreiner": "Carpenter", "Schweisser": "Welder",
+        "Maler": "Painter", "Dachdecker": "Roofer", "Kfz": "Auto Mechanic",
+        "Maschinenbau": "Mechanical Eng.",
+        "Logistik": "Logistics", "Fahrer": "Driver / Truck", "Lager": "Warehouse",
+        "Transport": "Transport", "Spedition": "Freight Forwarding", "Gabelstapler": "Forklift",
+        "Büro": "Office Clerk", "Buchhaltung": "Accounting", "Maliyye": "Finance",
+        "Controlling": "Controlling", "Personalwesen": "HR", "Recht": "Law / Legal",
+        "Steuer": "Tax Consulting", "Marketing": "Marketing", "Verkauf": "Sales",
+        "Kundenservice": "Customer Service", "Ecommerce": "E-commerce", "SocialMedia": "Social Media",
+        "PR": "Public Relations",
+        "Lehrer": "Teacher", "Erziehung": "Educator", "Sozialarbeit": "Social Work",
+        "Wissenschaft": "Research", "Übersetzer": "Translator",
+        "Mühəndis": "Engineer", "Elektronik": "Electronics", "Chemie": "Chemistry",
+        "Umwelt": "Environmental", "Luft": "Aerospace",
+        "Sicherheit": "Security", "Reinigung": "Cleaning", "Friseur": "Hairdresser",
+        "Landwirtschaft": "Agriculture", "Energie": "Energy", "Andere": "Other"
+      }
+    };
 
-<script>
-/* ═══════════════════════════════════════════
-   TRANSLATIONS + STATE + FILTER + RENDER + MODAL
-   ═══════════════════════════════════════════ */
+    var T = {
+      de: {
+        searchPlaceholder: 'Name suchen...',
+        candidateSingular: ' Kandidat',
+        candidatePlural: ' Kandidaten',
+        typeMeta: {
+          fachkraft: { label: 'Fachkraft · sofort verfügbar' },
+          ausbildung: { label: 'Ausbildung gesucht' },
+          saisonal:   { label: 'Saisonal · bis 8 Monate' }
+        },
+        sections: {
+          about:           'Über mich',
+          exp:             'Berufserfahrung',
+          skills:          'Kernkompetenzen',
+          langs:           'Sprachen',
+          certs:           'Zertifikate',
+          contact:         'Kandidaten anfragen',
+          field:           'Bereich',
+          delevel:         'Deutschniveau',
+          computerSkills:  'Computerkenntnisse',
+          additionalSkills:'Zusätzliche Fähigkeiten',
+          furtherInfo:     'Weitere Informationen',
+          additionalNotes: 'Zusätzliche Hinweise'
+        },
+        cardMore: 'Vollständiges Profil →'
+      },
+      en: {
+        searchPlaceholder: 'Search by name...',
+        candidateSingular: ' candidate',
+        candidatePlural:   ' candidates',
+        typeMeta: {
+          fachkraft: { label: 'Skilled Worker · available now' },
+          ausbildung: { label: 'Seeking apprenticeship' },
+          saisonal:   { label: 'Seasonal · up to 8 months' }
+        },
+        sections: {
+          about:           'About',
+          exp:             'Work Experience',
+          skills:          'Key Skills',
+          langs:           'Languages',
+          certs:           'Certificates',
+          contact:         'Contact candidate',
+          field:           'Field',
+          delevel:         'German Level',
+          computerSkills:  'Computer Skills',
+          additionalSkills:'Additional Skills',
+          furtherInfo:     'Further Information',
+          additionalNotes: 'Additional notes'
+        },
+        cardMore: 'View full profile →'
+      }
+    };
 
-var T = {
-  de: {
-    searchPlaceholder: 'Name suchen...',
-    allFields: 'Alle Bereiche',
-    allLevels: 'Alle Sprachniveaus',
-    candidateSingular: ' Kandidat',
-    candidatePlural: ' Kandidaten',
-    typeMeta: {
-      fachkraft: { label: 'Fachkraft · sofort verfügbar' },
-      ausbildung: { label: 'Ausbildung gesucht' },
-      saisonal: { label: 'Saisonal · bis 8 Monate' }
-    },
-    sections: {
-      about: 'Über mich',
-      exp: 'Berufserfahrung',
-      skills: 'Kernkompetenzen',
-      langs: 'Sprachen',
-      certs: 'Zertifikate & Qualifikationen',
-      contact: 'Kandidaten anfragen',
-      field: 'Bereich',
-      dob: 'Geburtsdatum',
-      loc: 'Standort',
-      delevel: 'Deutschniveau'
-    },
-    cardMore: 'Vollständiges Profil →'
-  },
-  en: {
-    searchPlaceholder: 'Search by name...',
-    allFields: 'All Fields',
-    allLevels: 'All Language Levels',
-    candidateSingular: ' candidate',
-    candidatePlural: ' candidates',
-    typeMeta: {
-      fachkraft: { label: 'Skilled Worker · available now' },
-      ausbildung: { label: 'Seeking apprenticeship' },
-      saisonal: { label: 'Seasonal · up to 8 months' }
-    },
-    sections: {
-      about: 'About',
-      exp: 'Work Experience',
-      skills: 'Key Skills',
-      langs: 'Languages',
-      certs: 'Certificates & Qualifications',
-      contact: 'Contact for this candidate',
-      field: 'Field',
-      dob: 'Date of birth',
-      loc: 'Location',
-      delevel: 'German Level'
-    },
-    cardMore: 'View full profile →'
-  }
-};
+    var typeColors = {
+      fachkraft: { badgeClass: 'badge-fach', langClass: 'lang-fach' },
+      ausbildung: { badgeClass: 'badge-azubi', langClass: 'lang-azubi' },
+      saisonal:   { badgeClass: 'badge-sais',  langClass: 'lang-sais'  }
+    };
 
-function getTagline(c, lang) {
-  if (lang === 'en') return c.taglineEN || c.tagline_en || c.taglineDE || c.taglineAZ || c.tagline || '';
-  return c.taglineDE || c.tagline_de || c.taglineEN || c.taglineAZ || c.tagline || '';
-}
+    // ── STATE ─────────────────────────────────────────────────────────
+    var currentLang = 'de';
+    var currentType = '';
+    var currentPage = 1;
+    var PER_PAGE = 6;
+    var filtered = [];
+    window.allData = [];
 
-var currentLang = 'de';
-var currentType = '';
-var currentPage = 1;
-var PER_PAGE = 6;
-var allData = [];
-var filtered = [];
-
-var typeColors = {
-  fachkraft: { badgeClass: 'badge-fach', langClass: 'lang-fach' },
-  ausbildung: { badgeClass: 'badge-azubi', langClass: 'lang-azubi' },
-  saisonal: { badgeClass: 'badge-sais', langClass: 'lang-sais' }
-};
-
-/* THEME */
-var theme = 'light';
-try { theme = localStorage.getItem('mz-theme') || 'light'; } catch(e){}
-function applyTheme(t) {
-  document.documentElement.setAttribute('data-theme', t);
-  theme = t;
-  try { localStorage.setItem('mz-theme', t); } catch(e){}
-  const isDark = t === 'dark';
-  const icon = isDark ? '☀️' : '🌙';
-  if (document.getElementById('themeIcon')) document.getElementById('themeIcon').textContent = icon;
-  if (document.getElementById('themeIconMob')) document.getElementById('themeIconMob').textContent = icon;
-  if (document.getElementById('themeIconMobile')) document.getElementById('themeIconMobile').textContent = icon;
-}
-function toggleTheme() { applyTheme(theme === 'light' ? 'dark' : 'light'); }
-
-/* LANGUAGE */
-function setLang(lang) {
-  currentLang = lang || 'de';
-  document.querySelectorAll('[data-lang]').forEach(el => {
-    el.style.display = (el.getAttribute('data-lang') === currentLang) ? 'block' : 'none';
-  });
-  document.documentElement.setAttribute('lang', currentLang);
-
-  const si = document.getElementById('search-in');
-  if (si) si.placeholder = T[currentLang].searchPlaceholder;
-
-  const optFields = document.getElementById('opt-all-fields');
-  if (optFields) optFields.textContent = T[currentLang].allFields;
-  const optLevels = document.getElementById('opt-all-levels');
-  if (optLevels) optLevels.textContent = T[currentLang].allLevels;
-
-  updateResultCount();
-  renderCards();
-}
-
-/* SORT & FILTER */
-function sortByNewest(arr) {
-  return arr.slice().sort((a, b) => getCandidateMs(b) - getCandidateMs(a));
-}
-function getCandidateMs(c) {
-  const val = c.createdAt;
-  if (val && typeof val.toMillis === 'function') return val.toMillis();
-  if (val && val.seconds !== undefined) return val.seconds * 1000;
-  if (typeof val === 'number' && val > 0) return val;
-  if (typeof val === 'string' && val) return new Date(val).getTime() || 0;
-  if (c.id && c.id.length >= 8) return parseInt(c.id.substring(0,8),16) * 1000 || 0;
-  return 0;
-}
-
-function setTypeFilter(el, type) {
-  document.querySelectorAll('#type-chips .chip').forEach(c => c.classList.remove('active'));
-  el.classList.add('active');
-  currentType = type;
-  currentPage = 1;
-  applyFilters();
-}
-
-function applyFilters() {
-  const source = window.allData || allData || [];
-  const search = (document.getElementById('search-in') || {}).value?.toLowerCase().trim() || '';
-  const field = document.getElementById('field-in')?.value || '';
-  const llvl = document.getElementById('lang-in')?.value || '';
-
-  const lvlMap = { A1:1, A2:2, B1:3, B2:4 };
-
-  filtered = source.filter(c => {
-    if (search && !c.name.toLowerCase().includes(search)) return false;
-    if (currentType && c.type !== currentType) return false;
-    if (field && c.field !== field) return false;
-    if (llvl) {
-      const cLvl = lvlMap[c.delevel] || 0;
-      const fLvl = lvlMap[llvl] || 0;
-      if (cLvl < fLvl) return false;
+    // ── HELPERS ───────────────────────────────────────────────────────
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/[&<>"']/g, function (m) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+      });
     }
-    return true;
-  });
 
-  filtered = sortByNewest(filtered);
-  window.filtered = filtered;
-  currentPage = 1;
-  updateResultCount();
-  renderCards();
-}
+    function getTagline(c, lang) {
+      if (lang === 'en') return c.taglineEN || c.tagline_en || c.taglineDE || c.tagline_de || c.taglineAZ || '';
+      return c.taglineDE || c.tagline_de || c.taglineEN || c.tagline_en || c.taglineAZ || '';
+    }
 
-function updateResultCount() {
-  const t = T[currentLang] || T.de;
-  const suffix = filtered.length === 1 ? t.candidateSingular : t.candidatePlural;
-  const el = document.getElementById('result-count');
-  if (el) el.textContent = filtered.length + suffix;
-}
+    // ── DİL ───────────────────────────────────────────────────────────
+    window.setLang = function (lang) {
+      currentLang = lang;
+      document.querySelectorAll('[data-lang]').forEach(function (el) {
+        el.style.display = el.getAttribute('data-lang') === lang
+          ? (el.tagName === 'SPAN' ? 'inline' : 'block') : 'none';
+      });
+      var si = document.getElementById('search-in');
+      if (si) si.placeholder = T[lang].searchPlaceholder;
+      var ol = document.getElementById('opt-all-levels');
+      if (ol) ol.innerText = lang === 'de' ? 'Alle Sprachniveaus' : 'All Language Levels';
 
-/* RENDER CARDS */
-function renderCards() {
-  const grid = document.getElementById('cards-grid');
-  const noRes = document.getElementById('no-results');
-  const pag = document.getElementById('pagination');
-  const t = T[currentLang] || T.de;
+      ['nav-btn-de', 'nav-btn-en', 'mob-btn-de', 'mob-btn-en'].forEach(function (id) {
+        var btn = document.getElementById(id);
+        if (!btn) return;
+        btn.classList.toggle('active', id.endsWith(lang));
+      });
 
-  if (filtered.length === 0) {
-    grid.style.display = 'none';
-    noRes.style.display = 'block';
-    return;
-  }
+      populateFieldSelect();
+      applyFilters();
+    };
 
-  grid.style.display = 'grid';
-  noRes.style.display = 'none';
+    // ── FİELD SELECT ──────────────────────────────────────────────────
+    function populateFieldSelect() {
+      var sel = document.getElementById('field-in');
+      if (!sel) return;
+      var currentVal = sel.value;
+      var opts = fieldOptions[currentLang];
+      sel.innerHTML = '';
+      for (var val in opts) {
+        var opt = document.createElement('option');
+        opt.value = val;
+        opt.textContent = opts[val];
+        if (val === '') opt.id = 'opt-all-fields';
+        sel.appendChild(opt);
+      }
+      sel.value = currentVal;
+    }
 
-  const totalPages = Math.ceil(filtered.length / PER_PAGE);
-  const start = (currentPage - 1) * PER_PAGE;
-  const pageData = filtered.slice(start, start + PER_PAGE);
+    // ── TYPE CHIP ─────────────────────────────────────────────────────
+    window.setTypeFilter = function (el, type) {
+      document.querySelectorAll('#type-chips .chip').forEach(function (c) {
+        c.classList.remove('active');
+      });
+      el.classList.add('active');
+      currentType = type;
+      currentPage = 1;
+      applyFilters();
+    };
 
-  let html = '';
-  pageData.forEach((c, i) => {
-    const colors = typeColors[c.type] || typeColors.fachkraft;
-    const tmeta = t.typeMeta[c.type] || t.typeMeta.fachkraft;
-    const tagline = getTagline(c, currentLang);
-    const initials = c.name.split(' ').map(n => n[0]).join('').slice(0,2).toUpperCase();
+    // ── FİLTRASİYA ────────────────────────────────────────────────────
+    function applyFilters() {
+      var source = window.allData || [];
+      var search = (document.getElementById('search-in') ? document.getElementById('search-in').value : '').toLowerCase().trim();
+      var field  = document.getElementById('field-in')  ? document.getElementById('field-in').value  : '';
+      var llvl   = document.getElementById('lang-in')   ? document.getElementById('lang-in').value   : '';
+      var lvlMap = { A1: 1, A2: 2, B1: 3, B2: 4 };
 
-    const avatarHTML = c.img 
-      ? `<img src="${esc(c.img)}" alt="${esc(c.name)}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=modal-avatar-fallback>${initials}</div>'">`
-      : `<div class="modal-avatar-fallback">${initials}</div>`;
+      filtered = source.filter(function (c) {
+        if (search && !(c.name || '').toLowerCase().includes(search)) return false;
+        if (currentType && c.type !== currentType) return false;
+        if (field && c.field !== field) return false;
+        if (llvl) {
+          var cLvl = lvlMap[c.delevel] || 0;
+          if (cLvl < (lvlMap[llvl] || 0)) return false;
+        }
+        return true;
+      });
 
-    const expHTML = (c.exp || []).slice(0,2).map(e => `
-      <div class="cv-exp-row">
-        <span class="cv-exp-title">${esc(e.title||'')}</span>
-        <span class="cv-exp-year">${esc(e.year||'')}</span>
-      </div>`).join('');
+      filtered = filtered.slice().sort(function (a, b) {
+        return (b._sortMs || 0) - (a._sortMs || 0);
+      });
 
-    const skillsHTML = (c.skills || []).slice(0,4).map(s => `<span class="cv-tag">${esc(s)}</span>`).join('');
-    const langsHTML = (c.langs || []).map(l => `<span class="cv-lang ${colors.langClass}">${esc(l)}</span>`).join('');
+      currentPage = 1;
+      updateResultCount();
+      renderCards();
+    }
+    window.applyFilters = applyFilters;
 
-    const locStr = `📍 ${esc(c.location || 'Aserbaidschan')}${c.dob ? ' · ' + esc(c.dob) : ''}`;
+    // ── NƏTİCƏ SAYI ──────────────────────────────────────────────────
+    function updateResultCount() {
+      var t = T[currentLang];
+      var suffix = filtered.length === 1 ? t.candidateSingular : t.candidatePlural;
+      var el = document.getElementById('result-count');
+      if (el) el.textContent = filtered.length + suffix;
+    }
 
-    const cardIdx = (window.allData || allData).indexOf(c);
+    // ── KARTLAR ───────────────────────────────────────────────────────
+    function renderCards() {
+      var grid   = document.getElementById('cards-grid');
+      var noRes  = document.getElementById('no-results');
+      var pag    = document.getElementById('pagination');
+      var t      = T[currentLang];
 
-    html += `
-      <div class="cv-card" style="animation-delay:${i*70}ms" onclick="openModal(${cardIdx})">
-        <div class="cv-card-header">
-          <div class="cv-avatar">${avatarHTML}</div>
-          <div class="cv-name">${esc(c.name)}</div>
-          <div class="cv-loc">${locStr}</div>
-          <span class="cv-badge ${colors.badgeClass}">${esc(tmeta.label)}</span>
-          <div class="card-cta">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            ${esc(t.cardMore)}
-          </div>
-        </div>
-        <div class="cv-body">
-          ${tagline ? `<p class="cv-tagline">${esc(tagline)}</p>` : ''}
-          ${expHTML ? `<div class="cv-section-title">${esc(t.sections.exp)}</div><div>${expHTML}</div>` : ''}
-          ${skillsHTML ? `<div class="cv-section-title">${esc(t.sections.skills)}</div><div class="cv-tags">${skillsHTML}</div>` : ''}
-          <div class="cv-section-title">${esc(t.sections.langs)}</div>
-          <div class="cv-lang-tags">${langsHTML}</div>
-        </div>
-      </div>`;
-  });
+      if (filtered.length === 0) {
+        grid.style.display = 'none';
+        noRes.style.display = 'block';
+        if (pag) pag.innerHTML = '';
+        return;
+      }
 
-  grid.innerHTML = html;
+      grid.style.display = 'grid';
+      noRes.style.display = 'none';
 
-  if (totalPages <= 1) { pag.innerHTML = ''; return; }
-  let btns = `<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‹</button>`;
-  for (let p=1; p<=totalPages; p++) btns += `<button class="page-btn${p===currentPage?' active':''}" onclick="goPage(${p})">${p}</button>`;
-  btns += `<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===totalPages?'disabled':''}>›</button>`;
-  pag.innerHTML = `<div class="pagination">${btns}</div>`;
-}
+      var totalPages = Math.ceil(filtered.length / PER_PAGE);
+      var start      = (currentPage - 1) * PER_PAGE;
+      var pageData   = filtered.slice(start, start + PER_PAGE);
 
-function goPage(p) {
-  const total = Math.ceil(filtered.length / PER_PAGE);
-  if (p < 1 || p > total) return;
-  currentPage = p;
-  renderCards();
-  document.querySelector('.grid-section')?.scrollIntoView({ behavior: 'smooth' });
-}
+      var html = '';
 
-/* MODAL (tam saxlanıldı) */
-window.openModal = function(idx) {
-  const source = window.allData || allData;
-  const c = source[idx];
-  if (!c) return;
+      pageData.forEach(function (c, i) {
+        var colors   = typeColors[c.type] || typeColors.fachkraft;
+        var tmeta    = t.typeMeta[c.type] || t.typeMeta.fachkraft;
+        var tagline  = getTagline(c, currentLang);
+        var initials = (c.name || '').split(' ').map(function (n) { return n[0]; }).join('').slice(0, 2).toUpperCase();
 
-  const colors = typeColors[c.type] || typeColors.fachkraft;
-  const t = T[currentLang] || T.de;
-  const tmeta = t.typeMeta[c.type] || t.typeMeta.fachkraft;
-  const tagline = getTagline(c, currentLang);
-  const initials = c.name.split(' ').map(n => n[0]).join('').slice(0,2).toUpperCase();
+        var avatarHTML = c.img
+          ? '<img src="' + escapeHtml(c.img) + '" alt="' + escapeHtml(c.name) + '" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=modal-avatar-fallback>' + initials + '</div>\'">'
+          : '<div class="modal-avatar-fallback">' + initials + '</div>';
 
-  const avatarHTML = c.img 
-    ? `<img src="${esc(c.img)}" alt="${esc(c.name)}" onerror="this.parentElement.innerHTML='<div class=modal-avatar-fallback>${initials}</div>'">`
-    : `<div class="modal-avatar-fallback">${initials}</div>`;
+        var expHTML = (c.exp || []).slice(0, 2).map(function (e) {
+          return '<div class="cv-exp-row"><span class="cv-exp-title">' + escapeHtml(e.title || '') + '</span><span class="cv-exp-year">' + escapeHtml(e.year || '') + '</span></div>';
+        }).join('');
 
-  const expHTML = (c.exp || []).map(e => `
-    <div class="modal-exp-row">
-      <div><div class="modal-exp-title">${esc(e.title || '')}</div>
-      ${e.company ? `<div class="modal-exp-company">${esc(e.company)}</div>` : ''}</div>
-      <div class="modal-exp-year">${esc(e.year || '')}</div>
-    </div>`).join('');
+        var skillsHTML = (c.skills || []).slice(0, 4).map(function (s) {
+          return '<span class="cv-tag">' + escapeHtml(s) + '</span>';
+        }).join('');
 
-  const skillsHTML = (c.skills || []).map(s => `<span class="modal-tag">${esc(s)}</span>`).join('');
-  const langsHTML = (c.langs || []).map(l => `<span class="modal-lang ${colors.langClass}">${esc(l)}</span>`).join('');
-  const certsHTML = (c.certs || []).map(cert => `<span class="modal-tag">${esc(cert)}</span>`).join('');
+        var computerHTML = (c.computerSkills || []).slice(0, 3).map(function (s) {
+          return '<span class="cv-tag" style="background:#e0f0ff;color:#185FA5;">' + escapeHtml(s) + '</span>';
+        }).join('');
 
-  const extraHTML = `
-    <div class="modal-extra">
-      <div class="modal-section-title">${currentLang === 'de' ? 'Weitere Informationen' : 'Further Information'}</div>
-      <div class="modal-extra-grid">
-        ${c.field ? `<div><span class="modal-extra-label">${t.sections.field}:</span> ${esc(c.field)}</div>` : ''}
-        ${c.salary ? `<div><span class="modal-extra-label">${currentLang === 'de' ? 'Gehaltsvorstellung' : 'Salary expectation'}:</span> ${esc(c.salary)}</div>` : ''}
-        ${c.availableFrom ? `<div><span class="modal-extra-label">${currentLang === 'de' ? 'Verfügbar ab' : 'Available from'}:</span> ${esc(c.availableFrom)}</div>` : ''}
-        ${c.workType ? `<div><span class="modal-extra-label">${currentLang === 'de' ? 'Vertragsart' : 'Contract type'}:</span> ${esc(c.workType)}</div>` : ''}
-        ${c.relocation ? `<div><span class="modal-extra-label">${currentLang === 'de' ? 'Umzugsbereitschaft' : 'Relocation'}:</span> ${esc(c.relocation)}</div>` : ''}
-        ${c.visa ? `<div><span class="modal-extra-label">${currentLang === 'de' ? 'Visum / Aufenthaltserlaubnis' : 'Visa / Permit'}:</span> ${esc(c.visa)}</div>` : ''}
-        ${c.delevel ? `<div><span class="modal-extra-label">${t.sections.delevel}:</span> DE – ${esc(c.delevel)}</div>` : ''}
-        ${c.notes ? `<div style="grid-column:1/-1;margin-top:12px;"><strong>${currentLang === 'de' ? 'Zusätzliche Hinweise' : 'Additional notes'}:</strong><br>${esc(c.notes)}</div>` : ''}
-      </div>
-    </div>`;
+        var additionalHTML = (c.additionalSkills || []).slice(0, 2).map(function (s) {
+          return '<span class="cv-tag" style="background:#fff3d0;color:#854F0B;">' + escapeHtml(s) + '</span>';
+        }).join('');
 
-  const profileHTML = `<div class="modal-avatar">${avatarHTML}</div><div><div class="modal-name">${esc(c.name)}</div><div class="modal-meta">📍 ${esc(c.location || 'Aserbaidschan')} ${c.dob ? '· ' + esc(c.dob) : ''}</div><span class="cv-badge ${colors.badgeClass}">${esc(tmeta.label)}</span></div>`;
+        var langsHTML = (c.langs || []).map(function (l) {
+          return '<span class="cv-lang ' + colors.langClass + '">' + escapeHtml(l) + '</span>';
+        }).join('');
 
-  let bodyHTML = '';
-  if (tagline) bodyHTML += `<div class="modal-section"><div class="modal-section-title">${t.sections.about}</div><p class="modal-tagline">${esc(tagline)}</p></div>`;
-  if (expHTML) bodyHTML += `<div class="modal-divider"></div><div class="modal-section"><div class="modal-section-title">${t.sections.exp}</div>${expHTML}</div>`;
-  if (skillsHTML) bodyHTML += `<div class="modal-divider"></div><div class="modal-section"><div class="modal-section-title">${t.sections.skills}</div><div class="modal-tags">${skillsHTML}</div></div>`;
-  if (certsHTML) bodyHTML += `<div class="modal-divider"></div><div class="modal-section"><div class="modal-section-title">${t.sections.certs}</div><div class="modal-tags">${certsHTML}</div></div>`;
-  if (langsHTML) bodyHTML += `<div class="modal-divider"></div><div class="modal-section"><div class="modal-section-title">${t.sections.langs}</div><div class="modal-tags">${langsHTML}</div></div>`;
-  bodyHTML += extraHTML;
+        var locStr = '📍 ' + escapeHtml(c.location || 'Aserbaidschan') + (c.dob ? ' · ' + escapeHtml(c.dob) : '');
 
-  const waMsg = encodeURIComponent(currentLang === 'de' ? `Hallo, ich interessiere mich für den Kandidaten ${c.name}.` : `Hello, I'm interested in candidate ${c.name}.`);
+        html += '<div class="cv-card" data-id="' + escapeHtml(c.id) + '" style="animation-delay:' + (i * 70) + 'ms">'
+          + '<div class="cv-card-header">'
+          +   '<div class="cv-avatar">' + avatarHTML + '</div>'
+          +   '<div class="cv-name">' + escapeHtml(c.name) + '</div>'
+          +   '<div class="cv-loc">' + locStr + '</div>'
+          +   '<span class="cv-badge ' + colors.badgeClass + '">' + escapeHtml(tmeta.label) + '</span>'
+          +   '<div class="card-cta">'
+          +     '<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> '
+          +     escapeHtml(t.cardMore)
+          +   '</div>'
+          + '</div>'
+          + '<div class="cv-body">'
+          + (tagline ? '<p class="cv-tagline">' + escapeHtml(tagline) + '</p>' : '')
+          + (expHTML  ? '<div class="cv-section-title">' + escapeHtml(t.sections.exp) + '</div><div>' + expHTML + '</div>' : '')
+          + (skillsHTML    ? '<div class="cv-section-title">' + escapeHtml(t.sections.skills) + '</div><div class="cv-tags">' + skillsHTML + '</div>' : '')
+          + (computerHTML  ? '<div class="cv-section-title">' + escapeHtml(t.sections.computerSkills) + '</div><div class="cv-tags">' + computerHTML + '</div>' : '')
+          + (additionalHTML ? '<div class="cv-section-title">' + escapeHtml(t.sections.additionalSkills) + '</div><div class="cv-tags">' + additionalHTML + '</div>' : '')
+          + '<div class="cv-section-title">' + escapeHtml(t.sections.langs) + '</div>'
+          + '<div class="cv-lang-tags">' + langsHTML + '</div>'
+          + '</div>'
+          + '</div>';
+      });
 
-  bodyHTML += `<button class="modal-contact-btn" onclick="window.open('https://wa.me/491639880495?text=${waMsg}','_blank')">${t.sections.contact}</button>`;
+      grid.innerHTML = html;
 
-  document.getElementById('modal-profile').innerHTML = profileHTML;
-  document.getElementById('modal-body').innerHTML = bodyHTML;
-  document.getElementById('cv-modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-};
+      // Pagination
+      if (totalPages <= 1) { if (pag) pag.innerHTML = ''; return; }
+      var btns = '<button class="page-btn" onclick="goPage(' + (currentPage - 1) + ')" ' + (currentPage === 1 ? 'disabled' : '') + '>‹</button>';
+      for (var p = 1; p <= totalPages; p++) {
+        btns += '<button class="page-btn' + (p === currentPage ? ' active' : '') + '" onclick="goPage(' + p + ')">' + p + '</button>';
+      }
+      btns += '<button class="page-btn" onclick="goPage(' + (currentPage + 1) + ')" ' + (currentPage === totalPages ? 'disabled' : '') + '>›</button>';
+      if (pag) pag.innerHTML = '<div class="pagination">' + btns + '</div>';
+    }
 
-function closeModal() {
-  document.getElementById('cv-modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function handleBackdropClick(e) {
-  if (e.target.id === 'cv-modal') closeModal();
-}
+    window.goPage = function (p) {
+      var total = Math.ceil(filtered.length / PER_PAGE);
+      if (p < 1 || p > total) return;
+      currentPage = p;
+      renderCards();
+      var gs = document.querySelector('.grid-section');
+      if (gs) gs.scrollIntoView({ behavior: 'smooth' });
+    };
 
-/* UTILITY */
-function esc(str) {
-  if (!str) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
+    // ── MODAL ─────────────────────────────────────────────────────────
+    window.openModalById = function (id) {
+      var source = window.allData || [];
+      var c = source.find(function (x) { return x.id === id; });
+      if (!c) return;
 
-/* INIT */
-window.addEventListener('DOMContentLoaded', function () {
-  const yr = document.getElementById('currentYear');
-  if (yr) yr.textContent = new Date().getFullYear();
+      var colors   = typeColors[c.type] || typeColors.fachkraft;
+      var t        = T[currentLang];
+      var tmeta    = t.typeMeta[c.type] || t.typeMeta.fachkraft;
+      var tagline  = getTagline(c, currentLang);
+      var initials = (c.name || '').split(' ').map(function (n) { return n[0]; }).join('').slice(0, 2).toUpperCase();
 
-  window.allData = allData;
-  window.filtered = filtered;
-  window.currentPage = currentPage;
-  window.updateResultCount = updateResultCount;
-  window.renderCards = renderCards;
+      var avatarHTML = c.img
+        ? '<img src="' + escapeHtml(c.img) + '" alt="' + escapeHtml(c.name) + '" onerror="this.parentElement.innerHTML=\'<div class=modal-avatar-fallback>' + initials + '</div>\'">'
+        : '<div class="modal-avatar-fallback">' + initials + '</div>';
 
-  applyTheme(theme);
-  setLang('de');
-});
-</script>
+      var expHTML = (c.exp || []).map(function (e) {
+        return '<div class="modal-exp-row"><div><div class="modal-exp-title">' + escapeHtml(e.title || '') + '</div>'
+          + (e.company ? '<div class="modal-exp-company">' + escapeHtml(e.company) + '</div>' : '')
+          + '</div><div class="modal-exp-year">' + escapeHtml(e.year || '') + '</div></div>';
+      }).join('');
 
+      var skillsHTML     = (c.skills || []).map(function (s) { return '<span class="modal-tag">' + escapeHtml(s) + '</span>'; }).join('');
+      var computerHTML   = (c.computerSkills || []).map(function (s) { return '<span class="modal-tag" style="background:#e0f0ff;color:#185FA5;">' + escapeHtml(s) + '</span>'; }).join('');
+      var additionalHTML = (c.additionalSkills || []).map(function (s) { return '<span class="modal-tag" style="background:#fff3d0;color:#854F0B;">' + escapeHtml(s) + '</span>'; }).join('');
+      var langsHTML      = (c.langs || []).map(function (l) { return '<span class="modal-lang ' + colors.langClass + '">' + escapeHtml(l) + '</span>'; }).join('');
+      var certsHTML      = (c.certs || []).map(function (cert) { return '<span class="modal-tag">' + escapeHtml(cert) + '</span>'; }).join('');
 
+      var extraHTML = '<div class="modal-extra">'
+        + '<div class="modal-section-title">' + escapeHtml(t.sections.furtherInfo) + '</div>'
+        + '<div class="modal-extra-grid">'
+        + (c.field   ? '<div><span class="modal-extra-label">' + escapeHtml(t.sections.field)   + ':</span> ' + escapeHtml(c.field) + '</div>' : '')
+        + (c.delevel ? '<div><span class="modal-extra-label">' + escapeHtml(t.sections.delevel) + ':</span> DE – ' + escapeHtml(c.delevel) + '</div>' : '')
+        + (computerHTML   ? '<div style="grid-column:1/-1;"><span class="modal-extra-label">' + escapeHtml(t.sections.computerSkills)   + ':</span><br>' + computerHTML   + '</div>' : '')
+        + (additionalHTML ? '<div style="grid-column:1/-1;"><span class="modal-extra-label">' + escapeHtml(t.sections.additionalSkills) + ':</span><br>' + additionalHTML + '</div>' : '')
+        + (c.notes ? '<div style="grid-column:1/-1;margin-top:12px;"><strong>' + escapeHtml(t.sections.additionalNotes) + ':</strong><br>' + escapeHtml(c.notes) + '</div>' : '')
+        + '</div></div>';
 
+      var profileHTML = '<div class="modal-avatar">' + avatarHTML + '</div>'
+        + '<div>'
+        +   '<div class="modal-name">' + escapeHtml(c.name) + '</div>'
+        +   '<div class="modal-meta">📍 ' + escapeHtml(c.location || 'Aserbaidschan') + (c.dob ? ' · ' + escapeHtml(c.dob) : '') + '</div>'
+        +   '<span class="cv-badge ' + colors.badgeClass + '">' + escapeHtml(tmeta.label) + '</span>'
+        + '</div>';
+
+      var bodyHTML = '';
+      if (tagline)   bodyHTML += '<div class="modal-section"><div class="modal-section-title">' + escapeHtml(t.sections.about) + '</div><p class="modal-tagline">' + escapeHtml(tagline) + '</p></div>';
+      if (expHTML)   bodyHTML += '<div class="modal-divider"></div><div class="modal-section"><div class="modal-section-title">' + escapeHtml(t.sections.exp) + '</div>' + expHTML + '</div>';
+      if (skillsHTML) bodyHTML += '<div class="modal-divider"></div><div class="modal-section"><div class="modal-section-title">' + escapeHtml(t.sections.skills) + '</div><div class="modal-tags">' + skillsHTML + '</div></div>';
+      if (certsHTML) bodyHTML += '<div class="modal-divider"></div><div class="modal-section"><div class="modal-section-title">' + escapeHtml(t.sections.certs) + '</div><div class="modal-tags">' + certsHTML + '</div></div>';
+      if (langsHTML) bodyHTML += '<div class="modal-divider"></div><div class="modal-section"><div class="modal-section-title">' + escapeHtml(t.sections.langs) + '</div><div class="modal-tags">' + langsHTML + '</div></div>';
+      bodyHTML += extraHTML;
+
+      var waMsg = encodeURIComponent(
+        currentLang === 'de'
+          ? 'Hallo, ich interessiere mich für den Kandidaten ' + (c.name || '') + '.'
+          : "Hello, I'm interested in candidate " + (c.name || '') + '.'
+      );
+      bodyHTML += '<button class="modal-contact-btn" onclick="window.open(\'https://wa.me/491639880495?text=' + waMsg + '\',\'_blank\')">' + escapeHtml(t.sections.contact) + '</button>';
+
+      document.getElementById('modal-profile').innerHTML = profileHTML;
+      document.getElementById('modal-body').innerHTML    = bodyHTML;
+      document.getElementById('cv-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+
+    window.closeModal = function () {
+      document.getElementById('cv-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    };
+
+    window.handleBackdropClick = function (e) {
+      if (e.target.id === 'cv-modal') window.closeModal();
+    };
+
+    // ── FİLTRLƏRİ SIFIRLAMA ──────────────────────────────────────────
+    window.resetFilters = function () {
+      var si = document.getElementById('search-in');
+      var fi = document.getElementById('field-in');
+      var li = document.getElementById('lang-in');
+      if (si) si.value = '';
+      if (fi) fi.value = '';
+      if (li) li.value = '';
+
+      currentType = '';
+      document.querySelectorAll('#type-chips .chip').forEach(function (c) {
+        c.classList.remove('active');
+        if (c.getAttribute('data-type') === '') c.classList.add('active');
+      });
+
+      currentPage = 1;
+      applyFilters();
+    };
+
+    // ── THEME ─────────────────────────────────────────────────────────
+    var _theme = localStorage.getItem('mz-theme') || 'light';
+
+    function applyTheme(t) {
+      document.documentElement.setAttribute('data-theme', t);
+      _theme = t;
+      localStorage.setItem('mz-theme', t);
+      var isDark = t === 'dark';
+      ['themeIcon', 'themeIconMob', 'themeIconMobile'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = isDark ? '☀️' : '🌙';
+      });
+      ['themeLabel', 'themeLabelMobile'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+      });
+    }
+
+    window.toggleTheme   = function () { applyTheme(_theme === 'light' ? 'dark' : 'light'); };
+    window.toggleMobile  = function () { document.getElementById('mobileMenu').classList.toggle('open'); };
+    window.closeMobile   = function () { document.getElementById('mobileMenu').classList.remove('open'); };
+    window.showOverlay   = function (id) { document.getElementById(id).style.display = 'flex'; };
+    window.hideOverlay   = function (id) { document.getElementById(id).style.display = 'none'; };
+
+    // ── INIT ──────────────────────────────────────────────────────────
+    window.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('currentYear').innerText = new Date().getFullYear();
+
+      document.getElementById('cards-grid').addEventListener('click', function (e) {
+        var card = e.target.closest('.cv-card');
+        if (card) {
+          var id = card.getAttribute('data-id');
+          if (id) window.openModalById(id);
+        }
+      });
+
+      applyTheme(_theme);
+      populateFieldSelect();
+      setLang('de');
+    });
+  </script>
   <script src="script.js"></script>
-</body>
 
+</body>
 </html>

@@ -3,15 +3,52 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>MZ Admin · CV Panel v5</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@700&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="admin.css">
+
+  <!-- ═══ DATE PICKER STYLES ═══ -->
   <style>
-   
+    .dob-wrap {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .dob-wrap select {
+      flex: 1;
+      padding: 9px 8px;
+      border: 1px solid var(--border, #e2e8f0);
+      border-radius: 8px;
+      background: var(--input-bg, #fff);
+      color: var(--text, #1e293b);
+      font-size: 0.88rem;
+      cursor: pointer;
+      appearance: auto;
+    }
+
+    .dob-wrap select:focus {
+      outline: none;
+      border-color: var(--gold, #D4AF37);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+    }
+
+    .dob-sep {
+      color: var(--muted, #94a3b8);
+      font-weight: 600;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .dob-year-input {
+      width: 78px !important;
+      flex: none !important;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -225,26 +262,109 @@
         </div>
         <div class="filter-row">
           <div class="search-wrap"><input type="text" id="search-input" placeholder="Ad ilə axtar..."
-              oninput="renderTable()" style="width:200px;"></div>
+              oninput="renderTable()"></div>
           <select id="filter-type" onchange="renderTable()">
             <option value="">Bütün növlər</option>
             <option value="fachkraft">Fachkraft</option>
             <option value="ausbildung">Ausbildung</option>
             <option value="saisonal">Saisonal</option>
           </select>
+          <!-- ══ FILTER FIELD — GENİŞLƏNDİRİLMİŞ ══ -->
           <select id="filter-field" onchange="renderTable()">
             <option value="">Bütün sahələr</option>
-            <option value="Gastronomie">Gastronomie</option>
-            <option value="Hotel">Hotel</option>
-            <option value="IT">IT</option>
-            <option value="Pflege">Pflege</option>
-            <option value="Logistik">Logistik</option>
-            <option value="Handwerk">Handwerk</option>
-            <option value="Büro">Büro</option>
-            <option value="Marketing">Marketing</option>
-            <option value="Andere">Andere</option>
-            <option value="."> </option>
-
+            <optgroup label="🍽️ Qida & Xidmət">
+              <option value="Gastronomie">Gastronomie / Restoran</option>
+              <option value="Koch">Aşpaz / Koch</option>
+              <option value="Baecker">Çörəkçi / Bäcker</option>
+              <option value="Konditor">Şirniyyatçı / Konditor</option>
+              <option value="Kellner">Ofisiant / Kellner</option>
+              <option value="Barista">Barista / Kafeteria</option>
+              <option value="Catering">Keytrinq / Catering</option>
+              <option value="Qida">Qida sənayesi / Lebensmittel</option>
+            </optgroup>
+            <optgroup label="🏨 Turizm & Hotel">
+              <option value="Hotel">Hotel / Resepsiyon</option>
+              <option value="Tourismus">Turizm / Tourismus</option>
+              <option value="Eventmanagement">Tədbir / Event Management</option>
+              <option value="Housekeeping">Housekeeping / Otaq xidməti</option>
+            </optgroup>
+            <optgroup label="🏥 Tibb & Sağlamlıq">
+              <option value="Pflege">Pflege / Tibb bacısı</option>
+              <option value="Arzt">Həkim / Arzt</option>
+              <option value="Zahnarzt">Diş həkimi / Zahnarzt</option>
+              <option value="Apotheke">Aptek / Pharmazie</option>
+              <option value="Physiotherapie">Fizioterapiya</option>
+              <option value="Psychologie">Psixologiya</option>
+              <option value="Tibb">Tibb / Klinika</option>
+              <option value="Veteriner">Baytarlıq / Veterinär</option>
+            </optgroup>
+            <optgroup label="💻 IT & Texnologiya">
+              <option value="IT">IT / Developer / Software</option>
+              <option value="Netzwerk">Şəbəkə / Network Admin</option>
+              <option value="Cybersecurity">Kibertəhlükəsizlik</option>
+              <option value="DataScience">Data Science / AI / ML</option>
+              <option value="Design">Dizayn / UI-UX</option>
+              <option value="ITSupport">IT Dəstək / Helpdesk</option>
+            </optgroup>
+            <optgroup label="🏗️ Tikinti & Sənaye">
+              <option value="Bau">Tikinti / Bau</option>
+              <option value="Handwerk">Handwerk / Usta</option>
+              <option value="Elektrik">Elektrikçi / Elektrik</option>
+              <option value="Sanitaer">Santexnik / Sanitär</option>
+              <option value="Schreiner">Dülgər / Schreiner / Tischler</option>
+              <option value="Schweisser">Qaynaqçı / Schweißer</option>
+              <option value="Maler">Rəssam / Maler</option>
+              <option value="Dachdecker">Damörtücü / Dachdecker</option>
+              <option value="Kfz">Avtomexanik / KFZ</option>
+              <option value="Maschinenbau">Mexanika / Maschinenbau</option>
+            </optgroup>
+            <optgroup label="🚛 Logistik & Nəqliyyat">
+              <option value="Logistik">Logistik / Anbar</option>
+              <option value="Fahrer">Sürücü / Fahrer / LKW</option>
+              <option value="Lager">Anbar işçisi / Lager</option>
+              <option value="Transport">Nəqliyyat / Transport</option>
+              <option value="Spedition">Spedisiya / Yükdaşıma</option>
+              <option value="Gabelstapler">Forklift / Gabelstapler</option>
+            </optgroup>
+            <optgroup label="🏢 Ofis & İdarəetmə">
+              <option value="Büro">Büro / Katib / Ofis</option>
+              <option value="Buchhaltung">Mühasib / Buchhaltung</option>
+              <option value="Maliyye">Maliyyə / Finanz</option>
+              <option value="Controlling">Kontrollinq / Controlling</option>
+              <option value="Personalwesen">HR / Kadrlar / Personal</option>
+              <option value="Recht">Hüquqşünas / Recht / Jurist</option>
+              <option value="Steuer">Vergi / Steuerberatung</option>
+            </optgroup>
+            <optgroup label="📢 Marketing & Satış">
+              <option value="Marketing">Marketing / Reklam</option>
+              <option value="Verkauf">Satış / Verkauf</option>
+              <option value="Kundenservice">Müştəri xidməti</option>
+              <option value="Ecommerce">E-ticarət / E-Commerce</option>
+              <option value="SocialMedia">Sosial media / SMM</option>
+              <option value="PR">İctimaiyyətlə əlaqə / PR</option>
+            </optgroup>
+            <optgroup label="🎓 Təhsil & Elm">
+              <option value="Lehrer">Müəllim / Lehrer</option>
+              <option value="Erziehung">Tərbiyəçi / Erzieher</option>
+              <option value="Sozialarbeit">Sosial işçi / Sozialarbeit</option>
+              <option value="Wissenschaft">Elm / Forschung</option>
+              <option value="Übersetzer">Tərcüməçi / Übersetzer</option>
+            </optgroup>
+            <optgroup label="⚙️ Mühəndislik & Texnika">
+              <option value="Mühəndis">Mühəndis / Ingenieur</option>
+              <option value="Elektronik">Elektronika / Elektrotechnik</option>
+              <option value="Chemie">Kimya / Chemie</option>
+              <option value="Umwelt">Ekologiya / Umwelt</option>
+              <option value="Luft">Aviasiya / Luft- und Raumfahrt</option>
+            </optgroup>
+            <optgroup label="🛡️ Digər">
+              <option value="Sicherheit">Təhlükəsizlik / Security</option>
+              <option value="Reinigung">Təmizlik / Reinigung</option>
+              <option value="Friseur">Bərbər / Friseur / Kosmetik</option>
+              <option value="Landwirtschaft">Kənd təsərrüfatı / Landwirtschaft</option>
+              <option value="Energie">Enerji / Energie</option>
+              <option value="Andere">Digər / Andere</option>
+            </optgroup>
           </select>
           <select id="filter-status" onchange="renderTable()">
             <option value="">Bütün statuslar</option>
@@ -281,7 +401,6 @@
               </tbody>
             </table>
           </div>
-          <!-- Batch bar -->
           <div class="batch-bar" id="batch-bar">
             <span id="batch-count-label">0 kandidat seçildi</span>
             <button class="btn btn-success btn-sm" onclick="batchChangeStatus('available')">🟢 Mövcud</button>
@@ -289,7 +408,6 @@
             <button class="btn btn-ghost btn-sm" onclick="batchChangeStatus('placed')">🔵 Yerləşdirildi</button>
             <button class="btn btn-danger btn-sm" onclick="batchDelete()">🗑️ Sil</button>
           </div>
-          <!-- Pagination -->
           <div class="pagination" id="candidates-pagination">
             <span id="pagination-info">0 kandidat</span>
             <div class="pagination-btns" id="pagination-btns"></div>
@@ -305,18 +423,46 @@
         <div
           style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;box-shadow:var(--shadow);">
           <div class="form-grid">
-            <!-- AI Button -->
             <div class="form-group full" style="margin-bottom:4px;">
-              <button type="button" class="btn btn-primary" onclick="openAIModal()" style="width:100%;">
-                🤖 AI ilə avtomatik doldur
-              </button>
+              <button type="button" class="btn btn-primary" onclick="openAIModal()" style="width:100%;">🤖 AI ilə
+                avtomatik doldur</button>
             </div>
 
             <div class="section-divider">👤 Şəxsi Məlumat</div>
             <div class="form-group"><label>Ad Soyad *</label><input type="text" id="f-name"
                 placeholder="Məs: İman Azizov"></div>
-            <div class="form-group"><label>Doğum tarixi</label><input type="text" id="f-dob" placeholder="dd.mm.yyyy">
+
+            <!-- ══ YENİLƏNMİŞ DOĞUM TARİXİ ══ -->
+            <div class="form-group">
+              <label>Doğum tarixi</label>
+              <div class="dob-wrap">
+                <select id="f-dob-day" onchange="updateDobHidden()">
+                  <option value="">Gün</option>
+                </select>
+                <span class="dob-sep">.</span>
+                <select id="f-dob-month" onchange="updateDobDays();updateDobHidden()">
+                  <option value="">Ay</option>
+                  <option value="01">01 — Yanvar</option>
+                  <option value="02">02 — Fevral</option>
+                  <option value="03">03 — Mart</option>
+                  <option value="04">04 — Aprel</option>
+                  <option value="05">05 — May</option>
+                  <option value="06">06 — İyun</option>
+                  <option value="07">07 — İyul</option>
+                  <option value="08">08 — Avqust</option>
+                  <option value="09">09 — Sentyabr</option>
+                  <option value="10">10 — Oktyabr</option>
+                  <option value="11">11 — Noyabr</option>
+                  <option value="12">12 — Dekabr</option>
+                </select>
+                <span class="dob-sep">.</span>
+                <input type="number" id="f-dob-year" class="dob-year-input" placeholder="İl" min="1940" max="2010"
+                  oninput="updateDobDays();updateDobHidden()"
+                  style="padding:9px 8px;border:1px solid var(--border,#e2e8f0);border-radius:8px;font-size:0.88rem;background:var(--input-bg,#fff);color:var(--text,#1e293b);">
+              </div>
+              <input type="hidden" id="f-dob">
             </div>
+
             <div class="form-group"><label>Cins</label><select id="f-gender">
                 <option value="">Seçin</option>
                 <option value="male">Kişi</option>
@@ -331,19 +477,107 @@
                 <option value="ausbildung">Ausbildung (Stajyer)</option>
                 <option value="saisonal">Saisonal (Mövsümi)</option>
               </select></div>
-            <div class="form-group"><label>Sahə *</label><select id="f-field">
-                <option value="Gastronomie">Gastronomie</option>
-                <option value="Hotel">Hotel</option>
-                <option value="IT">IT</option>
-                <option value="Pflege">Pflege</option>
-                <option value="Logistik">Logistik</option>
-                <option value="Handwerk">Handwerk</option>
-                <option value="Büro">Büro</option>
-                <option value="Marketing">Marketing</option>
-                <option value="Andere">Andere</option>
-                <option value="bos">  </option>
 
-              </select></div>
+            <!-- ══ FORM FIELD — GENİŞLƏNDİRİLMİŞ ══ -->
+            <div class="form-group">
+              <label>Sahə *</label>
+              <select id="f-field">
+                <optgroup label="🍽️ Qida & Xidmət">
+                  <option value="Gastronomie">Gastronomie / Restoran</option>
+                  <option value="Koch">Aşpaz / Koch</option>
+                  <option value="Baecker">Çörəkçi / Bäcker</option>
+                  <option value="Konditor">Şirniyyatçı / Konditor</option>
+                  <option value="Kellner">Ofisiant / Kellner</option>
+                  <option value="Barista">Barista / Kafeteria</option>
+                  <option value="Catering">Keytrinq / Catering</option>
+                  <option value="Qida">Qida sənayesi / Lebensmittel</option>
+                </optgroup>
+                <optgroup label="🏨 Turizm & Hotel">
+                  <option value="Hotel">Hotel / Resepsiyon</option>
+                  <option value="Tourismus">Turizm / Tourismus</option>
+                  <option value="Eventmanagement">Tədbir / Event Management</option>
+                  <option value="Housekeeping">Housekeeping / Otaq xidməti</option>
+                </optgroup>
+                <optgroup label="🏥 Tibb & Sağlamlıq">
+                  <option value="Pflege">Pflege / Tibb bacısı</option>
+                  <option value="Arzt">Həkim / Arzt</option>
+                  <option value="Zahnarzt">Diş həkimi / Zahnarzt</option>
+                  <option value="Apotheke">Aptek / Pharmazie</option>
+                  <option value="Physiotherapie">Fizioterapiya</option>
+                  <option value="Psychologie">Psixologiya</option>
+                  <option value="Tibb">Tibb / Klinika</option>
+                  <option value="Veteriner">Baytarlıq / Veterinär</option>
+                </optgroup>
+                <optgroup label="💻 IT & Texnologiya">
+                  <option value="IT">IT / Developer / Software</option>
+                  <option value="Netzwerk">Şəbəkə / Network Admin</option>
+                  <option value="Cybersecurity">Kibertəhlükəsizlik</option>
+                  <option value="DataScience">Data Science / AI / ML</option>
+                  <option value="Design">Dizayn / UI-UX</option>
+                  <option value="ITSupport">IT Dəstək / Helpdesk</option>
+                </optgroup>
+                <optgroup label="🏗️ Tikinti & Sənaye">
+                  <option value="Bau">Tikinti / Bau</option>
+                  <option value="Handwerk">Handwerk / Usta</option>
+                  <option value="Elektrik">Elektrikçi / Elektrik</option>
+                  <option value="Sanitaer">Santexnik / Sanitär</option>
+                  <option value="Schreiner">Dülgər / Schreiner</option>
+                  <option value="Schweisser">Qaynaqçı / Schweißer</option>
+                  <option value="Maler">Rəssam / Maler</option>
+                  <option value="Dachdecker">Damörtücü / Dachdecker</option>
+                  <option value="Kfz">Avtomexanik / KFZ</option>
+                  <option value="Maschinenbau">Mexanika / Maschinenbau</option>
+                </optgroup>
+                <optgroup label="🚛 Logistik & Nəqliyyat">
+                  <option value="Logistik">Logistik / Anbar</option>
+                  <option value="Fahrer">Sürücü / Fahrer / LKW</option>
+                  <option value="Lager">Anbar işçisi / Lager</option>
+                  <option value="Transport">Nəqliyyat / Transport</option>
+                  <option value="Spedition">Spedisiya / Yükdaşıma</option>
+                  <option value="Gabelstapler">Forklift / Gabelstapler</option>
+                </optgroup>
+                <optgroup label="🏢 Ofis & İdarəetmə">
+                  <option value="Büro">Büro / Katib / Ofis</option>
+                  <option value="Buchhaltung">Mühasib / Buchhaltung</option>
+                  <option value="Maliyye">Maliyyə / Finanz</option>
+                  <option value="Controlling">Kontrollinq / Controlling</option>
+                  <option value="Personalwesen">HR / Kadrlar / Personal</option>
+                  <option value="Recht">Hüquqşünas / Recht / Jurist</option>
+                  <option value="Steuer">Vergi / Steuerberatung</option>
+                </optgroup>
+                <optgroup label="📢 Marketing & Satış">
+                  <option value="Marketing">Marketing / Reklam</option>
+                  <option value="Verkauf">Satış / Verkauf</option>
+                  <option value="Kundenservice">Müştəri xidməti</option>
+                  <option value="Ecommerce">E-ticarət / E-Commerce</option>
+                  <option value="SocialMedia">Sosial media / SMM</option>
+                  <option value="PR">İctimaiyyətlə əlaqə / PR</option>
+                </optgroup>
+                <optgroup label="🎓 Təhsil & Elm">
+                  <option value="Lehrer">Müəllim / Lehrer</option>
+                  <option value="Erziehung">Tərbiyəçi / Erzieher</option>
+                  <option value="Sozialarbeit">Sosial işçi / Sozialarbeit</option>
+                  <option value="Wissenschaft">Elm / Forschung</option>
+                  <option value="Übersetzer">Tərcüməçi / Übersetzer</option>
+                </optgroup>
+                <optgroup label="⚙️ Mühəndislik & Texnika">
+                  <option value="Mühəndis">Mühəndis / Ingenieur</option>
+                  <option value="Elektronik">Elektronika / Elektrotechnik</option>
+                  <option value="Chemie">Kimya / Chemie</option>
+                  <option value="Umwelt">Ekologiya / Umwelt</option>
+                  <option value="Luft">Aviasiya / Luft- und Raumfahrt</option>
+                </optgroup>
+                <optgroup label="🛡️ Digər">
+                  <option value="Sicherheit">Təhlükəsizlik / Security</option>
+                  <option value="Reinigung">Təmizlik / Reinigung</option>
+                  <option value="Friseur">Bərbər / Friseur / Kosmetik</option>
+                  <option value="Landwirtschaft">Kənd təsərrüfatı / Landwirtschaft</option>
+                  <option value="Energie">Enerji / Energie</option>
+                  <option value="Andere">Digər / Andere</option>
+                </optgroup>
+              </select>
+            </div>
+
             <div class="form-group"><label>Alman dili səviyyəsi</label><select id="f-delevel">
                 <option value="">Yoxdur</option>
                 <option value="A1">A1</option>
@@ -401,7 +635,30 @@
                 <input type="text" class="tag-input" id="certs-input" placeholder="Sertifikat adı yazıb Enter basın...">
               </div>
             </div>
+            <div class="form-group full">
+              <label>Bacarıqlar (Enter ilə əlavə et) *</label>
+              <div class="tag-input-wrap" id="skills-wrap" onclick="document.getElementById('skills-input').focus()">
+                <input type="text" class="tag-input" id="skills-input" placeholder="Bacarıq yazın və Enter basın...">
+              </div>
+            </div>
 
+            <div class="form-group full">
+              <label>Kompyuter / Texniki Bacarıqlar</label>
+              <div class="tag-input-wrap" id="computer-skills-wrap"
+                onclick="document.getElementById('computer-skills-input').focus()">
+                <input type="text" class="tag-input" id="computer-skills-input"
+                  placeholder="Meta Business Suite, Canva Pro, Google Ads...">
+              </div>
+            </div>
+
+            <div class="form-group full">
+              <label>Əlavə Bacarıqlar</label>
+              <div class="tag-input-wrap" id="additional-skills-wrap"
+                onclick="document.getElementById('additional-skills-input').focus()">
+                <input type="text" class="tag-input" id="additional-skills-input"
+                  placeholder="Layihə idarəetməsi, satış psixologiyası...">
+              </div>
+            </div>
             <div class="section-divider">🛠️ Bacarıqlar</div>
             <div class="form-group full">
               <label>Bacarıqlar (Enter ilə əlavə et)</label>
@@ -440,10 +697,8 @@
             <div class="section-divider">📸 Şəkil & Əlaqə</div>
             <div class="form-group full">
               <label>Şəkil</label>
-              <div class="info-banner info-green">
-                ✅ <span>Şəkil avtomatik <strong>Firebase Storage</strong>-a yüklənir. URL Firestore-a saxlanır. Köhnə
-                  şəkillər silinir.</span>
-              </div>
+              <div class="info-banner info-green">✅ <span>Şəkil avtomatik <strong>Firebase Storage</strong>-a
+                  yüklənir.</span></div>
               <div class="img-upload-area" id="img-upload-area" onclick="document.getElementById('f-img-file').click()">
                 <input type="file" id="f-img-file" accept="image/*" onchange="handleImgUpload(event)">
                 <button type="button" class="img-remove-btn" id="img-remove-btn" onclick="removeImg(event)">✕
@@ -497,16 +752,14 @@
           <h1>Export / Import</h1>
           <div style="display:flex;gap:12px;flex-wrap:wrap;">
             <button class="btn btn-ghost" onclick="copyJSON()">📋 Kopyala</button>
-            <button class="btn btn-primary download-btn" onclick="downloadJSON()">⬇️ candidates.json</button>
+            <button class="btn btn-primary" onclick="downloadJSON()">⬇️ candidates.json</button>
           </div>
         </div>
-
-        <!-- Import section -->
         <div
           style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:var(--shadow);">
           <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:12px;">📥 JSON Import</h3>
-          <div class="info-banner">💡 <span>Əvvəlki export faylını yükləyərək Firestore-a toplu import edə bilərsiniz.
-              Mövcud ID-ləri üzərinə yazır.</span></div>
+          <div class="info-banner">💡 <span>Əvvəlki export faylını yükləyərək Firestore-a toplu import edə
+              bilərsiniz.</span></div>
           <div class="import-drop" id="import-drop" onclick="document.getElementById('import-file').click()">
             <input type="file" id="import-file" accept=".json" onchange="handleImportFile(event)" style="display:none;">
             <div style="font-size:2rem;margin-bottom:8px;">📂</div>
@@ -515,15 +768,12 @@
           </div>
           <div id="import-preview" style="display:none;margin-top:12px;">
             <div class="info-banner info-green" id="import-info"></div>
-            <button class="btn btn-primary" id="import-confirm-btn" onclick="confirmImport()" style="margin-top:10px;">
-              🚀 Firebase-ə Import Et
-            </button>
+            <button class="btn btn-primary" id="import-confirm-btn" onclick="confirmImport()"
+              style="margin-top:10px;">🚀 Firebase-ə Import Et</button>
           </div>
         </div>
-
-        <!-- Export section -->
-        <p style="color:var(--muted);font-size:0.88rem;margin-bottom:16px;">Firebase-dən real-time oxunan məlumatlar
-          (base64 şəkillər qısaldılmış göstərilir).</p>
+        <p style="color:var(--muted);font-size:0.88rem;margin-bottom:16px;">Firebase-dən real-time oxunan məlumatlar.
+        </p>
         <div class="code-block" id="json-output">[]</div>
       </div>
 
@@ -532,54 +782,40 @@
         <div class="topbar">
           <h1>Parametrlər</h1>
         </div>
-
-        <!-- Email Verification -->
         <div
           style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:var(--shadow);">
           <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:12px;">🔐 Hesab Təhlükəsizliyi
           </h3>
-          <div class="info-banner" id="email-verified-banner">
-            <span id="email-verified-text">E-mail yoxlanma statusu yüklənir...</span>
-          </div>
+          <div class="info-banner" id="email-verified-banner"><span id="email-verified-text">E-mail yoxlanma statusu
+              yüklənir...</span></div>
           <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
             <button class="btn btn-ghost btn-sm" onclick="checkEmailVerification()">🔄 Yenilə</button>
             <button class="btn btn-primary btn-sm" onclick="sendVerificationEmail()">📧 Doğrulama E-maili
               Göndər</button>
           </div>
         </div>
-
-        <!-- Firestore Security Rules -->
         <div
           style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:var(--shadow);">
           <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:4px;">🛡️ Firestore Security
             Rules</h3>
-          <p style="font-size:0.82rem;color:var(--muted);margin-bottom:16px;">Bu qaydaları Firebase Console → Firestore
-            → Rules bölməsinə yapışdırın:</p>
+          <p style="font-size:0.82rem;color:var(--muted);margin-bottom:16px;">Firebase Console → Firestore → Rules
+            bölməsinə yapışdırın:</p>
           <div class="rules-card">
             <h4>🔒 Tövsiyə Edilən Qaydalar (v5)</h4>
             <pre style="color:#E2E8F0;font-size:0.78rem;font-family:monospace;white-space:pre-wrap;line-height:1.6;">rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-
-    // Kandidatlar kolleksiyası
     match /candidates/{document} {
-
-      // PUBLIC oxuma: yalnız status 'placed' olmayanlar
       allow read: if resource.data.status != 'placed';
-
-      // ADMIN yazma/silmə: yalnız autentifikasiya + e-mail doğrulanmış
       allow write: if request.auth != null
                    && request.auth.token.email_verified == true;
     }
-
   }
 }</pre>
           </div>
           <button class="btn btn-ghost btn-sm" onclick="copySecurityRules()" style="margin-top:10px;">📋 Qaydaları
             Kopyala</button>
         </div>
-
-        <!-- Firebase Storage Security Rules -->
         <div
           style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:var(--shadow);">
           <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:4px;">🗄️ Firebase Storage
@@ -590,8 +826,6 @@ service cloud.firestore {
             <pre style="color:#E2E8F0;font-size:0.78rem;font-family:monospace;white-space:pre-wrap;line-height:1.6;">rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
-
-    // CV şəkilləri — public oxuna bilər, yalnız admin yaza bilər
     match /cv-photos/{allPaths=**} {
       allow read:  if true;
       allow write: if request.auth != null
@@ -599,15 +833,12 @@ service firebase.storage {
                    && request.resource.size < 2 * 1024 * 1024
                    && request.resource.contentType.matches('image/.*');
     }
-
   }
 }</pre>
           </div>
           <button class="btn btn-ghost btn-sm" onclick="copyStorageRules()" style="margin-top:10px;">📋 Qaydaları
             Kopyala</button>
         </div>
-
-        <!-- Panel dili -->
         <div
           style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:var(--shadow);">
           <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:12px;">🌍 Panel Dili</h3>
@@ -671,19 +902,10 @@ service firebase.storage {
   <!-- ═══════════════ FIREBASE SDK ═══════════════ -->
   <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js';
-    import {
-      getFirestore, collection, doc, setDoc, deleteDoc,
-      onSnapshot, writeBatch, serverTimestamp
-    } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
-    import {
-      getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject
-    } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-storage.js';
-    import {
-      getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged,
-      sendPasswordResetEmail, sendEmailVerification
-    } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js';
+    import { getFirestore, collection, doc, setDoc, deleteDoc, onSnapshot, writeBatch, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
+    import { getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-storage.js';
+    import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged, sendPasswordResetEmail, sendEmailVerification } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js';
 
-    // ════ FIREBASE CONFIG ════
     const firebaseConfig = {
       apiKey: "AIzaSyBgF0KZmiDoaYnmQ0IG1-Nf-mHjSd5n700",
       authDomain: "mz-personalvermittlung.firebaseapp.com",
@@ -698,43 +920,28 @@ service firebase.storage {
     const storage = getStorage(app);
     const auth = getAuth(app);
 
-    // Expose to global scope for non-module JS
-    window._db = db;
-    window._storage = storage;
-    window._auth = auth;
+    window._db = db; window._storage = storage; window._auth = auth;
     window._fb = { collection, doc, setDoc, deleteDoc, writeBatch, ref, uploadBytesResumable, getDownloadURL, deleteObject };
     window._fbAuth = { signInWithEmailAndPassword, signOut, sendPasswordResetEmail, sendEmailVerification };
     window._fbReady = true;
 
-    // ════ AUTH STATE ════
     onAuthStateChanged(auth, (user) => {
       const overlay = document.getElementById('login-overlay');
       if (user) {
-        // ✅ Check email verification
-        if (!user.emailVerified) {
-          window._emailVerified = false;
-          // Allow login but show warning
-          console.warn('E-mail hələ doğrulanmayıb');
-        } else {
-          window._emailVerified = true;
-        }
-
+        window._emailVerified = user.emailVerified;
         overlay.style.opacity = '0';
         setTimeout(() => overlay.style.display = 'none', 400);
-
         const emailEl = document.getElementById('sidebar-email');
         const avatarEl = document.getElementById('sidebar-avatar');
         const userDiv = document.getElementById('sidebar-user');
         if (emailEl) emailEl.textContent = user.email;
         if (avatarEl) avatarEl.textContent = user.email[0].toUpperCase();
         if (userDiv) userDiv.style.display = 'flex';
-
         updateEmailVerifiedBanner(user);
         startFirestoreListener();
         window.renderDashboard && window.renderDashboard();
       } else {
-        overlay.style.display = 'flex';
-        overlay.style.opacity = '1';
+        overlay.style.display = 'flex'; overlay.style.opacity = '1';
         const userDiv = document.getElementById('sidebar-user');
         if (userDiv) userDiv.style.display = 'none';
         window._fbData = [];
@@ -766,49 +973,38 @@ service firebase.storage {
       try {
         await window._fbAuth.sendEmailVerification(auth.currentUser);
         window.showToast('✅ Doğrulama e-maili göndərildi!', 'success');
-      } catch (e) {
-        window.showToast('❌ Xəta: ' + e.message, 'error');
-      }
+      } catch (e) { window.showToast('❌ Xəta: ' + e.message, 'error'); }
     };
 
-    // ════ REAL-TIME FIRESTORE LISTENER ════
     function startFirestoreListener() {
       onSnapshot(collection(db, 'candidates'), (snapshot) => {
         const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
         window._fbData = data;
-
         const dot = document.getElementById('sidebar-fb-dot');
         const txt = document.getElementById('sidebar-fb-text');
         if (dot) dot.classList.add('live');
         if (txt) txt.textContent = 'Firebase · canlı (' + data.length + ' kandidat)';
-
         window.renderDashboard && window.renderDashboard();
         window.renderTable && window.renderTable();
       });
     }
 
-    // ════ STORAGE: UPLOAD IMAGE → GET URL ════
     window.uploadImageToStorage = function (file, candidateId) {
       return new Promise((resolve, reject) => {
         const { ref, uploadBytesResumable, getDownloadURL } = window._fb;
         const storageRef = ref(storage, `cv-photos/${candidateId}`);
         const uploadTask = uploadBytesResumable(storageRef, file);
-
         const progress = document.getElementById('img-upload-progress');
         const fill = document.getElementById('progress-fill');
         const txt = document.getElementById('img-upload-progress-text');
         if (progress) progress.classList.add('visible');
-
         uploadTask.on('state_changed',
           (snapshot) => {
             const pct = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
             if (fill) fill.style.width = pct + '%';
             if (txt) txt.textContent = 'Yüklənir... ' + pct + '%';
           },
-          (err) => {
-            if (progress) progress.classList.remove('visible');
-            reject(err);
-          },
+          (err) => { if (progress) progress.classList.remove('visible'); reject(err); },
           async () => {
             const url = await getDownloadURL(uploadTask.snapshot.ref);
             if (progress) { progress.classList.remove('visible'); if (fill) fill.style.width = '0%'; }
@@ -818,22 +1014,95 @@ service firebase.storage {
       });
     };
 
-    // ════ STORAGE: DELETE OLD IMAGE ════
     window.deleteImageFromStorage = async function (candidateId) {
       try {
         const { ref, deleteObject } = window._fb;
-        const storageRef = ref(storage, `cv-photos/${candidateId}`);
-        await deleteObject(storageRef);
-      } catch (e) {
-        // Fayl yoxdursa problem deyil
-        console.log('Storage delete (yoxsa ok):', e.message);
-      }
+        await deleteObject(ref(storage, `cv-photos/${candidateId}`));
+      } catch (e) { console.log('Storage delete (yoxsa ok):', e.message); }
     };
   </script>
 
   <!-- ═══════════════ ANA LOGIC ═══════════════ -->
   <script>
-    // ════ UTILS ════
+    // ══ DOĞUM TARİXİ — GÜN/AY/İL HELPER-LƏR ══
+    function initDobDays() {
+      updateDobDays();
+    }
+
+    function updateDobDays() {
+      var monthEl = document.getElementById('f-dob-month');
+      var yearEl = document.getElementById('f-dob-year');
+      var dayEl = document.getElementById('f-dob-day');
+      if (!dayEl) return;
+
+      var month = parseInt(monthEl ? monthEl.value : 0) || 0;
+      var year = parseInt(yearEl ? yearEl.value : 0) || 0;
+
+      // Ayda neçə gün olduğunu hesabla
+      var maxDay = 31;
+      if (month > 0) {
+        if ([4, 6, 9, 11].indexOf(month) !== -1) {
+          maxDay = 30;
+        } else if (month === 2) {
+          // Uzun il yoxlaması
+          maxDay = (year > 0 && ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0)) ? 29 : 28;
+        }
+      }
+
+      var currentDay = parseInt(dayEl.value) || 0;
+      dayEl.innerHTML = '<option value="">Gün</option>';
+      for (var d = 1; d <= maxDay; d++) {
+        var val = d < 10 ? '0' + d : String(d);
+        var opt = document.createElement('option');
+        opt.value = val;
+        opt.textContent = val;
+        if (d === currentDay) opt.selected = true;
+        dayEl.appendChild(opt);
+      }
+    }
+
+    function updateDobHidden() {
+      var day = document.getElementById('f-dob-day') ? document.getElementById('f-dob-day').value : '';
+      var month = document.getElementById('f-dob-month') ? document.getElementById('f-dob-month').value : '';
+      var year = document.getElementById('f-dob-year') ? document.getElementById('f-dob-year').value : '';
+      var hidden = document.getElementById('f-dob');
+      if (!hidden) return;
+      if (day && month && year && year.length === 4) {
+        hidden.value = day + '.' + month + '.' + year;
+      } else {
+        hidden.value = '';
+      }
+    }
+
+    // Mövcud DD.MM.YYYY dəyərini date picker-ə yüklə
+    function setDobFromString(dobStr) {
+      if (!dobStr) { clearDob(); return; }
+      var parts = dobStr.split('.');
+      if (parts.length !== 3) { clearDob(); return; }
+      var day = parts[0], month = parts[1], year = parts[2];
+      var yearEl = document.getElementById('f-dob-year');
+      var monthEl = document.getElementById('f-dob-month');
+      if (yearEl) yearEl.value = year;
+      if (monthEl) monthEl.value = month;
+      updateDobDays();
+      var dayEl = document.getElementById('f-dob-day');
+      if (dayEl) dayEl.value = day;
+      updateDobHidden();
+    }
+
+    function clearDob() {
+      var d = document.getElementById('f-dob-day');
+      var m = document.getElementById('f-dob-month');
+      var y = document.getElementById('f-dob-year');
+      var h = document.getElementById('f-dob');
+      if (d) d.value = '';
+      if (m) m.value = '';
+      if (y) y.value = '';
+      if (h) h.value = '';
+      updateDobDays();
+    }
+
+    // ══ ƏSAS LOGIC ══
     function waitForFirebase(fn, tries) {
       tries = tries || 0;
       if (window._fbReady) { fn(); return; }
@@ -859,7 +1128,6 @@ service firebase.storage {
     }
     window.showToast = showToast;
 
-    // ════ AUTH ════
     function checkLogin() {
       waitForFirebase(async function () {
         const email = document.getElementById('login-email').value.trim();
@@ -867,23 +1135,14 @@ service firebase.storage {
         const errEl = document.getElementById('login-error');
         const btn = document.getElementById('login-btn');
         const content = document.getElementById('login-btn-content');
-        if (!email || !password) {
-          errEl.textContent = '⚠️ E-mail və şifrəni daxil edin.';
-          errEl.style.display = 'block'; return;
-        }
+        if (!email || !password) { errEl.textContent = '⚠️ E-mail və şifrəni daxil edin.'; errEl.style.display = 'block'; return; }
         btn.disabled = true;
         content.innerHTML = '<div class="login-spinner"></div> Yoxlanır...';
         errEl.style.display = 'none';
         try {
           await window._fbAuth.signInWithEmailAndPassword(window._auth, email, password);
         } catch (err) {
-          const msgs = {
-            'auth/user-not-found': '❌ Bu e-mail ilə hesab tapılmadı.',
-            'auth/wrong-password': '❌ Şifrə yanlışdır.',
-            'auth/invalid-email': '❌ E-mail formatı yanlışdır.',
-            'auth/too-many-requests': '⛔ Çox sayda cəhd. Bir az gözləyin.',
-            'auth/invalid-credential': '❌ E-mail və ya şifrə yanlışdır.',
-          };
+          const msgs = { 'auth/user-not-found': '❌ Bu e-mail ilə hesab tapılmadı.', 'auth/wrong-password': '❌ Şifrə yanlışdır.', 'auth/invalid-email': '❌ E-mail formatı yanlışdır.', 'auth/too-many-requests': '⛔ Çox sayda cəhd. Bir az gözləyin.', 'auth/invalid-credential': '❌ E-mail və ya şifrə yanlışdır.' };
           errEl.textContent = msgs[err.code] || ('❌ Giriş uğursuz: ' + err.message);
           errEl.style.display = 'block';
           setTimeout(() => errEl.style.display = 'none', 5000);
@@ -895,12 +1154,8 @@ service firebase.storage {
 
     async function adminLogout() {
       if (!confirm('Çıxmaq istəyirsiniz?')) return;
-      try {
-        await window._fbAuth.signOut(window._auth);
-        showToast('Uğurla çıxış edildi', 'success');
-      } catch (err) {
-        showToast('Çıxış xətası: ' + err.message, 'error');
-      }
+      try { await window._fbAuth.signOut(window._auth); showToast('Uğurla çıxış edildi', 'success'); }
+      catch (err) { showToast('Çıxış xətası: ' + err.message, 'error'); }
     }
 
     function openResetModal() { document.getElementById('reset-modal').classList.add('open'); }
@@ -908,26 +1163,16 @@ service firebase.storage {
     async function sendResetEmail() {
       const email = document.getElementById('reset-email').value.trim();
       if (!email) { showToast('E-mail daxil edin', 'error'); return; }
-      try {
-        await window._fbAuth.sendPasswordResetEmail(window._auth, email);
-        showToast('✅ Sıfırlama linki göndərildi!', 'success');
-        closeResetModal();
-      } catch (err) {
-        showToast('❌ Xəta: ' + err.message, 'error');
-      }
+      try { await window._fbAuth.sendPasswordResetEmail(window._auth, email); showToast('✅ Sıfırlama linki göndərildi!', 'success'); closeResetModal(); }
+      catch (err) { showToast('❌ Xəta: ' + err.message, 'error'); }
     }
 
-    // ════ DATA ════
-    function getData() {
-      return window._fbData || [];
-    }
+    function getData() { return window._fbData || []; }
 
-    // ════ FIREBASE CRUD ════
     async function saveToFirebase(candidate) {
       if (!window._db || !window._fb) throw new Error('Firebase hazır deyil');
       const { doc, setDoc } = window._fb;
-      const id = String(candidate.id);
-      await setDoc(doc(window._db, 'candidates', id), candidate);
+      await setDoc(doc(window._db, 'candidates', String(candidate.id)), candidate);
       return candidate;
     }
 
@@ -937,7 +1182,6 @@ service firebase.storage {
       await deleteDoc(doc(window._db, 'candidates', String(id)));
     }
 
-    // ════ BATCH OPERATIONS ════
     var gSelectedIds = new Set();
 
     function toggleCheckAll(cb) {
@@ -960,19 +1204,10 @@ service firebase.storage {
       var countEl = document.getElementById('batch-count-label');
       var btn = document.getElementById('batch-status-btn');
       var n = gSelectedIds.size;
-      if (n > 0) {
-        bar.classList.add('visible');
-        if (btn) btn.style.display = 'inline-flex';
-        countEl.textContent = n + ' kandidat seçildi';
-      } else {
-        bar.classList.remove('visible');
-        if (btn) btn.style.display = 'none';
-      }
+      if (n > 0) { bar.classList.add('visible'); if (btn) btn.style.display = 'inline-flex'; countEl.textContent = n + ' kandidat seçildi'; }
+      else { bar.classList.remove('visible'); if (btn) btn.style.display = 'none'; }
       var allCb = document.getElementById('check-all');
-      if (allCb) {
-        var allCbs = document.querySelectorAll('.row-check');
-        allCb.checked = allCbs.length > 0 && gSelectedIds.size === allCbs.length;
-      }
+      if (allCb) { var allCbs = document.querySelectorAll('.row-check'); allCb.checked = allCbs.length > 0 && gSelectedIds.size === allCbs.length; }
     }
 
     function openBatchStatusModal() {
@@ -986,21 +1221,15 @@ service firebase.storage {
       if (!window._db || !window._fb) { showToast('Firebase hazır deyil', 'error'); return; }
       const { writeBatch, doc } = window._fb;
       const batch = writeBatch(window._db);
-      gSelectedIds.forEach(function (id) {
-        var ref = doc(window._db, 'candidates', String(id));
-        batch.update(ref, { status: status, updatedAt: new Date().toISOString() });
-      });
+      gSelectedIds.forEach(function (id) { batch.update(doc(window._db, 'candidates', String(id)), { status: status, updatedAt: new Date().toISOString() }); });
       try {
         await batch.commit();
         showToast('✅ ' + gSelectedIds.size + ' kandidat yeniləndi!', 'success');
-        gSelectedIds.clear();
-        updateBatchBar();
+        gSelectedIds.clear(); updateBatchBar();
         var allCb = document.getElementById('check-all');
         if (allCb) allCb.checked = false;
         document.querySelectorAll('.row-check').forEach(function (c) { c.checked = false; });
-      } catch (e) {
-        showToast('❌ Xəta: ' + e.message, 'error');
-      }
+      } catch (e) { showToast('❌ Xəta: ' + e.message, 'error'); }
     }
 
     async function batchDelete() {
@@ -1009,67 +1238,43 @@ service firebase.storage {
       if (!window._db || !window._fb) return;
       const { writeBatch, doc } = window._fb;
       const batch = writeBatch(window._db);
-
-      // Delete storage images too
       for (const id of gSelectedIds) {
-        var ref = doc(window._db, 'candidates', String(id));
-        batch.delete(ref);
+        batch.delete(doc(window._db, 'candidates', String(id)));
         await window.deleteImageFromStorage && window.deleteImageFromStorage(id);
       }
-      try {
-        await batch.commit();
-        showToast('🗑️ ' + gSelectedIds.size + ' kandidat silindi!', 'success');
-        gSelectedIds.clear();
-        updateBatchBar();
-      } catch (e) {
-        showToast('❌ Xəta: ' + e.message, 'error');
-      }
+      try { await batch.commit(); showToast('🗑️ ' + gSelectedIds.size + ' kandidat silindi!', 'success'); gSelectedIds.clear(); updateBatchBar(); }
+      catch (e) { showToast('❌ Xəta: ' + e.message, 'error'); }
     }
 
-    // ════ PAGES ════
     function showPage(page, btn) {
       document.querySelectorAll('.page').forEach(function (p) { p.classList.remove('active'); });
       document.getElementById('page-' + page).classList.add('active');
-      if (btn) {
-        document.querySelectorAll('.nav-item').forEach(function (n) { n.classList.remove('active'); });
-        btn.classList.add('active');
-      }
+      if (btn) { document.querySelectorAll('.nav-item').forEach(function (n) { n.classList.remove('active'); }); btn.classList.add('active'); }
       if (page === 'dashboard') renderDashboard();
       if (page === 'candidates') { gCurrentPage = 1; renderTable(); }
       if (page === 'export') renderExport();
     }
 
-    // ════ PAGINATION ════
     var gCurrentPage = 1;
     var gFilteredData = [];
 
-    function getPageSize() {
-      var sel = document.getElementById('page-size-select');
-      return sel ? parseInt(sel.value) : 20;
-    }
+    function getPageSize() { var sel = document.getElementById('page-size-select'); return sel ? parseInt(sel.value) : 20; }
 
     function renderPagination(total, pageSize, current) {
       var totalPages = Math.ceil(total / pageSize);
       var infoEl = document.getElementById('pagination-info');
       var btnsEl = document.getElementById('pagination-btns');
       if (!infoEl || !btnsEl) return;
-
       var start = (current - 1) * pageSize + 1;
       var end = Math.min(current * pageSize, total);
       infoEl.textContent = total > 0 ? (start + '–' + end + ' / ' + total + ' kandidat') : '0 kandidat';
-
       var btns = '';
       btns += '<button class="page-btn" onclick="goPage(' + (current - 1) + ')" ' + (current <= 1 ? 'disabled' : '') + '>‹</button>';
-
-      var lo = Math.max(1, current - 2);
-      var hi = Math.min(totalPages, current + 2);
+      var lo = Math.max(1, current - 2), hi = Math.min(totalPages, current + 2);
       if (lo > 1) btns += '<button class="page-btn" onclick="goPage(1)">1</button>' + (lo > 2 ? '<span style="padding:0 4px;color:var(--muted)">…</span>' : '');
-      for (var i = lo; i <= hi; i++) {
-        btns += '<button class="page-btn' + (i === current ? ' active' : '') + '" onclick="goPage(' + i + ')">' + i + '</button>';
-      }
+      for (var i = lo; i <= hi; i++) btns += '<button class="page-btn' + (i === current ? ' active' : '') + '" onclick="goPage(' + i + ')">' + i + '</button>';
       if (hi < totalPages) btns += (hi < totalPages - 1 ? '<span style="padding:0 4px;color:var(--muted)">…</span>' : '') + '<button class="page-btn" onclick="goPage(' + totalPages + ')">' + totalPages + '</button>';
       btns += '<button class="page-btn" onclick="goPage(' + (current + 1) + ')" ' + (current >= totalPages ? 'disabled' : '') + '>›</button>';
-
       btnsEl.innerHTML = btns;
     }
 
@@ -1077,47 +1282,26 @@ service firebase.storage {
       var pageSize = getPageSize();
       var totalPages = Math.ceil(gFilteredData.length / pageSize);
       if (n < 1 || n > totalPages) return;
-      gCurrentPage = n;
-      renderTable();
+      gCurrentPage = n; renderTable();
       var wrap = document.getElementById('candidates-table-wrap');
       if (wrap) wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    // ════ RENDER HELPERS ════
-    function typeBadgeStyle(type) {
-      return {
-        fachkraft: 'background:#E6F1FB;color:#185FA5;',
-        ausbildung: 'background:#FAECE7;color:#993C1D;',
-        saisonal: 'background:#FAEEDA;color:#854F0B;'
-      }[type] || '';
-    }
-    function typeLabel(type) {
-      return { fachkraft: 'Fachkraft', ausbildung: 'Ausbildung', saisonal: 'Saisonal' }[type] || type;
-    }
-    function statusDot(s) {
-      return { available: '🟢', process: '🟡', placed: '🔵' }[s] || '⚪';
-    }
-    function priorityBadge(p) {
-      return p === 'high' ? ' ⭐' : p === 'urgent' ? ' 🔥' : '';
-    }
+    function typeBadgeStyle(type) { return { fachkraft: 'background:#E6F1FB;color:#185FA5;', ausbildung: 'background:#FAECE7;color:#993C1D;', saisonal: 'background:#FAEEDA;color:#854F0B;' }[type] || ''; }
+    function typeLabel(type) { return { fachkraft: 'Fachkraft', ausbildung: 'Ausbildung', saisonal: 'Saisonal' }[type] || type; }
+    function statusDot(s) { return { available: '🟢', process: '🟡', placed: '🔵' }[s] || '⚪'; }
+    function priorityBadge(p) { return p === 'high' ? ' ⭐' : p === 'urgent' ? ' 🔥' : ''; }
 
     function rowHTML(c, cols) {
       var deTag = '';
-      if (c.langs) {
-        var d = c.langs.find(function (l) { return l.startsWith('DE'); });
-        if (d) deTag = d;
-      }
+      if (c.langs) { var d = c.langs.find(function (l) { return l.startsWith('DE'); }); if (d) deTag = d; }
       if (!deTag) deTag = c.delevel || '—';
       var emailLink = c.email ? '<a href="mailto:' + c.email + '" style="color:var(--gold);font-size:0.78rem;margin-left:4px;">✉️</a>' : '';
       var waLink = c.whatsapp ? '<a href="https://wa.me/' + c.whatsapp.replace(/[^0-9]/g, '') + '" target="_blank" style="font-size:0.78rem;margin-left:4px;">📱</a>' : '';
       var ph = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" fill="%23e2e8f0" rx="18"/></svg>';
-
       var checked = gSelectedIds.has(String(c.id)) ? 'checked' : '';
       var row = '<tr>';
-
-      if (cols === 9) {
-        row += '<td class="col-check"><input type="checkbox" class="row-check" data-id="' + c.id + '" ' + checked + ' onchange="toggleRowCheck(\'' + c.id + '\',this.checked)"></td>';
-      }
+      if (cols === 9) row += '<td class="col-check"><input type="checkbox" class="row-check" data-id="' + c.id + '" ' + checked + ' onchange="toggleRowCheck(\'' + c.id + '\',this.checked)"></td>';
       row += '<td><img class="cv-avatar-sm" src="' + (c.img || ph) + '" onerror="this.src=\'' + ph + '\'" alt="' + c.name + '"></td>';
       row += '<td><strong>' + c.name + priorityBadge(c.priority) + '</strong><br><span style="font-size:0.75rem;color:var(--muted)">' + (c.location || '') + '</span></td>';
       row += '<td><span class="type-badge" style="' + typeBadgeStyle(c.type) + '">' + typeLabel(c.type) + '</span></td>';
@@ -1126,9 +1310,9 @@ service firebase.storage {
       if (cols === 9) row += '<td style="font-size:0.82rem;">' + (c.phone || '') + emailLink + waLink + '</td>';
       row += '<td>' + statusDot(c.status) + '</td>';
       row += '<td class="col-actions"><div class="actions-cell">';
-      row += '<button class="btn btn-ghost btn-sm" onclick="viewCandidate(\'' + c.id + '\')" title="Bax">👁️</button>';
-      row += '<button class="btn btn-ghost btn-sm" onclick="editCandidate(\'' + c.id + '\')" title="Redaktə et">✏️</button>';
-      row += '<button class="btn btn-danger btn-sm" onclick="deleteCandidate(\'' + c.id + '\')" title="Sil">🗑️</button>';
+      row += '<button class="btn btn-ghost btn-sm" onclick="viewCandidate(\'' + c.id + '\')">👁️</button>';
+      row += '<button class="btn btn-ghost btn-sm" onclick="editCandidate(\'' + c.id + '\')">✏️</button>';
+      row += '<button class="btn btn-danger btn-sm" onclick="deleteCandidate(\'' + c.id + '\')">🗑️</button>';
       row += '</div></td></tr>';
       return row;
     }
@@ -1141,30 +1325,24 @@ service firebase.storage {
       });
     }
 
-    // ════ DASHBOARD ════
     function renderDashboard() {
       var data = getData();
       document.getElementById('stat-total').textContent = data.length;
       document.getElementById('stat-fach').textContent = data.filter(function (d) { return d.type === 'fachkraft'; }).length;
       document.getElementById('stat-azubi').textContent = data.filter(function (d) { return d.type === 'ausbildung'; }).length;
       document.getElementById('stat-sais').textContent = data.filter(function (d) { return d.type === 'saisonal'; }).length;
-
       var recent = sortByNewest(data).slice(0, 5);
       var tbody = document.getElementById('recent-table-body');
-      tbody.innerHTML = recent.length
-        ? recent.map(function (c) { return rowHTML(c, 7); }).join('')
-        : '<tr class="empty-row"><td colspan="7">Hələ heç bir kandidat yoxdur.</td></tr>';
+      tbody.innerHTML = recent.length ? recent.map(function (c) { return rowHTML(c, 7); }).join('') : '<tr class="empty-row"><td colspan="7">Hələ heç bir kandidat yoxdur.</td></tr>';
     }
     window.renderDashboard = renderDashboard;
 
-    // ════ CANDIDATES TABLE (with pagination) ════
     function renderTable() {
       var data = getData();
       var search = (document.getElementById('search-input') || { value: '' }).value.toLowerCase();
       var typeF = (document.getElementById('filter-type') || { value: '' }).value;
       var fieldF = (document.getElementById('filter-field') || { value: '' }).value;
       var statusF = (document.getElementById('filter-status') || { value: '' }).value;
-
       gFilteredData = sortByNewest(data).filter(function (c) {
         if (search && !c.name.toLowerCase().includes(search)) return false;
         if (typeF && c.type !== typeF) return false;
@@ -1172,26 +1350,19 @@ service firebase.storage {
         if (statusF && c.status !== statusF) return false;
         return true;
       });
-
       var pageSize = getPageSize();
       var total = gFilteredData.length;
       var totalPages = Math.ceil(total / pageSize);
       if (gCurrentPage > totalPages && totalPages > 0) gCurrentPage = totalPages;
       if (gCurrentPage < 1) gCurrentPage = 1;
-
       var startIdx = (gCurrentPage - 1) * pageSize;
       var pageData = gFilteredData.slice(startIdx, startIdx + pageSize);
-
       var tbody = document.getElementById('all-table-body');
-      tbody.innerHTML = pageData.length
-        ? pageData.map(function (c) { return rowHTML(c, 9); }).join('')
-        : '<tr class="empty-row"><td colspan="9">Kandidat tapılmadı.</td></tr>';
-
+      tbody.innerHTML = pageData.length ? pageData.map(function (c) { return rowHTML(c, 9); }).join('') : '<tr class="empty-row"><td colspan="9">Kandidat tapılmadı.</td></tr>';
       renderPagination(total, pageSize, gCurrentPage);
     }
     window.renderTable = renderTable;
 
-    // ════ VIEW CANDIDATE ════
     function viewCandidate(id) {
       var c = getData().find(function (x) { return String(x.id) === String(id); });
       if (!c) return;
@@ -1206,6 +1377,7 @@ service firebase.storage {
         + '<div style="margin-top:12px;text-align:center;"><span class="type-badge" style="' + typeBadgeStyle(c.type) + '">' + typeLabel(c.type) + '</span></div>'
         + '<div style="margin-top:10px;font-size:0.82rem;color:var(--muted);text-align:center;">' + (statusM[c.status] || '') + '</div></div>'
         + '<div>'
+        + (c.dob ? '<div class="detail-section"><div class="detail-label">Doğum tarixi</div><div class="detail-value">' + c.dob + '</div></div>' : '')
         + (c.taglineAZ ? '<div class="detail-section"><div class="detail-label">Qısa CV (AZ)</div><div class="detail-value" style="font-style:italic;">' + c.taglineAZ + '</div></div>' : '')
         + (c.taglineDE ? '<div class="detail-section"><div class="detail-label">Qısa CV (DE)</div><div class="detail-value" style="font-style:italic;">' + c.taglineDE + '</div></div>' : '')
         + (c.taglineEN ? '<div class="detail-section"><div class="detail-label">Qısa CV (EN)</div><div class="detail-value" style="font-style:italic;">' + c.taglineEN + '</div></div>' : '')
@@ -1219,17 +1391,18 @@ service firebase.storage {
       document.getElementById('view-modal').classList.add('open');
     }
 
-    // ════ FORM HELPERS ════
     var gEditingId = null;
     var gSkills = [], gLangs = [], gCerts = [];
-    var gImgFile = null;   // File object for Storage upload
-    var gImgUrl = '';     // Existing URL (from Storage or other)
-    var gExpRows = [];
-    var expCounter = 0;
+    var gImgFile = null, gImgUrl = '';
+    var gExpRows = [], expCounter = 0;
+    var gCompSkills = [];
+
+
+
+
 
     function startNewCV() {
-      gEditingId = null;
-      resetForm();
+      gEditingId = null; resetForm();
       document.getElementById('form-page-title').textContent = 'Yeni CV Əlavə Et';
       document.getElementById('save-btn-text').textContent = 'Firebase-ə Saxla';
       document.getElementById('save-btn-icon').textContent = '💾';
@@ -1244,10 +1417,8 @@ service firebase.storage {
       gExpRows.push({ id: id });
       var list = document.getElementById('exp-list');
       var div = document.createElement('div');
-      div.className = 'exp-item';
-      div.id = 'row-' + id;
-      div.innerHTML =
-        '<input type="text" id="title-' + id + '" placeholder="Vəzifə / Şirkət" value="' + (title || '') + '">'
+      div.className = 'exp-item'; div.id = 'row-' + id;
+      div.innerHTML = '<input type="text" id="title-' + id + '" placeholder="Vəzifə / Şirkət" value="' + (title || '') + '">'
         + '<input type="text" id="year-' + id + '" placeholder="İl: 2020–2024" value="' + (year || '') + '">'
         + '<button type="button" class="remove-exp-btn" onclick="removeExpRow(\'' + id + '\')">✕</button>';
       list.appendChild(div);
@@ -1270,10 +1441,8 @@ service firebase.storage {
       if (!input) return;
       input.addEventListener('keydown', function (e) {
         if ((e.key === 'Enter' || e.key === ',') && this.value.trim()) {
-          e.preventDefault();
-          arr.push(this.value.trim());
-          renderTags(wrapId, inputId, arr);
-          this.value = '';
+          e.preventDefault(); arr.push(this.value.trim());
+          renderTags(wrapId, inputId, arr); this.value = '';
         }
       });
     }
@@ -1294,20 +1463,13 @@ service firebase.storage {
       if (arr) { arr.splice(idx, 1); renderTags(wrapId, inputId, arr); }
     }
 
-    // ════ IMAGE HANDLING (Storage-based) ════
     function handleImgUpload(event) {
       var file = event.target.files[0];
       if (!file) return;
-      if (file.size > 10 * 1024 * 1024) {
-        showToast('Şəkil 10MB-dan böyük olmamalıdır!', 'error'); return;
-      }
-      gImgFile = file;
-      gImgUrl = '';
+      if (file.size > 10 * 1024 * 1024) { showToast('Şəkil 10MB-dan böyük olmamalıdır!', 'error'); return; }
+      gImgFile = file; gImgUrl = '';
       var reader = new FileReader();
-      reader.onload = function (e) {
-        setImgPreview(e.target.result);
-        showToast('📸 Şəkil seçildi — saxlandıqda Storage-a yüklənəcək', 'success');
-      };
+      reader.onload = function (e) { setImgPreview(e.target.result); showToast('📸 Şəkil seçildi — saxlandıqda Storage-a yüklənəcək', 'success'); };
       reader.readAsDataURL(file);
     }
     function setImgPreview(src) {
@@ -1315,8 +1477,7 @@ service firebase.storage {
       var area = document.getElementById('img-upload-area');
       var rem = document.getElementById('img-remove-btn');
       var ph = document.getElementById('img-upload-placeholder');
-      prev.src = src;
-      prev.classList.add('visible');
+      prev.src = src; prev.classList.add('visible');
       if (ph) ph.style.display = 'none';
       if (area) area.classList.add('has-img');
       if (rem) rem.classList.add('visible');
@@ -1326,20 +1487,15 @@ service firebase.storage {
       var area = document.getElementById('img-upload-area');
       var rem = document.getElementById('img-remove-btn');
       var ph = document.getElementById('img-upload-placeholder');
-      prev.src = '';
-      prev.classList.remove('visible');
+      prev.src = ''; prev.classList.remove('visible');
       if (ph) ph.style.display = '';
       if (area) area.classList.remove('has-img');
       if (rem) rem.classList.remove('visible');
-      gImgFile = null;
-      gImgUrl = '';
+      gImgFile = null; gImgUrl = '';
       var fi = document.getElementById('f-img-file');
       if (fi) fi.value = '';
     }
-    function removeImg(e) {
-      e.stopPropagation();
-      clearImgPreview();
-    }
+    function removeImg(e) { e.stopPropagation(); clearImgPreview(); }
     function setupDragDrop() {
       var area = document.getElementById('img-upload-area');
       if (!area) return;
@@ -1358,28 +1514,28 @@ service firebase.storage {
       });
     }
 
-    // ════ RESET FORM ════
     function resetForm() {
-      var textFields = [
-        'f-name', 'f-dob', 'f-location', 'f-tagline-az', 'f-tagline-de', 'f-tagline-en', 'f-notes',
-        'f-email', 'f-phone', 'f-whatsapp', 'f-linkedin', 'f-salary', 'f-available-from',
-        'f-edu-school', 'f-edu-major', 'f-edu-years', 'f-nationality'
-      ];
-      textFields.forEach(function (id) { var el = document.getElementById(id); if (el) el.value = ''; });
-      var selectFields = ['f-type', 'f-field', 'f-delevel', 'f-status', 'f-gender', 'f-edu-level', 'f-visa', 'f-work-type', 'f-relocation', 'f-priority'];
-      selectFields.forEach(function (id) { var el = document.getElementById(id); if (el) el.selectedIndex = 0; });
-      gSkills.length = 0; gLangs.length = 0; gCerts.length = 0;
+      ['f-name', 'f-location', 'f-tagline-az', 'f-tagline-de', 'f-tagline-en', 'f-notes', 'f-email', 'f-phone', 'f-whatsapp', 'f-linkedin', 'f-salary', 'f-available-from', 'f-edu-school', 'f-edu-major', 'f-edu-years', 'f-nationality'].forEach(function (id) { var el = document.getElementById(id); if (el) el.value = ''; });
+      ['f-type', 'f-field', 'f-delevel', 'f-status', 'f-gender', 'f-edu-level', 'f-visa', 'f-work-type', 'f-relocation', 'f-priority'].forEach(function (id) { var el = document.getElementById(id); if (el) el.selectedIndex = 0; });
+      clearDob();
+      gSkills.length = 0;
+      gComputerSkills.length = 0;
+      gAdditionalSkills.length = 0;
+      gLangs.length = 0;
+      gCerts.length = 0;
       renderTags('skills-wrap', 'skills-input', gSkills);
+      renderTags('computer-skills-wrap', 'computer-skills-input', gComputerSkills);
+      renderTags('additional-skills-wrap', 'additional-skills-input', gAdditionalSkills);
       renderTags('langs-wrap', 'langs-input', gLangs);
       renderTags('certs-wrap', 'certs-input', gCerts);
       document.getElementById('exp-list').innerHTML = '';
-      gExpRows = []; expCounter = 0;
-      addExpRow();
+      gExpRows = []; expCounter = 0; addExpRow();
       clearImgPreview();
     }
 
-    // ════ SAVE CANDIDATE (with Storage upload) ════
-    async function saveCandidate() {
+    // ========== DÜZƏLİŞ: candidateId xətasını aradan qaldırmaq üçün saveCandidate funksiyasını tamamilə əvəz edin ==========
+    // Köhnə saveCandidate funksiyasını silib bu yenisi ilə əvəz edin
+    window.saveCandidate = async function () {
       var name = document.getElementById('f-name').value.trim();
       if (!name) { showToast('Ad mütləq doldurulmalıdır!', 'error'); return; }
 
@@ -1390,14 +1546,12 @@ service firebase.storage {
       saveBtn.textContent = 'Saxlanır...';
       saveIco.textContent = '⏳';
 
+      // ✅ candidateId BURADA təyin olunur
       var candidateId = gEditingId || Date.now();
       var imgUrl = gImgUrl;
 
-      // ── Upload image to Storage if new file selected
       try {
-        if (gImgFile) {
-          imgUrl = await window.uploadImageToStorage(gImgFile, String(candidateId));
-        }
+        if (gImgFile) imgUrl = await window.uploadImageToStorage(gImgFile, String(candidateId));
       } catch (uploadErr) {
         showToast('❌ Şəkil yükləmə xətası: ' + uploadErr.message, 'error');
         btn.disabled = false;
@@ -1406,6 +1560,7 @@ service firebase.storage {
         return;
       }
 
+      // ✅ candidateId artıq mövcuddur
       var candidate = {
         id: candidateId,
         name: name,
@@ -1426,6 +1581,8 @@ service firebase.storage {
         notes: document.getElementById('f-notes').value.trim(),
         exp: getExpData(),
         skills: gSkills.slice(),
+        computerSkills: gComputerSkills.slice(),
+        additionalSkills: gAdditionalSkills.slice(),
         langs: gLangs.slice(),
         certs: gCerts.slice(),
         img: imgUrl || '',
@@ -1457,82 +1614,195 @@ service firebase.storage {
           setTimeout(function () { showPage('candidates', document.querySelector('[data-page="candidates"]')); }, 600);
         })
         .catch(function (err) {
-          console.error('Firebase save xəta:', err);
           showToast('❌ Firebase xətası: ' + err.message, 'error');
           saveBtn.textContent = 'Firebase-ə Saxla';
           saveIco.textContent = '💾';
           btn.disabled = false;
         });
-    }
+    };
+    // ========== editCandidate funksiyasını əlavə edin ==========
+    window.editCandidate = function (id) {
+      const candidate = getData().find(c => String(c.id) === String(id));
+      if (!candidate) {
+        showToast('Kandidat tapılmadı!', 'error');
+        return;
+      }
 
-    // ════ EDIT ════
+      // Formu təmizlə
+      resetForm();
+
+      // Əsas məlumatları doldur
+      document.getElementById('f-name').value = candidate.name || '';
+      document.getElementById('f-nationality').value = candidate.nationality || '';
+      document.getElementById('f-location').value = candidate.location || '';
+      document.getElementById('f-type').value = candidate.type || 'fachkraft';
+      document.getElementById('f-field').value = candidate.field || '';
+      document.getElementById('f-delevel').value = candidate.delevel || '';
+      document.getElementById('f-status').value = candidate.status || 'available';
+      document.getElementById('f-priority').value = candidate.priority || 'normal';
+      document.getElementById('f-gender').value = candidate.gender || '';
+      document.getElementById('f-edu-level').value = candidate.eduLevel || '';
+      document.getElementById('f-edu-school').value = candidate.eduSchool || '';
+      document.getElementById('f-edu-major').value = candidate.eduMajor || '';
+      document.getElementById('f-edu-years').value = candidate.eduYears || '';
+      document.getElementById('f-tagline-az').value = candidate.taglineAZ || '';
+      document.getElementById('f-tagline-de').value = candidate.taglineDE || '';
+      document.getElementById('f-tagline-en').value = candidate.taglineEN || '';
+      document.getElementById('f-notes').value = candidate.notes || '';
+      document.getElementById('f-email').value = candidate.email || '';
+      document.getElementById('f-phone').value = candidate.phone || '';
+      document.getElementById('f-whatsapp').value = candidate.whatsapp || '';
+      document.getElementById('f-linkedin').value = candidate.linkedin || '';
+      document.getElementById('f-salary').value = candidate.salary || '';
+      document.getElementById('f-available-from').value = candidate.availableFrom || '';
+      document.getElementById('f-work-type').value = candidate.workType || '';
+      document.getElementById('f-relocation').value = candidate.relocation || '';
+      document.getElementById('f-visa').value = candidate.visa || '';
+
+      // Doğum tarixi
+      if (candidate.dob) {
+        setDobFromString(candidate.dob);
+      } else {
+        clearDob();
+      }
+
+      // Bacarıqlar
+      gSkills = candidate.skills ? [...candidate.skills] : [];
+      renderTags('skills-wrap', 'skills-input', gSkills);
+
+      gComputerSkills = candidate.computerSkills ? [...candidate.computerSkills] : [];
+      renderTags('computer-skills-wrap', 'computer-skills-input', gComputerSkills);
+
+      gAdditionalSkills = candidate.additionalSkills ? [...candidate.additionalSkills] : [];
+      renderTags('additional-skills-wrap', 'additional-skills-input', gAdditionalSkills);
+
+      gLangs = candidate.langs ? [...candidate.langs] : [];
+      renderTags('langs-wrap', 'langs-input', gLangs);
+
+      gCerts = candidate.certs ? [...candidate.certs] : [];
+      renderTags('certs-wrap', 'certs-input', gCerts);
+
+      // İş təcrübəsi
+      const expList = document.getElementById('exp-list');
+      expList.innerHTML = '';
+      gExpRows = [];
+      expCounter = 0;
+      if (candidate.exp && candidate.exp.length) {
+        candidate.exp.forEach(exp => {
+          addExpRow(exp.title, exp.year);
+        });
+      } else {
+        addExpRow();
+      }
+
+      // Şəkil
+      if (candidate.img && candidate.img.startsWith('http')) {
+        gImgUrl = candidate.img;
+        gImgFile = null;
+        setImgPreview(candidate.img);
+      } else {
+        clearImgPreview();
+      }
+
+      // Redaktə rejimi
+      gEditingId = candidate.id;
+      document.getElementById('form-page-title').textContent = 'CV Redaktə Et';
+      document.getElementById('save-btn-text').textContent = 'Yenilə';
+      document.getElementById('save-btn-icon').textContent = '✏️';
+
+      showPage('add', document.querySelector('[data-page="add"]'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
     function editCandidate(id) {
       var c = getData().find(function (x) { return String(x.id) === String(id); });
       if (!c) return;
-      gEditingId = c.id;
-      gImgUrl = c.img || '';
-      gImgFile = null;
-      showPage('add', document.querySelector('[data-page="add"]'));
-      document.getElementById('form-page-title').textContent = 'Kandidatı Redaktə Et';
+
+      gEditingId = id;
+      document.getElementById('form-page-title').textContent = 'CV Redaktə Et';
       document.getElementById('save-btn-text').textContent = 'Yenilə';
-      document.getElementById('save-btn-icon').textContent = '✏️';
-      setTimeout(function () {
-        var set = function (id, val) { var el = document.getElementById(id); if (el) el.value = val || ''; };
-        set('f-name', c.name); set('f-dob', c.dob);
-        set('f-gender', c.gender); set('f-nationality', c.nationality);
-        set('f-location', c.location); set('f-type', c.type);
-        set('f-field', c.field); set('f-delevel', c.delevel);
-        set('f-edu-level', c.eduLevel); set('f-edu-school', c.eduSchool);
-        set('f-edu-major', c.eduMajor); set('f-edu-years', c.eduYears);
-        set('f-tagline-az', c.taglineAZ); set('f-tagline-de', c.taglineDE);
-        set('f-tagline-en', c.taglineEN); set('f-notes', c.notes);
-        set('f-email', c.email); set('f-phone', c.phone);
-        set('f-whatsapp', c.whatsapp); set('f-linkedin', c.linkedin);
-        set('f-status', c.status); set('f-priority', c.priority || 'normal');
-        set('f-salary', c.salary); set('f-available-from', c.availableFrom);
-        set('f-work-type', c.workType); set('f-relocation', c.relocation);
-        set('f-visa', c.visa);
+      document.getElementById('save-btn-icon').textContent = '💾';
 
-        document.getElementById('exp-list').innerHTML = '';
-        gExpRows = []; expCounter = 0;
-        if (c.exp && c.exp.length) { c.exp.forEach(function (e) { addExpRow(e.title, e.year); }); }
-        else { addExpRow(); }
+      // Əsas məlumatlar
+      document.getElementById('f-name').value = c.name || '';
+      document.getElementById('f-dob').value = c.dob || '';
+      setDobFromString(c.dob || '');
+      document.getElementById('f-gender').value = c.gender || '';
+      document.getElementById('f-nationality').value = c.nationality || '';
+      document.getElementById('f-location').value = c.location || '';
+      document.getElementById('f-type').value = c.type || '';
+      document.getElementById('f-field').value = c.field || '';
+      document.getElementById('f-delevel').value = c.delevel || '';
+      document.getElementById('f-visa').value = c.visa || '';
+      document.getElementById('f-status').value = c.status || '';
+      document.getElementById('f-priority').value = c.priority || '';
+      document.getElementById('f-salary').value = c.salary || '';
+      document.getElementById('f-available-from').value = c.availableFrom || '';
+      document.getElementById('f-work-type').value = c.workType || '';
+      document.getElementById('f-relocation').value = c.relocation || '';
+      document.getElementById('f-email').value = c.email || '';
+      document.getElementById('f-phone').value = c.phone || '';
+      document.getElementById('f-whatsapp').value = c.whatsapp || '';
+      document.getElementById('f-linkedin').value = c.linkedin || '';
 
-        gSkills.length = 0; gLangs.length = 0; gCerts.length = 0;
-        (c.skills || []).forEach(function (s) { gSkills.push(s); });
-        (c.langs || []).forEach(function (l) { gLangs.push(l); });
-        (c.certs || []).forEach(function (ct) { gCerts.push(ct); });
-        renderTags('skills-wrap', 'skills-input', gSkills);
-        renderTags('langs-wrap', 'langs-input', gLangs);
-        renderTags('certs-wrap', 'certs-input', gCerts);
+      // Təhsil
+      document.getElementById('f-edu-level').value = c.eduLevel || '';
+      document.getElementById('f-edu-school').value = c.eduSchool || '';
+      document.getElementById('f-edu-major').value = c.eduMajor || '';
+      document.getElementById('f-edu-years').value = c.eduYears || '';
 
-        if (c.img) setImgPreview(c.img);
-        else clearImgPreview();
-      }, 80);
-    }
+      // Qısa təsvirlər
+      document.getElementById('f-tagline-az').value = c.taglineAZ || '';
+      document.getElementById('f-tagline-de').value = c.taglineDE || '';
+      document.getElementById('f-tagline-en').value = c.taglineEN || '';
+      document.getElementById('f-notes').value = c.notes || '';
 
-    // ════ DELETE (with Storage cleanup) ════
-    function deleteCandidate(id) {
-      if (!confirm('Bu kandidatı Firebase-dən silmək istəyirsiniz? Şəkil də silinəcək.')) return;
-      var c = getData().find(function (x) { return String(x.id) === String(id); });
+      // Bacarıqlar və dillər
+      gSkills = c.skills || [];
+      gComputerSkills = c.computerSkills || [];
+      gAdditionalSkills = c.additionalSkills || [];
+      gLangs = c.langs || [];
+      gCerts = c.certs || [];
 
-      // Delete Storage image first
-      if (window.deleteImageFromStorage) {
-        window.deleteImageFromStorage(String(id));
+      renderTags('skills-wrap', 'skills-input', gSkills);
+      renderTags('computer-skills-wrap', 'computer-skills-input', gComputerSkills);
+      renderTags('additional-skills-wrap', 'additional-skills-input', gAdditionalSkills);
+      renderTags('langs-wrap', 'langs-input', gLangs);
+      renderTags('certs-wrap', 'certs-input', gCerts);
+
+      // İş təcrübəsi
+      document.getElementById('exp-list').innerHTML = '';
+      gExpRows = []; expCounter = 0;
+      if (c.exp && c.exp.length) {
+        c.exp.forEach(function (e) {
+          addExpRow(e.title, e.year);
+        });
+      } else {
+        addExpRow();
       }
 
+      // Şəkil
+      if (c.img) {
+        gImgUrl = c.img;
+        setImgPreview(c.img);
+      } else {
+        clearImgPreview();
+      }
+
+      showPage('add', null);
+    }
+
+    function deleteCandidate(id) {
+      if (!confirm('Bu kandidatı Firebase-dən silmək istəyirsiniz? Şəkil də silinəcək.')) return;
+      if (window.deleteImageFromStorage) window.deleteImageFromStorage(String(id));
       deleteFromFirebase(id)
         .then(function () { showToast('Kandidat silindi', 'error'); })
         .catch(function (err) { showToast('Silmə xətası: ' + err.message, 'error'); });
     }
 
-    // ════ EXPORT / IMPORT ════
     function renderExport() {
       var data = getData().map(function (c) {
         var copy = Object.assign({}, c);
-        if (copy.img && copy.img.startsWith('data:')) {
-          copy.img = copy.img.substring(0, 60) + '...[base64]';
-        }
+        if (copy.img && copy.img.startsWith('data:')) copy.img = copy.img.substring(0, 60) + '...[base64]';
         return copy;
       });
       document.getElementById('json-output').textContent = JSON.stringify(data, null, 2);
@@ -1541,9 +1811,7 @@ service firebase.storage {
     function downloadJSON() {
       var blob = new Blob([JSON.stringify(getData(), null, 2)], { type: 'application/json' });
       var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'candidates.json';
-      a.click();
+      a.href = URL.createObjectURL(blob); a.download = 'candidates.json'; a.click();
       showToast('✅ candidates.json yükləndi!', 'success');
     }
     function copyJSON() {
@@ -1552,10 +1820,8 @@ service firebase.storage {
     }
 
     var gImportData = null;
-
     function handleImportFile(event) {
-      var file = event.target.files[0];
-      if (!file) return;
+      var file = event.target.files[0]; if (!file) return;
       var reader = new FileReader();
       reader.onload = function (e) {
         try {
@@ -1563,11 +1829,8 @@ service firebase.storage {
           if (!Array.isArray(data)) throw new Error('Yanlış format. Massiv lazımdır.');
           gImportData = data;
           document.getElementById('import-preview').style.display = 'block';
-          document.getElementById('import-info').innerHTML =
-            '✅ <strong>' + data.length + ' kandidat</strong> tapıldı. Import edəcəksiniz?';
-        } catch (err) {
-          showToast('❌ JSON xəta: ' + err.message, 'error');
-        }
+          document.getElementById('import-info').innerHTML = '✅ <strong>' + data.length + ' kandidat</strong> tapıldı. Import edəcəksiniz?';
+        } catch (err) { showToast('❌ JSON xəta: ' + err.message, 'error'); }
       };
       reader.readAsText(file);
     }
@@ -1576,91 +1839,39 @@ service firebase.storage {
       if (!gImportData || !gImportData.length) return;
       if (!window._db || !window._fb) { showToast('Firebase hazır deyil', 'error'); return; }
       var btn = document.getElementById('import-confirm-btn');
-      btn.disabled = true;
-      btn.textContent = 'Import edilir...';
+      btn.disabled = true; btn.textContent = 'Import edilir...';
       const { writeBatch, doc } = window._fb;
-
       try {
-        // Batch 500-lik hissələrə böl
         var chunks = [];
-        for (var i = 0; i < gImportData.length; i += 400) {
-          chunks.push(gImportData.slice(i, i + 400));
-        }
+        for (var i = 0; i < gImportData.length; i += 400) chunks.push(gImportData.slice(i, i + 400));
         for (var ci = 0; ci < chunks.length; ci++) {
           var batch = writeBatch(window._db);
-          chunks[ci].forEach(function (c) {
-            var ref = doc(window._db, 'candidates', String(c.id));
-            batch.set(ref, c);
-          });
+          chunks[ci].forEach(function (c) { batch.set(doc(window._db, 'candidates', String(c.id)), c); });
           await batch.commit();
         }
         showToast('✅ ' + gImportData.length + ' kandidat import edildi!', 'success');
         gImportData = null;
         document.getElementById('import-preview').style.display = 'none';
         document.getElementById('import-file').value = '';
-      } catch (err) {
-        showToast('❌ Import xəta: ' + err.message, 'error');
-      }
-      btn.disabled = false;
-      btn.textContent = '🚀 Firebase-ə Import Et';
+      } catch (err) { showToast('❌ Import xəta: ' + err.message, 'error'); }
+      btn.disabled = false; btn.textContent = '🚀 Firebase-ə Import Et';
     }
 
-    // Import drag-drop
-    window.addEventListener('DOMContentLoaded', function () {
-      var drop = document.getElementById('import-drop');
-      if (drop) {
-        drop.addEventListener('dragover', function (e) { e.preventDefault(); drop.classList.add('drag'); });
-        drop.addEventListener('dragleave', function () { drop.classList.remove('drag'); });
-        drop.addEventListener('drop', function (e) {
-          e.preventDefault(); drop.classList.remove('drag');
-          var file = e.dataTransfer.files[0];
-          if (!file) return;
-          var fakeEvent = { target: { files: [file] } };
-          handleImportFile(fakeEvent);
-        });
-      }
-    });
-
-    // ════ SETTINGS ════
     function copySecurityRules() {
-      var rules = `rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /candidates/{document} {
-      allow read: if resource.data.status != 'placed';
-      allow write: if request.auth != null
-                   && request.auth.token.email_verified == true;
+      navigator.clipboard.writeText(`rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /candidates/{document} {\n      allow read: if resource.data.status != 'placed';\n      allow write: if request.auth != null\n                   && request.auth.token.email_verified == true;\n    }\n  }\n}`)
+        .then(function () { showToast('Firestore qaydaları kopyalandı!', 'success'); });
     }
-  }
-}`;
-      navigator.clipboard.writeText(rules).then(function () { showToast('Firestore qaydaları kopyalandı!', 'success'); });
-    }
-
     function copyStorageRules() {
-      var rules = `rules_version = '2';
-service firebase.storage {
-  match /b/{bucket}/o {
-    match /cv-photos/{allPaths=**} {
-      allow read:  if true;
-      allow write: if request.auth != null
-                   && request.auth.token.email_verified == true
-                   && request.resource.size < 2 * 1024 * 1024
-                   && request.resource.contentType.matches('image/.*');
+      navigator.clipboard.writeText(`rules_version = '2';\nservice firebase.storage {\n  match /b/{bucket}/o {\n    match /cv-photos/{allPaths=**} {\n      allow read: if true;\n      allow write: if request.auth != null\n                   && request.auth.token.email_verified == true\n                   && request.resource.size < 2 * 1024 * 1024\n                   && request.resource.contentType.matches('image/.*');\n    }\n  }\n}`)
+        .then(function () { showToast('Storage qaydaları kopyalandı!', 'success'); });
     }
-  }
-}`;
-      navigator.clipboard.writeText(rules).then(function () { showToast('Storage qaydaları kopyalandı!', 'success'); });
-    }
-
     function setPanelLang(lang, btn) {
       document.querySelectorAll('.lang-switcher .lang-btn').forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
       showToast('Dil dəstəyi növbəti versiyada əlavə ediləcək.', 'success');
     }
 
-    // ════ AI MODAL ════
     var gAILang = 'az';
-
     function openAIModal() { document.getElementById('ai-modal').classList.add('open'); }
     function closeAIModal() {
       document.getElementById('ai-modal').classList.remove('open');
@@ -1674,151 +1885,48 @@ service firebase.storage {
       document.querySelectorAll('.ai-modal .lang-btn').forEach(function (b) { b.classList.remove('active'); });
       document.getElementById('lang-' + lang).classList.add('active');
     }
-  </script>
-  </script>
 
 
 
-
-
-
-  <script>
-    // =============================================
-    // DÜZƏLDİLMİŞ AI PARSER v5.2 — Dillər/Bacarıqlar silinmir!
-    // =============================================
-    async function runAIParse() {
-      const rawText = document.getElementById('ai-cv-text').value.trim();
-      if (!rawText) {
-        showToast('Mətni yapışdırın!', 'error');
-        return;
-      }
-
-      const loading = document.getElementById('ai-loading');
-      loading.classList.add('visible');
-      document.getElementById('ai-parse-btn').disabled = true;
-
-      await new Promise(r => setTimeout(r, 800));
-
-      const text = rawText.toLowerCase();
-      const lines = rawText.split('\n').map(l => l.trim()).filter(Boolean);
-
-      // 1. Ad, doğum tarixi, sahə, dil səviyyəsi
-      const nameMatch = rawText.match(/([A-ZƏÖÜĞİŞÇ][a-zəöüğışçə]+(?:\s+[A-ZƏÖÜĞİŞÇ][a-zəöüğışçə]+)+)/);
-      if (nameMatch) document.getElementById('f-name').value = nameMatch[1];
-
-      const dobMatch = rawText.match(/(\d{1,2}\.\d{1,2}\.\d{4}|\d{4}-\d{1,2}-\d{1,2})/);
-      if (dobMatch) document.getElementById('f-dob').value = dobMatch[1];
-
-      let field = "Gastronomie";
-      if (/hotel|hilton|marriott|resepsiyon|qəbul/i.test(text)) field = "Hotel";
-      if (/it|developer|programmierer|web|software|kompüter/i.test(text)) field = "IT";
-      if (/pflege|bakıcı|care|qulluq/i.test(text)) field = "Pflege";
-      if (/logistik|lager|anbar|warehouse/i.test(text)) field = "Logistik";
-      document.getElementById('f-field').value = field;
-
-      const deLevelMatch = rawText.match(/deutsch\s*[-\–]\s*(A1|A2|B1|B2|C1|C2)/i);
-      if (deLevelMatch) document.getElementById('f-delevel').value = deLevelMatch[1].toUpperCase();
-
-      // Tip
-      if (/ausbildung|stajyer|öyrən/i.test(text)) document.getElementById('f-type').value = "ausbildung";
-      else if (/saisonal|mövsüm/i.test(text)) document.getElementById('f-type').value = "saisonal";
-      else document.getElementById('f-type').value = "fachkraft";
-
-      // İş təcrübəsi
-      document.getElementById('exp-list').innerHTML = '';
-      gExpRows = []; expCounter = 0;
-      let i = 0;
-      while (i < lines.length) {
-        const line = lines[i];
-        const dateRegex = /(\d{4})\s*[-\–]\s*(\d{4}|heute|indiyədək|present|now)/i;
-        if (line.includes('–') || line.includes('-') || dateRegex.test(line)) {
-          let title = line;
-          let year = dateRegex.test(line) ? line.match(dateRegex)[0] : '';
-          if (!year && i + 1 < lines.length && dateRegex.test(lines[i + 1])) {
-            year = lines[i + 1];
-            i++;
-          }
-          addExpRow(title, year);
-        }
-        i++;
-      }
-      if (gExpRows.length === 0) addExpRow("Küchenmitarbeiter / Koch", "2022 – indiyədək");
-
-      // ================= ƏSAS DÜZƏLİŞ BURADADIR =================
-      // AI-nin təklif etdiyi tag-ləri mövcud tag-lərə əlavə edir (silmir!)
-      const aiSkills = [];
-      if (/pizza|pide|koch|küche/i.test(text)) aiSkills.push("Pizza & Pide Zubereitung", "Küchenerfahrung");
-      if (/team|hygiene/i.test(text)) aiSkills.push("Teamarbeit", "Hygiene Standards");
-
-      // Mövcud bacarıqlara AI-nin yenilərini əlavə et (duplikat olmadan)
-      aiSkills.forEach(skill => {
-        if (!gSkills.some(s => s.toLowerCase() === skill.toLowerCase())) {
-          gSkills.push(skill);
-        }
-      });
-      renderTags('skills-wrap', 'skills-input', gSkills);
-
-      // Dillər üçün də eyni
-      const aiLangs = ["AZ – Ana dili"];
-      if (/türk/i.test(text)) aiLangs.push("TR – Sehr gut");
-      if (/ingilis|english/i.test(text)) aiLangs.push("EN – Mittel");
-      if (deLevelMatch) aiLangs.push(`DE – ${deLevelMatch[1].toUpperCase()}`);
-
-      aiLangs.forEach(lang => {
-        if (!gLangs.some(l => l.toLowerCase() === lang.toLowerCase())) {
-          gLangs.push(lang);
-        }
-      });
-      renderTags('langs-wrap', 'langs-input', gLangs);
-
-      // Qısa təsvir
-      document.getElementById('f-tagline-az').value = rawText.substring(0, 280) + '...';
-      document.getElementById('f-notes').value = rawText.substring(0, 800);
-
-      loading.classList.remove('visible');
-      document.getElementById('ai-parse-btn').disabled = false;
-
-      showToast('✅ AI parse etdi! İndi əl ilə yeni dil/bacarıq əlavə edə bilərsiniz (köhnələr qalacaq).', 'success');
-      closeAIModal();
-    }
-
-    // Tag inputları aktivləşdir (tək dəfə)
     window.addEventListener('DOMContentLoaded', function () {
+      initDobDays();
       setupTagInput('skills-wrap', 'skills-input', gSkills);
       setupTagInput('langs-wrap', 'langs-input', gLangs);
       setupTagInput('certs-wrap', 'certs-input', gCerts);
       setupDragDrop();
+      if (document.getElementById('exp-list') && gExpRows.length === 0) addExpRow();
 
-      if (document.getElementById('exp-list') && gExpRows.length === 0) {
-        addExpRow();
+      var drop = document.getElementById('import-drop');
+      if (drop) {
+        drop.addEventListener('dragover', function (e) { e.preventDefault(); drop.classList.add('drag'); });
+        drop.addEventListener('dragleave', function () { drop.classList.remove('drag'); });
+        drop.addEventListener('drop', function (e) {
+          e.preventDefault(); drop.classList.remove('drag');
+          var file = e.dataTransfer.files[0]; if (!file) return;
+          handleImportFile({ target: { files: [file] } });
+        });
       }
-
-      console.log('%c✅ AI + Tag sistemi tam hazırdır!', 'color:#D4AF37; font-weight:bold');
-    });
-
-    window.runAIParse = runAIParse;
-  </script>
-
-
-  <!-- ═══════════════ TAG INPUTLARINI AKTİVLEŞDİR ═══════════════ -->
-  <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      // Tag inputları aktivləşdir
-      setupTagInput('skills-wrap', 'skills-input', gSkills);
-      setupTagInput('langs-wrap', 'langs-input', gLangs);
-      setupTagInput('certs-wrap', 'certs-input', gCerts);
-
-      // Drag & drop üçün
-      setupDragDrop();
-
-      // İlk exp row əlavə et
-      if (document.getElementById('exp-list') && gExpRows.length === 0) {
-        addExpRow();
-      }
-
-      console.log('✅ Tag inputlar aktiv edildi (Enter ilə işləyir)');
+      console.log('%c✅ MZ Admin v5 — Tam Responsiv Hazırdır!', 'color:#D4AF37;font-weight:bold;font-size:14px');
     });
   </script>
+
+  <script>// Yeni dəyişənlər (gSkills, gLangs, gCerts ilə birlikdə)
+    var gComputerSkills = [];
+    var gAdditionalSkills = [];
+var gSkills = [];
+var gLangs = [];
+var gCerts = [];
+var gComputerSkills = [];    // ← bu
+var gAdditionalSkills = [];  // ← və bu
+    // setupTagInput çağırışlarını artır (DOMContentLoaded içində)
+    setupTagInput('skills-wrap', 'skills-input', gSkills);
+    setupTagInput('computer-skills-wrap', 'computer-skills-input', gComputerSkills);
+    setupTagInput('additional-skills-wrap', 'additional-skills-input', gAdditionalSkills);
+    setupTagInput('langs-wrap', 'langs-input', gLangs);
+    setupTagInput('certs-wrap', 'certs-input', gCerts);
+  </script>
+
+  <script src="aı.js"></script>
 </body>
 
 </html>
